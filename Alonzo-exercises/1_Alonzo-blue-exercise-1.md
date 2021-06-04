@@ -1,8 +1,12 @@
 ## Exercise 1
 
-Download and install the correct version of the Cardano Node and CLI Software.  We will be updating the software regularly to add features, fix bugs, improve performance etc.  Note that you will need to use the correctly tagged version of the Node at each stage.  Unless you are already an expert, we do not recommend that you build binaries from source — we will not be able to help you if you encounter problems with the build.  Make sure that your search path includes the location for all the binaries that you have downloaded.
+Download and install the correct version of the Cardano Node and CLI software.  
 
-1. Verify your versions of cardano node and cardano cli
+Note that we will be updating the software regularly to add features, fix bugs, improve performance, so you will need to use the correctly tagged version of the node at each stage.  
+
+Unless you are already an expert, we do not recommend that you build binaries from source — we will not be able to help you if you encounter problems with the build.  Make sure that your search path includes the location for all the binaries that you have downloaded.
+
+1. Verify your versions of cardano node and cardano cli:
 
 		cardano-node –-version
 
@@ -13,11 +17,11 @@ Download and install the correct version of the Cardano Node and CLI Software.  
 		docker run cardano-node run --version
 
 
-2. Create a working directory for your instance of the node.  Download all the genesis files, the topology file, and the config file for the Alonzo Blue Testnet and store them in your working directory.  
+2. Create a working directory for your node instance.  Download the genesis files, topology file, and config file for the Alonzo Blue Testnet and store them in your working directory.  
 
 ![](images/configurations.png)
 
-3. Start the node using the configuration information that you have downloaded.
+3. Start the node using the configuration information that you have downloaded:
 
 
 		cardano-node run \
