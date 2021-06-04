@@ -16,7 +16,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 1. Obtaining test Ada.  
 
 [Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/1_Alonzo-blue-exercise-1.md)
-(Model Solution)
+[(Model Solution [Linux])](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1-linux-solution.md)
 
 ## Exercise 2: Hard Fork (Optional)
 
