@@ -15,8 +15,7 @@ Download and install the correct version of the Cardano Node and CLI Software.  
 
 2. Create a working directory for your instance of the node.  Download all the genesis files, the topology file, and the config file for the Alonzo Blue Testnet and store them in your working directory.  
 
-![](Alonzo-exercises/images/configurations.png)
-
+![](images/configurations.png)
 
 3. Start the node using the configuration information that you have downloaded.
 
@@ -29,17 +28,15 @@ Download and install the correct version of the Cardano Node and CLI Software.  
 		--port 3001 \
 		--config path/to/alonzo-blue-config.json
 
-![](Alonzo-exercises/images/node_running.png)
+![](images/node_running.png)
 
+**You are running a so-called “passive” node.  Your node will not participate in block production or verification, and it 	will connect to the dedicated IOG Testnet relay nodes to obtain information from the network.**
 
-	**You are running a so-called “passive” node.  Your node will not participate in block production or verification, and it 	will connect to the dedicated IOG Testnet relay nodes to obtain information from the network.**
+Make sure that you set the CARDANO_NODE_SOCKET_PATH environment variable correctly.  You may want to update your .bashrc or 	other configuration so this is done automatically in future.
 
-	Make sure that you set the CARDANO_NODE_SOCKET_PATH environment variable correctly.  You may want to update your .bashrc or 	other configuration so this is done automatically in future.
+Check that your instance of the node is properly connected to the Alonzo Blue Testnet and is fully synchronised.  You may 	need to wait a few minutes.  Use the relevant **cardano-cli commands** to query the tip of the blockchain.
 
-	Check that your instance of the node is properly connected to the Alonzo Blue Testnet and is fully synchronised.  You may 	need to wait a few minutes.  Use the relevant **cardano-cli commands** to query the tip of the blockchain.
-
-	Congratulations!  You have a working node connected to the first-ever public Alonzo Cardano network!
-
+Congratulations!  You have a working node connected to the first-ever public Alonzo Cardano network!
 
 4. Use cardano-cli to generate payment keys and address
 5. Request a “goody bag” containing a parcel of **test Ada** for use on the Testnet.
@@ -52,7 +49,6 @@ Before then, you might want to participate in the Hard Fork Event using the opti
 **Please let us know of any problems that you have encountered**
 
 Via the Discord Channel for general questions.
-
 Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs.
 
 KH @ 3/6/21
