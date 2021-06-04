@@ -41,7 +41,7 @@ Start a pasive node
     --port 3001 \
     --config alonzo-blue-config.json \
 
-Add CARDANO_NODE_SOCKET_PATH to the .bashrc file
+Add `CARDANO_NODE_SOCKET_PATH` to the `.bashrc` file
 
     echo export CARDANO_NODE_SOCKET_PATH=~/cardano/db/node.socket >> .bashrc
     source .bashrc
