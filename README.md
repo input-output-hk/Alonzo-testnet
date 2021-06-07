@@ -11,8 +11,8 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ## Exercise 1: Getting Started
 
-1. Introduction to the Alonzo Testnet. 
-1. Setting up a node to connect to the testnet. 
+1. Introduction to the Alonzo Testnet.
+1. Setting up a node to connect to the testnet.
 1. Obtaining test Ada.  
 
 [Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/1_Alonzo-blue-exercise-1.md)
@@ -24,12 +24,12 @@ See an update proposal submitted to the chain and follow along as we go through 
 
 (*Note that this may be a one-off event for each Testnet since we will need to start the network from scratch - the timing will be notified on the relevant Discord channel*).
 
-Exercise 2
+[Exercise 2](Alonzo-exercises/2_Alonzo-blue-exercise-2.md)
 (Model Solution)
 
 ## Exercise 3: Addresses and Transactions
 
-1. Managing payment addresses. 
+1. Managing payment addresses.
 1. Building, signing and submitting transactions on chain.  
 1. Submitting a transaction containing a pre-built Plutus script.
 
@@ -72,5 +72,3 @@ Exercise 6
 ## Disclaimer for Alonzo Blue
 
 Note that to ensure a good user experience we will be rolling the Alonzo testnets out in phases. At this point in time, we are restricting access to a few invited users. If you are not one of those users, please bear with us until we are ready to open up for general access.
-
-
