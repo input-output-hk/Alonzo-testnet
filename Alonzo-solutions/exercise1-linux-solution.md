@@ -30,6 +30,7 @@ Get the configuration files for the Alonzo testnet
     wget https://hydra.iohk.io/build/6510764/download/1/alonzo-blue-byron-genesis.json
     wget https://hydra.iohk.io/build/6510764/download/1/alonzo-blue-shelley-genesis.json
     wget https://hydra.iohk.io/build/6510764/download/1/alonzo-blue-alonzo-genesis.json
+    wget https://hydra.iohk.io/build/6510764/download/1/alonzo-blue-topology.json
 
 Start a pasive node
 
