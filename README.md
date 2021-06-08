@@ -9,15 +9,18 @@ The Planned Syllabus is shown below.  Exercises will be deployed here and linked
 
 The exercises are designed to help those who are unfamiliar with the Cardano node to write and submit Plutus scripts on the initial Alonzo Blue and Alonzo White testnets using the node CLI, so that they can develop their own simple DApps.  Those who are already familiar with the node may choose to skip some of the earlier exercises, of course. Note that there will be no Cardano wallet or Plutus application backend support prior to Alonzo Purple, so functionality will be limited compared with the full Plutus experience.
 
+
 ## Exercise 1: Getting Started
 
 1. Introduction to the Alonzo Testnet.
 1. Setting up a node to connect to the testnet.
 1. Obtaining test Ada.  
 
+([Draft Instructions for using Docker](docker.md))
+
+
 [Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/1_Alonzo-blue-exercise-1.md)
-[(Model Solution Linux)](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1-linux-solution.md)
-[(Model Solution Docker)](Alonzo-solutions/exercise1/exercise1-docker-solution.md)
+[(Model Solutions)](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1)
 
 ## Exercise 2: Hard Fork (Optional)
 
