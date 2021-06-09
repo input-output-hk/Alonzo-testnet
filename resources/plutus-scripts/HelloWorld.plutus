@@ -1,0 +1,6 @@
+
+{
+    "type": "PlutusScriptV1",
+    "description": "The 'Hello World' Script",
+    "cborHex": "4b0100002002002002000011"
+}
