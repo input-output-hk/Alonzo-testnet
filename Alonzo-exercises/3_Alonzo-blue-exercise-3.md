@@ -47,7 +47,7 @@ Create a tx ouput with a datum hash at the script address. To lock a tx ouput wi
 - Save it! you will need to provide the number to redeem funds from the script.
 - Use `cardano-cli transaction hash-script-data` to hash it
 
-Download the pre-built [AlwaysSucceeds.plutus](resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script   
+Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script   
 
 Use `untyped-always-succeeds-txin.plutus` to create a script address
 
