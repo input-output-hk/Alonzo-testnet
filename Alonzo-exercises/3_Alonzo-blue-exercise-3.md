@@ -39,7 +39,7 @@ Fund your newly created address with a simple transaction (use --mary-era flag w
 
 ### Part 2:  Lock a transaction output (tx-out) using a plutus script.
 
-We will use the pre-built  [AlwaysSucceeds.plutus](resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds - Always succeeds! -    
+We will use the pre-built  [AlwaysSucceeds.plutus](https://github.com/input-output-hk/Alonzo-testnet/blob/main/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds - Always succeeds! -    
 
 Create a tx ouput with a datum hash at the script address. To lock a tx ouput with a plutus script, it must have a datahash, so  
 
