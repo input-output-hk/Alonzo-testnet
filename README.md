@@ -37,7 +37,7 @@ Model Solution
 1. Building, signing and submitting transactions on chain.  
 1. Submitting a transaction containing a pre-built Plutus script.
 
-Exercise 3
+[Exercise 3](Alonzo-exercises/3_Alonzo-blue-exercise-3.md)
 (Model Solution)
 
 ## Exercise 4: Compiling and Submitting Simple Plutus Scripts
