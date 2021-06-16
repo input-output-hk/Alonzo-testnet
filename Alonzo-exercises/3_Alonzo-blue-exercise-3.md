@@ -104,7 +104,7 @@ Then
       --tx-in-script-file $plutusscriptinuse \
       --tx-in-datum-value <random_number>  \
       --protocol-params-file protocol.json\
-      --tx-in-redeemer-value \
+      --tx-in-redeemer-value <random_number> \
       --tx-in-execution-units "(200000000,200000000)" \
       --out-file test-alonzo.body
 
