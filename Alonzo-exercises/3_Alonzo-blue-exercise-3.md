@@ -5,7 +5,7 @@
 
 In the first exercise, you set up and ran a passive Cardano node that was connected to the Alonzo Blue Testnet.  You may also have participated in the Alonzo hard fork in the optional exercise 2.  In this exercise, you will build and submit transactions to the Testnet that contain pre-compiled Plutus Script and use the node CLI to manage the test Ada that you have obtained via payment addresses and UTxOs.
 
-### Prerequisites
+### Prerequisites
 
 - Complete Exercise Sheet 1
 - Start a passive Cardano Node, Make sure to use the latest tagged version [alonzo-blue2.0](https://github.com/input-output-hk/cardano-node/releases/tag/alonzo-blue2.0) of the node and cli.
@@ -39,7 +39,7 @@ Fund your newly created address with a simple transaction (use --mary-era flag w
 
 ### Part 2:  Lock a transaction output (tx-out) using a plutus script.
 
-We will use the pre-built  [AlwaysSucceeds.plutus](https://github.com/input-output-hk/Alonzo-testnet/blob/main/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds - Always succeeds! -    
+We will use the pre-built  [AlwaysSucceeds.plutus](/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds - Always succeeds! -    
 
 Create a tx ouput with a datum hash at the script address. To lock a tx ouput with a plutus script, it must have a datahash, so  
 
@@ -71,7 +71,7 @@ When you succeed check the balance of the script address, for example:
 
 ### Part 3: Can you spend the funds on the script?
 
-This particular script doesn't really lock the funds: redeeming always succeeds, It just needs the transaction to be correct or the collateral might be consumed.
+This particular script always succeeds if you provide the correct datum. 
 
 - Take a look into `cardano-cli transaction build-raw`
 
@@ -109,7 +109,7 @@ Then
       --out-file test-alonzo.body
 
 
-- The txin from the script that you should use is the one that is "locked" with your datum hash.
+- The tx-in from the script that you should use is the one that is "locked" with your datum hash.
 
 - Take a look into `--tx-in-datum-value`, What if you use a different value?
 
@@ -120,6 +120,10 @@ Then
   The units for how long a script executes for and how much memory it uses. This is used to declare the resources used by a particular use of a script. (INT, INT) The time and space units needed by the script. To learn more about this parameters take a look into the protocol parameters:
 
       cardano-cli query protocol-parameters --testnet-magic 5 --out-file protocol.json
+      
+       "executionUnitPrices": {
+        "priceSteps": 1,
+        "priceMemory": 1
 
 - Can you guess someone else datum value and redeem their funds to your own address?
 
