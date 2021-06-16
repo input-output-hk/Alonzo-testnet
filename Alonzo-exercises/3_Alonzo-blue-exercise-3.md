@@ -3,16 +3,16 @@
 
 ## Submitting Transactions Containing Basic Plutus Scripts
 
-In the first exercise, you set up and ran a passive Cardano node that was connected to the Alonzo Blue Testnet.  You may also have participated in the Alonzo hard fork in the optional exercise 2.  In this exercise, you will build and submit transactions to the Testnet that contain pre-compiled Plutus Script and use the node CLI to manage the test Ada that you have obtained via payment addresses and UTxOs.
+In the first exercise, you set up and ran a passive Cardano node that was connected to the Alonzo Blue testnet.  You may also have participated in the Alonzo hard fork in the optional exercise 2.  In this exercise, you will build and submit transactions to the Testnet that contain pre-compiled Plutus script and use the node CLI to manage the test ada that you have obtained via payment addresses and UTxOs.
 
 ### Prerequisites
 
 - Complete Exercise Sheet 1
-- Start a passive Cardano Node, Make sure to use the latest tagged version [alonzo-blue2.0](https://github.com/input-output-hk/cardano-node/releases/tag/alonzo-blue2.0) of the node and cli.
-- Make sure you have some Alonzo Blue Test Ada
+- Start a passive Cardano node, ensure that you use the latest tagged version [alonzo-blue2.0](https://github.com/input-output-hk/cardano-node/releases/tag/alonzo-blue2.0) of the node and cli.
+- Make sure you have some Alonzo Blue test ada
 - Read the tutorial information on:
-	-	Payment Addresses
-	- How to build a Cardano Transaction
+	- Payment addresses
+	- How to build a Cardano transaction
 
 ### Objectives
 
@@ -20,10 +20,10 @@ In the second set of exercises, we will make sure that you can:
 
 - Create a new set of keys and address i.e. `wallet_payment.addr, wallet_payment.skey, wallet_payment.vkey`
 - Fund your `wallet_payment.addr` using a simple transaction. (Use --mary-era flag for this).    
-- Build and Submit Transactions to the Testnet Blockchain, including ones containing Plutus scripts.
+- Build and submit transactions to the testnet blockchain, including ones containing Plutus scripts.
 - Spend funds from the script address.
 
-This is the core of what is required to execute Plutus scripts on the Cardano Chain.
+This is the core of what is required to execute Plutus scripts on the Cardano chain.
 
 ## Exercise
 ### Part 1: Reminder on generating keys and building simple transactions
@@ -39,9 +39,9 @@ Fund your newly created address with a simple transaction (use --mary-era flag w
 
 ### Part 2:  Lock a transaction output (tx-out) using a plutus script.
 
-We will use the pre-built  [AlwaysSucceeds.plutus](/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds - Always succeeds! -    
+We will use the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds - Always succeeds! -    
 
-Create a tx ouput with a datum hash at the script address. To lock a tx ouput with a plutus script, it must have a datahash, so  
+Create a tx ouput with a datum hash at the script address. To lock a tx ouput with a plutus script, it must have a datahash, so:  
 
 - Use a random number generator, and get a number, make it hard.  
 - Save it! you will need to provide the number to redeem funds from the script.
@@ -63,7 +63,7 @@ So you can add the datum hash to the script address.
       --tx-out-datum-hash <hash_of_your_random_number> \
       ...
 
-Now you have all you need to build a raw transaction that will submit the Always Succeeds script;  pay for it using funds from __wallet_payment.addr__ from part 1.
+Now you have all you need to build a raw transaction that will submit the `Always Succeeds` script;  pay for it using funds from __wallet_payment.addr__ from part 1.
 
 When you succeed check the balance of the script address, for example:
 
@@ -157,7 +157,7 @@ The next exercise will involve compiling and submitting some more complex Plutus
 
 Please let us know of any problems that you have encountered:
 
-Via the Discord Channel for general questions
+Via the Discord channel for general questions
 Via the issue tracker at https://github.com/input-output-hk/cardano-node for any bugs.
 
 CL @ 14/6/21
