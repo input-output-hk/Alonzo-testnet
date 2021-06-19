@@ -39,9 +39,9 @@ If you are joining before the Hard Fork (HF) of June 4, 2021 you can log all the
     
 You should see a lot of information being printed on the screen.
 
-#### 6. Query last block
+#### 6. Query last block (new Terminal)
 
-To verify that we are in sync with the testnet we will use the cli and query the tip of the blockchain
+To verify that we are in sync with the testnet we will use the cli and query the tip of the blockchain. Leave the node running and in a new Terminalenter
 
     ./cardano-cli/bin/cardano-cli query tip --testnet-magic 5
 
