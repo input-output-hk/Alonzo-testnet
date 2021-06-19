@@ -25,7 +25,8 @@ We now can use Nix to build the node and the cli
 
 To make quicker access to the cli, we have to add its socket to our `bashrc`. Replace `yourPath` with the path where you have cloned the repo in step 1
 
-    echo export CARDANO_NODE_SOCKET_PATH=~/yourPath/cardano-node/result/alonzo-blue/state-node-alonzo-blue/node.socket
+    echo export CARDANO_NODE_SOCKET_PATH=~/yourPath/cardano-node/result/alonzo-blue/state-node-alonzo-blue/node.socket >> ~/.bashrc
+    source ~/.bashrc
 
 #### 5. Run a node
 
@@ -72,6 +73,53 @@ Great, the node is up and running!
 
 #### 7. Generate keys
 
-Lastly we will generate payment and staking addresses. 
+Lastly we will generate payment & stake keys as well as payment & stake addresses. 
 
+To generate a payment address follow
 
+```
+## generate payment verification and signing keys
+cardano-cli address key-gen \
+--verification-key-file payment.vkey \
+--signing-key-file payment.skey
+
+## generate stake verification and signing keys
+cardano-cli stake-address key-gen \
+--verification-key-file stake.vkey \
+--signing-key-file stake.skey
+
+## generate payment address (from payment verification and stake verification keys)
+cardano-cli address build \
+--payment-verification-key-file payment.vkey \
+--stake-verification-key-file stake.vkey \
+--out-file payment.addr \
+--testnet-magic 5
+```
+
+Print the payment address on Terminal, and then export it
+
+```
+cat payment.addr
+addr_test1qzcejjek8d7ah5pnk5lapvq9gjk8hr5t0kyepe0yltusruw04ecqwsgesl2sl65kjyxqkxj24mdgwdpd8e2n6np04u5smq6c3r
+export ADDRESS=addr_test1qzcejjek8d7ah5pnk5lapvq9gjk8hr5t0kyepe0yltusruw04ecqwsgesl2sl65kjyxqkxj24mdgwdpd8e2n6np04u5smq6c3r
+```
+
+Now generate a staking address
+
+```
+cardano-cli stake-address build \
+--stake-verification-key-file stake.vkey \
+--out-file stake.addr \
+--testnet-magic 5
+```
+
+verify the staking address
+
+```
+cat stake.addr
+stake_test1ur86uuq8gyvc04g0a2tfzrqtrf92ak58xsknu4fafsh672g3kvfmg
+```
+
+Sweet!
+
+Noy claim your goody-bag of test-ADA!
