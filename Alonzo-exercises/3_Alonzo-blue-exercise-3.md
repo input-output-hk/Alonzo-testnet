@@ -26,7 +26,7 @@ In this set of exercises, we will make sure that you can:
 This is the core of what is required to execute Plutus scripts on the Cardano chain.
 
 ## Exercise
-### Part 1: Reminder on generating keys and building simple transactions
+### Part 1: Generating keys and building simple transactions
 
 Use cardano_cli to create a new set of keys and addresses.
 
