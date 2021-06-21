@@ -16,7 +16,7 @@ In the first exercise, you set up and ran a passive Cardano node that was connec
 
 ### Objectives
 
-In the second set of exercises, we will make sure that you can:
+In this set of exercises, we will make sure that you can:
 
 - Create a new set of keys and address i.e. `wallet_payment.addr, wallet_payment.skey, wallet_payment.vkey`
 - Fund your `wallet_payment.addr` using a simple transaction. (Use --mary-era flag for this).    
