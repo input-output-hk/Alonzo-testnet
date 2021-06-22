@@ -28,14 +28,36 @@ This is the core of what is required to execute Plutus scripts on the Cardano ch
 ## Exercise
 ### Part 1: Generating keys and building simple transactions
 
-Use cardano_cli to create a new set of keys and addresses.
+1. Start a passive Cardano Node if you need to, as you did in Exercise Sheet 1.  Note that you will not need to reset configuration information, and the node will synchronise faster than when starting from scratch.
 
-    cardano-cli address key-gen ...
-    cardano-cli address build ...
+``$ cardano-node run --config …``
 
-Fund your newly created address with a simple transaction (use --mary-era flag when needed)
+or 
 
-    cardano-cli transaction build-raw --mary-era ...
+``$ docker run cardano-node run --config …``
+
+
+2.	Confirm the amount of Blue Test Ada that you have been sent in your goody bag:
+
+``$ cardano-node query utxo …``
+
+3.	Create a new payment address, wallet.addr.  Record your private and public keys. This will act as a “wallet” that you can use to fund transactions and to pay for Plutus script execution.
+
+```
+$ cardano-node address key-gen …
+…
+```
+4.	Transfer some of your test Ada from your goody bag to wallet.addr by building, signing and submitting a transaction to the blockchain, as described in the tutorial.
+
+```
+cardano-node transaction build-raw …
+…
+cardano-node transaction submit …
+```
+Confirm that you have successfully funded your wallet.  Remember that you will have to calculate the fee for the transaction (in Lovelace, a fraction of Ada) and account for it in the transaction (higher level wallets do this for you, of course!  We only need to do it because we are using the basic CLI commands).  You may need to wait a short while before the transaction is recorded on chain.  At this stage, all the nodes that are connected to the chain will be able to verify that you have funded the address.
+
+``$ cardano-node query utxo …``
+
 
 ### Part 2:  Lock a transaction output (tx-out) using a plutus script.
 
