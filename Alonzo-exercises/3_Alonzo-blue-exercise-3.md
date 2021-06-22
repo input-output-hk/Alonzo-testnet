@@ -8,7 +8,7 @@ In the first exercise, you set up and ran a passive Cardano node that was connec
 ### Prerequisites
 
 - Complete Exercise Sheet 1
-- Start a passive Cardano node, ensure that you use the latest tagged version [alonzo-blue2.0](https://github.com/input-output-hk/cardano-node/releases/tag/alonzo-blue2.0) of the node and cli.
+- Ensure that you have the latest tagged version of the node and CLI (at the time of writing, this was [alonzo-blue2.0](https://github.com/input-output-hk/cardano-node/releases/tag/alonzo-blue2.0))
 - Make sure you have some Alonzo Blue test ada
 - Read the tutorial information on:
 	- Payment addresses
@@ -18,17 +18,18 @@ In the first exercise, you set up and ran a passive Cardano node that was connec
 
 In this set of exercises, we will make sure that you can:
 
-- Create a new set of keys and address i.e. `wallet_payment.addr, wallet_payment.skey, wallet_payment.vkey`
-- Fund your `wallet_payment.addr` using a simple transaction. (Use --mary-era flag for this).    
+- Create new Payment Addresses and the Associated Keys
+- Use Payment Addresses to Fund Private “Wallets”
+- Build and Submit Transactions to the Testnet Blockchain, including ones containing Plutus scripts.   
 - Build and submit transactions to the testnet blockchain, including ones containing Plutus scripts.
-- Spend funds from the script address.
+- Spend funds that are controlled by the script address.
 
-This is the core of what is required to execute Plutus scripts on the Cardano chain.
+This is the core of what is required to execute Plutus scripts on the Cardano blockchain.
 
-## Exercise
+## Exercises
 ### Part 1: Generating keys and building simple transactions
 
-1. Start a passive Cardano Node if you need to, as you did in Exercise Sheet 1.  Note that you will not need to reset configuration information, and the node will synchronise faster than when starting from scratch.
+1. Start a passive Cardano Node if you need to, as you did in Exercise Sheet 1.  Note that you will not need to change the configuration information, and the node will synchronise faster than when starting from scratch.
 
 ``$ cardano-node run --config …``
 
@@ -59,21 +60,21 @@ Confirm that you have successfully funded your wallet.  Remember that you will h
 ``$ cardano-node query utxo …``
 
 
-### Part 2:  Lock a transaction output (tx-out) using a plutus script.
+### Part 2:  Lock a transaction output (tx-out) using a Plutus script.
 
-We will use the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds - Always succeeds! -    
+We will use the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds.    
 
-Create a tx ouput with a datum hash at the script address. To lock a tx ouput with a plutus script, it must have a datahash, so:  
+Create a tx ouput with a datum hash at the script address. To lock a transaction output with a plutus script, it must have a datahash, so:  
 
 - Use a random number generator, and get a number, make it hard.  
 - Save it! you will need to provide the number to redeem funds from the script.
 - Use `cardano-cli transaction hash-script-data` to hash it
 
-Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/untyped-always-succeeds-txin.plutus) Plutus script   
+Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script   
 
-Use `untyped-always-succeeds-txin.plutus` to create a script address
+Use `AlwaySucceeds.plutus` to create a script address
 
-     plutusscriptaddr=$(cardano-cli address build --payment-script-file untyped-always-succeeds-txin.plutus --testnet-magic 5)
+     plutusscriptaddr=$(cardano-cli address build --payment-script-file AlwaySucceeds.plutus --testnet-magic 5)
 
 Before you build the transaction to lock the funds, you will need to take a look into the new command:
 
@@ -179,7 +180,7 @@ The next exercise will involve compiling and submitting some more complex Plutus
 
 Please let us know of any problems that you have encountered:
 
-Via the Discord channel for general questions
-Via the issue tracker at https://github.com/input-output-hk/cardano-node for any bugs.
+- Via the Discord channel for general questions
+- Via the issue tracker at https://github.com/input-output-hk/cardano-node for any bugs.
 
 CL @ 14/6/21
