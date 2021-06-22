@@ -37,7 +37,7 @@ or
 ``$ docker run cardano-node run --config …``
 
 
-2.	Confirm the amount of Blue Test Ada that you have been sent in your goody bag:
+2.	Confirm the amount of Blue Test Ada that you have been sent in your goody bag (or obtained from a faucet):
 
 ``$ cardano-node query utxo …``
 
