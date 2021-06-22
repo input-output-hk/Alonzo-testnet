@@ -12,7 +12,7 @@ We are excited to have you join us on the journey to delivering Plutus scripts f
 - Make sure you can access:
 
 
-	1. The IOHK Tutorial Documentation at: https://docs.cardano.org/en/latest/
+	1. The IOHK Tutorial Documentation at: https://docs.cardano.org/introduction
 	2. The Alonzo Blue Testnet configuration information at: [https://hydra.iohk.io/build/6510764/download/1/index.html](https://hydra.iohk.io/build/6510764/download/1/index.html)
 	3. Either, the Linux Build at: [https://hydra.iohk.io/build/6538899/download/1/cardano-node-1.27.0-linux.tar.gz
 ](https://hydra.iohk.io/build/6538899/download/1/cardano-node-1.27.0-linux.tar.gz)
