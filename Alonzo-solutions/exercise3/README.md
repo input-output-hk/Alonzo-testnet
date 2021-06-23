@@ -33,19 +33,19 @@ cardano-cli stake-address build \
 #### Part 1.1 Fund the new account
 Build a simple transaction for funding the new account. Use the initial account of the testnet that claimed the goddy-bag of test-ADA and send some amount.
 
-To initialize the transaction we have to [build a raw transaction](https://web.archive.org/web/20210530221611/https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/simple_transaction.html), we will use the `--mary-era` flag when needded
+To initialize the transaction we have to [build a raw transaction](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/simple_transaction.html), we will use the `--mary-era` flag when needded
 
 - i) Get protocol parameters
 
-Save the parameters in a json file `protocol.json` 
+Save the parameters in a json file `protocol001.json`
 ```
 cardano-cli query protocol-parameters \
 --testnet-magic 5 \
---out-file ./txs/protocol.json
+--out-file ./txs/protocol001.json
 ```
 
 - ii) Draft the transaction
-Save the draft in `tx.draft`
+Save the draft in `tx001.draft`
 
 ```
 cardano-cli transaction build-raw \
@@ -54,7 +54,7 @@ cardano-cli transaction build-raw \
 --tx-out $(cat payment.addr)+0 \
 --invalid-hereafter $TTL \
 --fee 0 \
---out-file ./txs/tx.draft
+--out-file ./txs/tx001.draft
 ```
 
 where 
@@ -63,16 +63,16 @@ where
 
 - iii) Calculate fees
 
-To calculate the fee we need to include the draft transaction `tx.draft`
+To calculate the fee we need to include the draft transaction `tx001.draft`
 ```
 cardano-cli transaction calculate-min-fee \
---tx-body-file ./txs/tx.draft \
+--tx-body-file ./txs/tx001.draft \
 --tx-in-count 1 \
 --tx-out-count 2 \
 --witness-count 1 \
 --byron-witness-count 0 \
 --testnet-magic 5 \
---protocol-params-file ./txs/protocol.json
+--protocol-params-file ./txs/protocol001.json
 ```
 
 we should get the fees printed on the screen. Now we have to calculte how much change we have to return to the sender of the transaction 
@@ -90,25 +90,66 @@ cardano-cli transaction build-raw \
 --tx-out $(cat ./addrs/payment.addr)+999799823455 \
 --invalid-hereafter 1943280 \
 --fee 176545 \
---out-file ./txs/tx.raw
+--out-file ./txs/tx001.raw
 ```
 
 - ii) Sign the transaction
 
 ```
 cardano-cli transaction sign \
---tx-body-file ./txs/tx.raw \
+--tx-body-file ./txs/tx001.raw \
 --signing-key-file ./addrs/payment.skey \
 --testnet-magic 5 \
---out-file ./txs/tx.signed
+--out-file ./txs/tx001.signed
 ```
 
 iii) Submit the transaction
 
 ```
 cardano-cli transaction submit \
---tx-file ./txs/tx.signed \
+--tx-file ./txs/tx001.signed \
 --testnet-magic 5
 ```
 
+## Part 2. Lock a transaction output (tx-out) using a plutus script.
 
+The pre-build script [AlwaysSucceeds.hs](https://github.com/input-output-hk/cardano-node/blob/master/plutus-example/plutus-example/src/Cardano/PlutusExample/Untyped/AlwaysSucceeds.hs) is used to lock funds in the script and as the name suggests it always allows withdrawing them back. 
+
+To lock funds in the Plutus script we have to create a tx output with **datum-hash** at the script address. One way to do this is to create a long random number and save it as `randomDatum.txt`, this can be done quickly using a simple python script
+
+```python
+#!/usr/bin/env python3
+from numpy import random
+randDatum = ''
+for i in range(4):
+    randDatum += str(random.randint(1e3,1e4-1))
+
+with open("./txs/randomDatum.txt", "w") as f:
+    f.write(randDatum)
+print(randDatum)
+```
+
+save it as `randDatumGen.py`, make it executable `$ chmod u+x ./randDatumGen.py`.
+
+Now we can hash it 
+
+```
+./txs/randomDatum.txt
+echo $(cardano-cli transaction hash-script-data \
+--script-data-value $(cat ./txs/randomDatum.txt)) \
+> ./txs/randomDatumHash.txt
+```
+
+and save it to 
+
+
+
+
+
+
+
+
+
+```
+cardano-cli transaction 
+```
