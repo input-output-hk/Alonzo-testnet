@@ -12,16 +12,16 @@ In the first exercise, you set up and ran a passive Cardano node that was connec
 - Make sure you have some Alonzo Blue test ada
 - Read the tutorial information on:
 	- Payment addresses
-	- How to build a Cardano transaction
+	- How to build and submit a Cardano transaction
+- You may also want to watch [Plutus Pioneer Program - Lecture #2](https://youtu.be/E5KRk5y9KjQ) for background on Plutus scripts
 
 ### Objectives
 
 In this set of exercises, we will make sure that you can:
 
-- Create new Payment Addresses and the Associated Keys
+- Create new Payment Addresses and the Associated Private and Public Keys
 - Use Payment Addresses to Fund Private “Wallets”
-- Build and Submit Transactions to the Testnet Blockchain, including ones containing Plutus scripts.   
-- Build and submit transactions to the testnet blockchain, including ones containing Plutus scripts.
+- Build and Submit Transactions to the Testnet Blockchain, including ones containing Plutus scripts.
 - Spend funds that are controlled by the script address.
 
 This is the core of what is required to execute Plutus scripts on the Cardano blockchain.
@@ -29,7 +29,7 @@ This is the core of what is required to execute Plutus scripts on the Cardano bl
 ## Exercises
 ### Part 1: Generating keys and building simple transactions
 
-1. Start a passive Cardano Node if you need to, as you did in Exercise Sheet 1.  Note that you will not need to change the configuration information, and the node will synchronise faster than when starting from scratch.
+1. Start a passive Cardano Node if you need to, as you did in Exercise Sheet 1.  Note that you will not need to change the configuration information unless the testnet has been reset, and the node will synchronise faster than when starting from scratch.
 
 ``$ cardano-node run --config …``
 
@@ -42,145 +42,104 @@ or
 
 ``$ cardano-node query utxo …``
 
-3.	Create a new payment address, wallet.addr.  Record your private and public keys. This will act as a “wallet” that you can use to fund transactions and to pay for Plutus script execution.
+3.	Create a new payment address, `wallet.addr`.  Record your private and public keys. This will act as a “wallet” that you can use to fund transactions and to pay for Plutus script execution.
 
 ```
 $ cardano-node address key-gen …
 …
 ```
-4.	Transfer some of your test Ada from your goody bag to wallet.addr by building, signing and submitting a transaction to the blockchain, as described in the tutorial.
+4.	Transfer some of your test Ada to `wallet.addr` by building, signing and submitting a transaction to the blockchain, as described in the tutorial.
 
 ```
 cardano-node transaction build-raw …
 …
 cardano-node transaction submit …
 ```
-Confirm that you have successfully funded your wallet.  Remember that you will have to calculate the fee for the transaction (in Lovelace, a fraction of Ada) and account for it in the transaction (higher level wallets do this for you, of course!  We only need to do it because we are using the basic CLI commands).  You may need to wait a short while before the transaction is recorded on chain.  At this stage, all the nodes that are connected to the chain will be able to verify that you have funded the address.
+Confirm that you have successfully funded your wallet.  Remember that you will have to calculate the fee for the transaction (in Lovelace, a fraction of Ada) and account for it in the transaction (higher level wallets do this for you, of course!  We only need to do this because we are using the basic CLI commands).  You may need to wait a short while before the transaction is recorded on chain.  At this stage, all the nodes that are connected to the testnet chain will be able to verify that you have funded the address.
 
 ``$ cardano-node query utxo …``
 
 
-### Part 2:  Lock a transaction output (tx-out) using a Plutus script.
+### Part 2:  Submit a transaction that uses a Plutus script.
 
-We will use the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script to lock some funds. This particular script will always allow you to redeem the funds.    
+We will first use a pre-built Plutus validator script that always returns `True`. This is the simplest possible validator script (though it is not very useful except as a placeholder/test script!).
 
-Create a tx ouput with a datum hash at the script address. To lock a transaction output with a plutus script, it must have a datahash, so:  
+5. Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script.  
 
-- Use a random number generator, and get a number, make it hard.  
-- Save it! you will need to provide the number to redeem funds from the script.
-- Use `cardano-cli transaction hash-script-data` to hash it
+Obtain the script address
 
-Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script   
+``
+cardano-cli address build ...
+``
 
-Use `AlwaySucceeds.plutus` to create a script address
+6. Build a raw transaction that will submit the script and pay for it using funds from `wallet.addr`. You may need to top up the wallet before you do this if you did not transfer enough Ada initially.  For test purposes, assume that the transaction will cost 100 Ada (100,000,000 Lovelace) -- the cost of a real transaction on the Cardano Mainnet will be much less than this, of course.  Until we have improved the CLI, you will also need to specify the "budget" for executing the script in terms of time and memory execution units.  You may assume 10,000,000,000 units in each case (again, these numbers will be much larger than will be required on Mainnet).
 
-     plutusscriptaddr=$(cardano-cli address build --payment-script-file AlwaySucceeds.plutus --testnet-magic 5)
+``
+$ cardano-node transaction build-raw …
+``
 
-Before you build the transaction to lock the funds, you will need to take a look into the new command:
+Sign the transaction as usual, using the secret key for `wallet.addr`
 
-    cardano-cli transaction hash-script-data --script-data-value <random_number>
+``
+$ cardano-node transaction sign …
+``
 
-So you can add the datum hash to the script address.
+Submit the transaction to the chain. 
 
+``
+$ cardano-node transaction submit …
+``
+
+The Plutus script technically controls how the funds can be withdrawn, but it always succeeds, so there is effectively no restriction.
+
+### Part 3:  "Locking" funds using a Plutus script.
+
+We will now do something more useful, by using another pre-built script to "lock" some funds unless a valid input is supplied 
+
+1. Download the pre-built [Lock.plutus](/resources/plutus-scripts/Loc k.plutus) script.
+2. Choose your favourite number and hash it:
+
+``
+cardano-cli transaction hash-script-data --script-data-value <number>
+``
+
+3. Build a transaction that includes this hash on the transaction output and submit it.
+
+```
     cardano-cli transaction build-raw \
-      --tx-out-datum-hash <hash_of_your_random_number> \
+      --tx-out-datum-hash <hash_of_your_chosen_number> \
       ...
+```
 
-Now you have all you need to build a raw transaction that will submit the `Always Succeeds` script;  pay for it using funds from __wallet_payment.addr__ from part 1.
-
-When you succeed check the balance of the script address, for example:
-
-    cardano-cli query utxo --address $plutusscriptaddr --testnet-magic 5
-
-### Part 3: Can you spend the funds on the script?
-
-This particular script always succeeds if you provide the correct datum. 
-
-- Take a look into `cardano-cli transaction build-raw`
-
-- This time the utxo of the script address is used as an input.
-
-- What is the role of the `--tx-in-collateral`?
-
-  It is part of the “2 phase validation” scheme introduced in Alonzo. It specifies inputs that are used as collateral in case any of the scripts in the transaction fail. The collateral inputs must cover the tx fees (times the collateralisation factor which is a protocol parameter) and be ordinary pubkey inputs, not themselves scripts. The collateral inputs will not be consumed in the normal case that all scripts are valid. They will only be consumed if the scripts fail (in which case the normal tx ins will not be consumed). Collateral inputs are only needed for txs with Plutus scripts.
-
-  So you will need a `tx-in-collateral`.  
-
-Some ideas:
-
-    cardano-cli query utxo --address $plutusscriptaddr --testnet-magic 5 --out-file plutusutxo.json
-    plutusutxotxin=$(jq -r 'keys[]' plutusutxo.json)
-
-    cardano-cli query utxo --address $utxoaddr --testnet-magic 5 --out-file collateral_utxo.json
-    txinCollateral=$(jq -r 'keys[]' collateral_utxo.json)
-
-    receivingAddress=addr_test1vpqgspvmh6m2m5pwangvdg499srfzre2dd96qq57nlnw6yctpasy4
-
-Then
-
-    cardano-cli transaction build-raw \
-      --alonzo-era \
-      --fee 400000000 \
-      --tx-in $plutusutxotxin \
-      --tx-in-collateral $txinCollateral \
-      --tx-out "$receivingAddress+100000000" \
-      --tx-in-script-file $plutusscriptinuse \
-      --tx-in-datum-value <random_number>  \
-      --protocol-params-file protocol.json\
-      --tx-in-redeemer-value <random_number> \
-      --tx-in-execution-units "(200000000,200000000)" \
-      --out-file test-alonzo.body
+4. Try unlocking the funds. Note that you will need to provide some "collateral" to cover the fees in case the script fails to validate, and you will also need to provide a "redeemer".
 
 
-- The tx-in from the script that you should use is the one that is "locked" with your datum hash.
+### Optional Exercises
 
-- Take a look into `--tx-in-datum-value`, What if you use a different value?
+7.	Optional Exercise (Easy)
 
-- What about `--tx-in-redeemer-value` ? Did it play a role on this script?  
+Submit a transaction containing the [AlwaysFails.plutus](/resources/plutus-scripts/AlwayFails.plutus) Plutus script.  How does the outcome differ from [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus)?
+ 
 
-- So what is `--tx-in-execution-units` ?
+8.	Optional Exercise (Easy)
 
-  The units for how long a script executes for and how much memory it uses. This is used to declare the resources used by a particular use of a script. (INT, INT) The time and space units needed by the script. To learn more about this parameters take a look into the protocol parameters:
+What other kinds of data can you include you include in a datum value?
 
-      cardano-cli query protocol-parameters --testnet-magic 5 --out-file protocol.json
-      
-       "executionUnitPrices": {
-        "priceSteps": 1,
-        "priceMemory": 1
+8.	Optional Exercise (Moderate)
 
-- Can you guess someone else datum value and redeem their funds to your own address?
-
-### Important notes on execution units and costs
-
-- For now you have to figure out an upper bound on the execution units. Later on you won't need to specify execution units nor fees.
-
-- In current implementation on Alonzo testnet, a **SAFE** value that would cover all typical scripts on the first stages of the testnet should be around **10 milliseconds (10,000,000,000 picoseconds)**.  
-
-- Or more generally in the **range 100,000,000 -- 10,000,000,000 picoseconds**
-
-- Yes, that creates EXTREMELY HIGH EXECUTIONS COSTS (up to 10,000,000,000 lovelace). **Don't worry, this does not reflect future real mainnet costs**. These large numbers will be resolved when the cost models is completed by the Plutus team.
+Write your own version of the `AlwaysSucceeds` Plutus script, compile your script and submit it to the Alonzo Testnet.  Verify that it has succeeded.  (Note: we will do this properly in Exercise 4 so completing this exercise will involve you reading ahead!)
 
 
-### Optional Exercise (Moderate)
+8.	Optional Exercise (Moderate)
 
-How can you make your scripts “parametric”? What ways do you have to record “state” information on-chain using Plutus scripts?  How can you set up your scripts to adapt to previously-stored information?
+What ways do you have to record “state” information on-chain using Plutus scripts?
 
 The next exercise will involve compiling and submitting some more complex Plutus scripts using your own node.
 
 
-### You might be interested:
-
-- [Plutus Pioneer Program - Lecture #2](https://youtu.be/E5KRk5y9KjQ)
-
-- [alwaysSucceedingNAryFunction](https://github.com/input-output-hk/plutus/blob/ffa40bb7c91a575272f3b20b4628432396789360/plutus-ledger-api/src/Plutus/V1/Ledger/Examples.hs#L22)
-
-- [Plutus integration formal specification](https://hydra.iohk.io/job/Cardano/cardano-ledger-specs/specs.alonzo-ledger/latest/download-by-type/doc-pdf/alonzo-changes)
-
-- https://input-output-hk.github.io/cardano-node/cardano-api/Cardano-Api-ProtocolParameters.html#g:4
-
 Please let us know of any problems that you have encountered:
 
 - Via the Discord channel for general questions
-- Via the issue tracker at https://github.com/input-output-hk/cardano-node for any bugs.
+- Via the issue tracker at [https://github.com/input-output-hk/cardano-node](https://github.com/input-output-hk/cardano-node) for any bugs.
 
-CL @ 14/6/21
+KH @ 23/6/21
