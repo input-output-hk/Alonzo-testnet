@@ -129,18 +129,17 @@ with open("./txs/randomDatum.txt", "w") as f:
 print(randDatum)
 ```
 
-save it as `randDatumGen.py`, make it executable `$ chmod u+x ./randDatumGen.py`.
+save it as `randDatumGen.py`, make it executable `$ chmod u+x ./randDatumGen.py` and run it `./txs/randomDatum.txt`.
 
 Now we can hash it 
 
 ```
-./txs/randomDatum.txt
 echo $(cardano-cli transaction hash-script-data \
 --script-data-value $(cat ./txs/randomDatum.txt)) \
 > ./txs/randomDatumHash.txt
 ```
 
-and save it to 
+and save it to `randomDatumHash.txt` in the txs folder. 
 
 
 
