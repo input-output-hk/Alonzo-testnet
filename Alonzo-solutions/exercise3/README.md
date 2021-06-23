@@ -111,7 +111,26 @@ cardano-cli transaction submit \
 --testnet-magic 5
 ```
 
+#### Part 1.2 Check balances
+If the transaction was successful and we take a look at the addresses balances, the expected output shold look something like
+
+```
+$ cardano-cli query utxo --testnet-magic 5 --address $(cat ./addrs/payment.addr)
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+f2f80bedba5ff3effbc70d188f365e528ae9c04b35acff4d006c6e28477710d4     1        999799823455 lovelace + TxOutDatumHashNone
+
+
+$ cardano-cli query utxo --testnet-magic 5 --address $(cat ./addrs/payment2.addr)
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+f2f80bedba5ff3effbc70d188f365e528ae9c04b35acff4d006c6e28477710d4     0        200000000 lovelace + TxOutDatumHashNone
+```
+
+
 ## Part 2. Lock a transaction output (tx-out) using a plutus script.
+
+#### Part 2.1. Generate a Datum-hash
 
 The pre-build script [AlwaysSucceeds.hs](https://github.com/input-output-hk/cardano-node/blob/master/plutus-example/plutus-example/src/Cardano/PlutusExample/Untyped/AlwaysSucceeds.hs) is used to lock funds in the script and as the name suggests it always allows withdrawing them back. 
 
@@ -139,10 +158,29 @@ echo $(cardano-cli transaction hash-script-data \
 > ./txs/randomDatumHash.txt
 ```
 
-and save it to `randomDatumHash.txt` in the txs folder. 
+and save it to `randomDatumHash.txt` in the /txs folder. 
 
+#### Part 2.2. Send funds to the Script
 
+Before executing a transaction to the script we have to generate the Script address and save it in the /addr folder as `script.addr`
 
+```
+cardano-cli address build --payment-script-file untyped-always-succeeds-txin.plutus --testnet-magic 5 --out-file ./addrs/script.addr
+```
+
+Now we can build a transaction sending test-ADA to import
+
+```shell
+cardano-cli transaction build-raw \
+--alonzo-era \
+--tx-in 7d721d8a0cc2f3d87f44d4df22d6815f58fb67f421b283462ff3b823c36f34a6#1 \
+--tx-out $(cat script.addr)+10000000000 \
+--tx-out-datum-hash $(cat random_datum_hash.txt) \
+--tx-out addr_test1qpkgeus5d5yhpj876f8vx68qp95ftkk6kxw7dq9fmluvlewgmkukektxh5dthk04uhcm90d7pz6njjcfd3y0jjn5klhsk8ghrl+14999000000 \
+--fee 1000000 \
+--protocol-params-file pparams.json \
+--out-file tx.raw
+```
 
 
 
