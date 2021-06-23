@@ -64,9 +64,7 @@ Confirm that you have successfully funded your wallet.  Remember that you will h
 
 We will first use a pre-built Plutus validator script that always returns `True`. This is the simplest possible validator script (though it is not very useful except as a placeholder/test script!).
 
-5. Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script.  
-
-Obtain the script address
+5. Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script, and obtain the script address
 
 ``
 cardano-cli address build ...
@@ -78,13 +76,13 @@ cardano-cli address build ...
 $ cardano-node transaction build-raw …
 ``
 
-Sign the transaction as usual, using the secret key for `wallet.addr`
+7. Sign the transaction as usual, using the secret key for `wallet.addr`
 
 ``
 $ cardano-node transaction sign …
 ``
 
-Submit the transaction to the chain. 
+8. Submit the transaction to the chain. 
 
 ``
 $ cardano-node transaction submit …
@@ -111,7 +109,7 @@ cardano-cli transaction hash-script-data --script-data-value <number>
       ...
 ```
 
-4. Try unlocking the funds. Note that you will need to provide some "collateral" to cover the fees in case the script fails to validate, and you will also need to provide a "redeemer".
+4. Try spending the funds that are "locked" by the script. Note that you will need to provide some "collateral" to cover the fees in case the script fails to validate, and you will also need to provide a "redeemer".  What happens if you give the wrong value?
 
 
 ### Optional Exercises
@@ -136,8 +134,9 @@ What ways do you have to record “state” information on-chain using Plutus sc
 
 The next exercise will involve compiling and submitting some more complex Plutus scripts using your own node.
 
+### Feedback
 
-Please let us know of any problems that you have encountered:
+Please let us know of any problems that you have encountered or improvements that could be made:
 
 - Via the Discord channel for general questions
 - Via the issue tracker at [https://github.com/input-output-hk/cardano-node](https://github.com/input-output-hk/cardano-node) for any bugs.
