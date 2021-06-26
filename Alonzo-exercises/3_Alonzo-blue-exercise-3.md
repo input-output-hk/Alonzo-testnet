@@ -40,31 +40,31 @@ or
 
 2.	Confirm the amount of Blue Test Ada that you have been sent in your goody bag (or obtained from a faucet):
 
-``$ cardano-node query utxo …``
+``$ cardano-cli query utxo …``
 
 3.	Create a new payment address, `wallet.addr`.  Record your private and public keys. This will act as a “wallet” that you can use to fund transactions and to pay for Plutus script execution.
 
 ```
-$ cardano-node address key-gen …
+$ cardano-cli address key-gen …
 …
 ```
 4.	Transfer some of your test Ada to `wallet.addr` by building, signing and submitting a transaction to the blockchain, as described in the tutorial.
 
 ```
-cardano-node transaction build-raw …
+cardano-cli transaction build-raw …
 …
-cardano-node transaction submit …
+cardano-cli transaction submit …
 ```
 Confirm that you have successfully funded your wallet.  Remember that you will have to calculate the fee for the transaction (in Lovelace, a fraction of Ada) and account for it in the transaction (higher level wallets do this for you, of course!  We only need to do this because we are using the basic CLI commands).  You may need to wait a short while before the transaction is recorded on chain.  At this stage, all the nodes that are connected to the testnet chain will be able to verify that you have funded the address.
 
-``$ cardano-node query utxo …``
+``$ cardano-cli query utxo …``
 
 
 ### Part 2:  Submit a transaction that uses a Plutus script.
 
 We will first use a pre-built Plutus validator script that always returns `True`. This is the simplest possible validator script (though it is not very useful except as a placeholder/test script!).
 
-5. Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus) Plutus script, and obtain the script address
+5. Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaysSucceeds.plutus) Plutus script, and obtain the script address
 
 ``
 cardano-cli address build ...
@@ -73,19 +73,19 @@ cardano-cli address build ...
 6. Build a raw transaction that will submit the script and pay for it using funds from `wallet.addr`. You may need to top up the wallet before you do this if you did not transfer enough Ada initially.  For test purposes, assume that the transaction will cost 100 Ada (100,000,000 Lovelace) -- the cost of a real transaction on the Cardano Mainnet will be much less than this, of course.  Until we have improved the CLI, you will also need to specify the "budget" for executing the script in terms of time and memory execution units.  You may assume 10,000,000,000 units in each case (again, these numbers will be much larger than will be required on Mainnet).
 
 ``
-$ cardano-node transaction build-raw …
+$ cardano-cli transaction build-raw …
 ``
 
 7. Sign the transaction as usual, using the secret key for `wallet.addr`
 
 ``
-$ cardano-node transaction sign …
+$ cardano-cli transaction sign …
 ``
 
 8. Submit the transaction to the chain. 
 
 ``
-$ cardano-node transaction submit …
+$ cardano-cli transaction submit …
 ``
 
 The Plutus script technically controls how the funds can be withdrawn, but it always succeeds, so there is effectively no restriction.
@@ -94,7 +94,7 @@ The Plutus script technically controls how the funds can be withdrawn, but it al
 
 We will now do something more useful, by using another pre-built script to "lock" some funds unless a valid input is supplied 
 
-1. Download the pre-built [Lock.plutus](/resources/plutus-scripts/Loc k.plutus) script.
+1. Download the pre-built [Lock.plutus](/resources/plutus-scripts/Lock.plutus) script.
 2. Choose your favourite number and hash it:
 
 ``
@@ -116,7 +116,7 @@ cardano-cli transaction hash-script-data --script-data-value <number>
 
 7.	Optional Exercise (Easy)
 
-Submit a transaction containing the [AlwaysFails.plutus](/resources/plutus-scripts/AlwayFails.plutus) Plutus script.  How does the outcome differ from [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaySucceeds.plutus)?
+Submit a transaction containing the [AlwaysFails.plutus](/resources/plutus-scripts/AlwaysFails.plutus) Plutus script.  How does the outcome differ from [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaysSucceeds.plutus)?
  
 
 8.	Optional Exercise (Easy)
