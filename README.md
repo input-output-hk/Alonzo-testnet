@@ -3,7 +3,7 @@ This is the repository for the Cardano Alonzo testnet rollout program.
 
 Here you will find a set of [exercises](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises) and support material to use on the Alonzo testnet. We will gradually add materials to this repository through the testnet phases to help you understand the testnet and make use of its features.
 
-The Planned Syllabus is shown below.  Exercises will be deployed here and linked from this page as they are finalised.
+The planned syllabus is outlined below.  Exercises will be deployed here and linked from this page as they are finalised.
 
 ## Target Audience
 
