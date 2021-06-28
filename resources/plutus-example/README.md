@@ -1,6 +1,8 @@
+This directory is copied from the `cardano-api` directory in [cardano-node](https://github.com/input-output-hk/cardano-node).  This version includes `plutus-helloworld` which instantiates the example with a different script (the `HelloWorld` script needed for the Exercises).
+
 # plutus-example
 
-This library demonstates end to end examples of creating and executing Plutus scripts on chain.
+This directory demonstates end-to-end examples of creating and executing Plutus scripts on chain.
 
 This is done roughly in the following steps:
 
@@ -8,6 +10,10 @@ This is done roughly in the following steps:
 2. Serialize your Plutus on chain code to the text envelope format (`cardano-cli` expects this format).
 3. Create your transaction with the accompanying Plutus script(s).
 4. Submit transaction to execute Plutus script.
+
+# plutus-helloworld
+
+This directory contains a simple "Hello World" script.
 
 ## FAQ
 
@@ -27,6 +33,4 @@ We demonstate the following scripts:
 2. Simple minting Plutus script (In progress).
 
 The `plutus-example` executable outputs a text envelope formatted txin locking plutus script that always succeeds.
-
-More to come...
 
