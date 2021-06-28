@@ -1,9 +1,7 @@
 index-state: 2021-04-30T00:00:00Z
 
 packages:
-    plutus-example
     plutus-helloworld
-    ../cardano-api
 
 package cryptonite
   -- Using RDRAND instead of /dev/urandom as an entropy source for key
@@ -19,15 +17,20 @@ test-show-details: direct
 
 source-repository-package
   type: git
+  location: https://github.com/input-output-hk/cardano-node
+  tag: aa8856443e2bee7ccb2e5b52b56242f813c55d2a
+  subdir:
+    cardano-api
+
+source-repository-package
+  type: git
   location: https://github.com/input-output-hk/hedgehog-extras
-  tag: 8bcd3c9dc22cc44f9fcfe161f4638a384fc7a187
-  --sha256: 12viwpahjdfvlqpnzdgjp40nw31rvyznnab1hml9afpaxd6ixh70
+  tag: 2f28e62f1508f07bb628963ee9bb23dc19ec0e03
 
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-base
-  tag: a715c7f420770b70bbe95ca51d3dec83866cb1bd
-  --sha256: 06l06mmb8cd4q37bnvfpgx1c5zgsl4xaf106dqva98738i8asj7j
+  tag: 27f93e64a7d6aa78bfcd1072f0f5c088c79c99fe
   subdir:
     binary
     binary/test
@@ -40,14 +43,12 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-crypto
-  tag: ce8f1934e4b6252084710975bd9bbc0a4648ece4
-  --sha256: 1v2laq04piyj511b2m77hxjh9l1yd6k9kc7g6bjala4w3zdwa4ni
+  tag: 07397f0e50da97eaa0575d93bee7ac4b2b2576ec
 
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-ledger-specs
-  tag: 91dc8868db4d7b9aa48b8e8c7a912378489ac373
-  --sha256: 1byq0mkgn1b2vkw159g2xsykwvhwn8zjgarywysjdp36z83ic4gw
+  tag: ad92c1582c22471eb2f0c7195da82c29edb85d61
   subdir:
     alonzo/impl
     alonzo/test
@@ -99,17 +100,16 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/Win32-network
-  tag: 82f4afb8c240b8446a1db6c6b50901a42028ce0f
-  --sha256: 0ljxjzywk6xh9n4mfg21am65z65anlrq47z6zyzcav3h6iasvfq2
+  tag: 5b3d08c454f425da5cf045fe7865950d7c806691
 
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/ouroboros-network
-  tag: 47b94669555fb3e4f5f3b985f5d804090cfb60c4
-  --sha256: 1y20brl7scppf55037bq5rnq6vdab2f6x56nqsg8grj2gipihkdp
+  tag: 45780803aa15acf83cad1197d0c90ee27d71464a
   subdir:
     io-sim
-    io-sim-classes
+    io-classes
+    monoidal-synchronisation
     network-mux
     ouroboros-consensus
     ouroboros-consensus-byron
@@ -121,11 +121,17 @@ source-repository-package
     typed-protocols
     typed-protocols-examples
 
+-- Drops an instance breaking our code. Should be released to Hackage eventually.
+source-repository-package
+  type: git
+  location: https://github.com/Quid2/flat.git
+  tag: 95e5d7488451e43062ca84d5376b3adcc465f1cd
+
+
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/plutus
-  tag: 13da6d416b2b47cdb6f287ff078b9e759bb90b7f
-  --sha256: 11jpcjdr05l2yyhy9zp3hpkq8bhipx5w3y9bjzg2hzh0fay8571w
+  tag: 027356e4d28567871b9ce6bf41402e598ca8a098
   subdir:
     plutus-core
     plutus-ledger
@@ -133,6 +139,7 @@ source-repository-package
     plutus-tx
     plutus-tx-plugin
     prettyprinter-configurable
+    word-array
 
 constraints:
     hedgehog >= 1.0
