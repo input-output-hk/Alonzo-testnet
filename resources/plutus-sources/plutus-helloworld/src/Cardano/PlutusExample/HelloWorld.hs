@@ -16,8 +16,9 @@ import           Prelude hiding (($))
 
 import           Cardano.Api.Shelley (PlutusScript (..), PlutusScriptV1)
 
+import           Codec.Serialise
 import qualified Data.ByteString.Short as SBS
-import qualified Flat
+import qualified Data.ByteString.Lazy  as LBS
 
 import qualified Plutus.V1.Ledger.Scripts as Plutus
 import           PlutusTx (Data (..))
@@ -60,7 +61,7 @@ helloWorldScript = Plutus.unValidatorScript helloWorldValidator
 -}
 
 helloWorldSBS :: SBS.ShortByteString
-helloWorldSBS =  SBS.toShort $ Flat.flat helloWorldScript
+helloWorldSBS =  SBS.toShort . LBS.toStrict $ serialise helloWorldScript
 
 {-
     As a Serialised Script
