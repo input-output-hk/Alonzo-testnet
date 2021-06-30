@@ -3,7 +3,9 @@ index-state: 2021-04-30T00:00:00Z
 packages:
     plutus-example
     plutus-helloworld
---
+    plutus-alwayssucceeds
+
+
 package cryptonite
   -- Using RDRAND instead of /dev/urandom as an entropy source for key
   -- generation is dubious. Set the flag so we use /dev/urandom by default.
