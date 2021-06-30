@@ -9,7 +9,7 @@
 
 -- This example is taken directly from cardano-api, written by Jordan Millar, IOHK
 
-module Cardano.PlutusExample.Untyped.AlwaysSucceeds
+module Cardano.PlutusExample.AlwaysSucceeds
   ( alwaysSucceedsScript
   , alwaysSucceedsScriptShortBs
   ) where
