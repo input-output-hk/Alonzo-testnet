@@ -17,8 +17,8 @@ where `<TAG>` is the tag for the version that you require (e.g. `latest` for the
 Create local `data` and `node-ipc` volumes
 
 ```
-docker image create data
-docker image create node-ipc
+docker volume create data
+docker volume create node-ipc
 ```
 
 ## Run the Cardano node
