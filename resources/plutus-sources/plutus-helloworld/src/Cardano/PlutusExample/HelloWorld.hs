@@ -27,11 +27,13 @@ import           PlutusTx.Prelude as P hiding (Semigroup (..), unless)
 
 
 {-
-  The "hello world" message as a data item
+  The "hello world" message as a data item - converted to
+  an Integer and shortened to fit within the 8-byte limit
+  for an "int" datum.
 -}
 
 hello :: Data
-hello = I 0x48656c6c6f20576f726c64210a
+hello = I 0x48656c6c6f21
 
 {-
    The Hello World validator script
