@@ -7,7 +7,7 @@
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
 
-module Cardano.PlutusExample.HelloWorld
+module Cardano.PlutusExample.HelloWorldNumeric
   ( helloWorldSerialised
   , helloWorldSBS
   ) where
@@ -27,13 +27,11 @@ import           PlutusTx.Prelude as P hiding (Semigroup (..), unless)
 
 
 {-
-  The "hello world" message as a data item - converted to
-  an Integer and shortened to fit within the 8-byte limit
-  for an "int" datum.
+  The "hello world" message as a data item
 -}
 
 hello :: Data
-hello = I 0x48656c6c6f21
+hello = I 123
 
 {-
    The Hello World validator script
@@ -42,7 +40,7 @@ hello = I 0x48656c6c6f21
 {-# INLINABLE helloWorld #-}
 
 helloWorld :: Data -> Data -> Data -> ()
-helloWorld datum redeemer _ = if datum P.== hello then () else (P.error ())
+helloWorld datum _ _ = if datum P.== hello then () else (P.error ())
 
 {-
     As a Validator

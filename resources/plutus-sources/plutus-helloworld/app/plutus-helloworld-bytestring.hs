@@ -5,12 +5,11 @@ import           System.Environment
 import           Cardano.Api
 import           Cardano.Api.Shelley
 
-import qualified Cardano.Ledger.Alonzo.Data as Alonzo
 import qualified Plutus.V1.Ledger.Api as Plutus
 
 import qualified Data.ByteString.Short as SBS
 
-import           Cardano.PlutusExample.HelloWorld (helloWorldSBS, helloWorldSerialised)
+import           Cardano.PlutusExample.HelloWorldByteString (helloWorldSBS, helloWorldSerialised)
 
 main :: IO ()
 main = do
@@ -28,7 +27,7 @@ writePlutusScript scriptnum filename scriptSerial scriptSBS =
   do
   case Plutus.defaultCostModelParams of
         Just m ->
-          let Alonzo.Data pData = toAlonzoData (ScriptDataNumber scriptnum)
+          let pData = toPlutusData (ScriptDataNumber scriptnum)
               (logout, e) = Plutus.evaluateScriptCounting Plutus.Verbose m scriptSBS [pData]
           in do print ("Log output" :: String) >> print logout
                 case e of

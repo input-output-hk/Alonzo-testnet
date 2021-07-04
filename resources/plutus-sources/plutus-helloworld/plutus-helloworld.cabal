@@ -6,8 +6,8 @@ description:            End to end examples of creating and executing Plutus scr
 author:                 IOHK
 maintainer:             operations@iohk.io
 license:                Apache-2.0
-license-files:          LICENSE
-                        NOTICE
+-- license-files:          LICENSE
+                        -- NOTICE
 build-type:             Simple
 extra-source-files:     README.md
 
@@ -45,11 +45,12 @@ library
 
   hs-source-dirs:       src
 
-  exposed-modules:      Cardano.PlutusExample.HelloWorld
+  exposed-modules:      Cardano.PlutusExample.HelloWorldByteString
+                      , Cardano.PlutusExample.HelloWorldNumeric
 
   build-depends:        bytestring
                       , cardano-api
-                      , flat
+                      -- , flat
                       , plutus-core
                       , plutus-ledger
                       , plutus-ledger-api
@@ -57,17 +58,27 @@ library
                       , plutus-tx-plugin
                       , serialise
 
-executable plutus-helloworld
+executable plutus-helloworld-bytestring
   import:               base, project-config
   hs-source-dirs:       app
-  main-is:              plutus-helloworld.hs
+  main-is:              plutus-helloworld-bytestring.hs
   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
   build-depends:        cardano-api
-                      , cardano-ledger-alonzo
+                      -- , cardano-ledger-alonzo
                       , plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
 
+executable plutus-helloworld-numeric
+  import:               base, project-config
+  hs-source-dirs:       app
+  main-is:              plutus-helloworld-numeric.hs
+  ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
+  build-depends:        cardano-api
+                      -- , cardano-ledger-alonzo
+                      , plutus-helloworld
+                      , plutus-ledger-api
+                      , bytestring
 
