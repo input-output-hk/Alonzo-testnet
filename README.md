@@ -72,6 +72,16 @@ Exercise 5
 Exercise 6
 (Model Solution)
 
+## Exercise 7: Interacting with the Wallet
+
+
+1. The Cardano Wallet CLI
+2. Submitting transactions with Plutus Scripts from the wallet CLI
+3. Some simple DApps using the wallet CLI
+
+
+Exercise 7
+(Model Solution)
 
 ## Disclaimer for Alonzo Blue
 
