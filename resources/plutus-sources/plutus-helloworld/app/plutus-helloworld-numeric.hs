@@ -6,7 +6,7 @@ import           Cardano.Api
 import           Cardano.Api.Shelley
 
 import qualified Plutus.V1.Ledger.Api as Plutus
-
+import           Data.Aeson (encode)
 import qualified Data.ByteString.Short as SBS
 
 import           Cardano.PlutusExample.HelloWorldNumeric (helloWorldSBS, helloWorldSerialised)
@@ -33,6 +33,7 @@ writePlutusScript scriptnum filename scriptSerial scriptSBS =
                 case e of
                   Left evalErr -> print ("Eval Error" :: String) >> print evalErr
                   Right exbudget -> print ("Ex Budget" :: String) >> print exbudget
+                print $ "Datum value: " <> encode (scriptDataToJson ScriptDataJsonDetailedSchema $ ScriptDataNumber scriptnum)
         Nothing -> error "defaultCostModelParams failed"
   result <- writeFileTextEnvelope filename Nothing scriptSerial
   case result of
