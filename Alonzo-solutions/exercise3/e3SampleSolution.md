@@ -33,7 +33,7 @@
     --protocol-params-file pparams.json \
     --out-file tx.raw
 
-    cardano-cli transaction sign
+    cardano-cli transaction sign \
     --testnet-magic 5 \
     --signing-key-file paymet.skey \
     --tx-body-file tx.raw \
