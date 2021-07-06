@@ -40,7 +40,7 @@ Model Solution
 [Exercise 3](Alonzo-exercises/3_Alonzo-blue-exercise-3.md)
 [(Model Solution)](Alonzo-solutions/exercise3/e3SampleSolution.md)
 
-## Exercise 4: Compiling and Submitting Simple Plutus Scripts
+## Exercise 4: Compiling and Submitting Simple Plutus Scripts (Coming Soon)
 
 
 Compiling simple Plutus transactions. Submitting simple Plutus transactions. Calculating fees for Plutus transactions.
