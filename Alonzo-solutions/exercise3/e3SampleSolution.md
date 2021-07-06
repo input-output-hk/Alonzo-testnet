@@ -25,16 +25,16 @@
 
 
     cardano-cli transaction build-raw \
-    --testnet-magic 5 \
     --mary-era \
     --fee 200000 \
     --tx-in 7b4956b103d47908318ee92aa0790ff4b36fe7940991f0be350c9085fc4da175#1 \
     --tx-out addr_test1qpkgeus5d5yhpj876f8vx68qp95ftkk6kxw7dq9fmluvlewgmkukektxh5dthk04uhcm90d7pz6njjcfd3y0jjn5klhsk8ghrl+25000000000 \
     --tx-out $(cat payment.addr)+74999800000 \
     --protocol-params-file pparams.json \
-    -- out-file tx.raw
+    --out-file tx.raw
 
-    cardano-cli transaction sign  --testnet-magic 5 \
+    cardano-cli transaction sign
+    --testnet-magic 5 \
     --signing-key-file paymet.skey \
     --tx-body-file tx.raw \
     --out-file tx.sign
@@ -70,6 +70,9 @@ Use https://www.random.org/integers/ to generate a random number and save it in 
 
     cardano-cli address build --payment-script-file untyped-always-succeeds-txin.plutus --testnet-magic 5 --out-file script.addr
 
+### Generate protocol-parameters file
+
+    cardano-cli query protocol-parameters --testnet-magic 5 > pparams.json
 
 ### Send funds to the script address, we must include the datum hash
 
