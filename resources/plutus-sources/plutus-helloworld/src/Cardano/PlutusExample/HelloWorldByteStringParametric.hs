@@ -8,6 +8,8 @@
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
 
+-- This solution has been contributed by George Flerovsky
+
 module Cardano.PlutusExample.HelloWorldByteStringParametric
   ( hello
   , helloWorldSerialised
