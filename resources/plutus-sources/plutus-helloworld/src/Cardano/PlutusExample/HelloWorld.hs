@@ -45,7 +45,7 @@ hello = I 0x48656c6c6f21
 {-# INLINABLE helloWorld #-}
 
 helloWorld :: Data -> Data -> Data -> ()
-helloWorld datum redeemer _ = if datum P.== hello then () else (P.error ())
+helloWorld datum redeemer context = if datum P.== hello then () else (P.error ())
 
 {-
     As a Validator
