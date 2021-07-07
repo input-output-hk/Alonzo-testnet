@@ -7,7 +7,6 @@ author:                 IOHK
 maintainer:             operations@iohk.io
 license:                Apache-2.0
 license-files:          LICENSE
-                        NOTICE
 build-type:             Simple
 extra-source-files:     README.md
 
@@ -45,7 +44,8 @@ library
 
   hs-source-dirs:       src
 
-  exposed-modules:      Cardano.PlutusExample.HelloWorld
+  exposed-modules:      Cardano.PlutusExample.HelloWorld,
+			Cardano.PlutusExample.HelloWorldByteStringParameter
 
   build-depends:        bytestring
                       , cardano-api
@@ -69,5 +69,17 @@ executable plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
 
+executable plutus-helloworld-bytestring
+  import:               base, project-config
+  hs-source-dirs:       app
+  main-is:              plutus-helloworld-bytestring.hs
+  ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
+
+  build-depends:        aeson
+                      , cardano-api
+                      , plutus-helloworld
+                      , plutus-ledger-api
+                      , plutus-tx
+                      , bytestring
 
 
