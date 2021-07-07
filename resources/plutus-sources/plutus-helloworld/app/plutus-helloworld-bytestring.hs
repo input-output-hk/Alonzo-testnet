@@ -12,7 +12,7 @@ import qualified Plutus.V1.Ledger.Api as Plutus
 
 import           PlutusTx.Prelude as P (ByteString)
 
-import           Cardano.PlutusExample.HelloWorldByteString (hello, helloWorldSBS, helloWorldSerialised)
+import           Cardano.PlutusExample.HelloWorldByteStringParametric (hello, helloWorldSBS, helloWorldSerialised)
 
 main :: IO ()
 main = do
