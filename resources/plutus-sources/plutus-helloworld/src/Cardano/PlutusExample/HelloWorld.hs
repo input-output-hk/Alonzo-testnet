@@ -31,7 +31,7 @@ import           PlutusTx.Prelude as P hiding (Semigroup (..), unless)
   an Integer and shortened to fit within the 8-byte limit
   for an "int" datum.
 
-  See HelloWorldByteStringParameteric.hs for an example of how to
+  See HelloWorldByteStringParametric.hs for an example of how to
   check a bytestring datume by passing a parameter to a validator.
 -}
 

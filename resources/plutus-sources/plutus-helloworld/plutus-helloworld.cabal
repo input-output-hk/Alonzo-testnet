@@ -45,7 +45,7 @@ library
   hs-source-dirs:       src
 
   exposed-modules:      Cardano.PlutusExample.HelloWorld,
-			Cardano.PlutusExample.HelloWorldByteStringParameter
+			Cardano.PlutusExample.HelloWorldByteStringParametric
 
   build-depends:        bytestring
                       , cardano-api
