@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- Complete [Exercise Sheet 1](1_Alonzo-blue-exercise-1.md)
+- Complete [Exercise Sheet 1](1_Alonzo-white-exercise-1.md)
 - Start a passive Cardano node
 - Make sure that you have set the CARDANO_NODE_SOCKET_PATH environment variable correctly.
 - Install [lnav](http://lnav.org/) (optional) if you would like to use this to monitor the log files on Linux.
@@ -31,21 +31,20 @@ In this optional set of exercises, we will:
 1. Start a passive Cardano node as you did in [Exercise Sheet 1](1_Alonzo-blue-exercise-1.md). Note that you will not need to reset the configuration information, and the node will synchronise faster than when starting from scratch.  **Make sure the log output is being sent to a file.**
 
 ```
-      cardano-node run --config ... > node.log
+      cardano-node run --config … > node.log
 ```
   or
 
 ```
-        docker run cardano-node run --config ...
+        docker run cardano-node run --config …
 ```
 
 2. Check the network era from another terminal window
 
 ```
-		cardano-cli query tip --testnet-magic ...
-
+		cardano-cli query tip --testnet-magic …
 		{
-		    ...
+		    …
 		    "era": "Mary"
 		}
 ```
@@ -56,10 +55,9 @@ In this optional set of exercises, we will:
 	
 ```
 		grep -2 -i update node.log
-
-		...
-	    ... HardForkUpdateInEra S (S (S (S (Z ...
-		...
+		…
+	    … HardForkUpdateInEra S (S (S (S (Z …
+		…
 ```
 
 Note that you may also see update proposals for previous eras.
@@ -67,15 +65,15 @@ Note that you may also see update proposals for previous eras.
 The network should still be in the Mary era
 
 ```
-		cardano-cli query tip --testnet-magic ...
-		...
+		cardano-cli query tip --testnet-magic …
+		…
 ```
 
 4. Monitor the logs
 
 ```
         tail -f -n2 node.log
-        ...
+        …
 ```
 
 or (if you have installed the `lnav` command)
@@ -88,7 +86,7 @@ or (if you have installed the `lnav` command)
     You will see the node change era as the hard fork happens (it may take a short while for the change to propagate across the network).
 
 ```
-        ... HardForkUpdateTransitionDone ...
+        … HardForkUpdateTransitionDone …
 ```
 
 **After the hard fork**
@@ -97,15 +95,15 @@ or (if you have installed the `lnav` command)
 
 ```
           grep -2 -i ‘HardForkUpdate’ node.log
-          ... HardForkUpdateTransitionDone
+          … HardForkUpdateTransitionDone
 ```
 
 6. Confirm that the testnet is  in the Alonzo era
 
 ```
-        cardano-cli query tip --testnet-magic ...
+        cardano-cli query tip --testnet-magic …
         {
-          ...
+          …
           "era": "Alonzo"
         }
 ```
@@ -118,3 +116,13 @@ or (if you have installed the `lnav` command)
 	Use some of your test ada to build and submit a simple transaction before and after the hard fork (eg a funds transfer from your original payment address to a new address that you have created - don’t try to run a Plutus script yet – we will do that in [Exercise Sheet 3](3_Alonzo-white-exercise-3.md)!).  Do you notice any differences between the two transactions (inspect the files that are built by the transaction build-raw and transaction sign commands)?  How do you check whether your transactions have succeeded?
 
   Now that we have gone through the hard fork into Alonzo, the next exercise will involve building, signing and submitting simple Plutus transactions using your own node.  
+
+## Feedback
+
+**Please let us know of any problems that you have encountered**
+
+- Via the Discord channels for general questions.
+
+- Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
+
+- Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.

@@ -95,9 +95,12 @@ The next full exercise [Exercise 3](3_Alonzo-white-exercise-3.md) will involve b
 
 Before then, you might want to participate in the Hard Fork Event using the optional [Exercise 2](2_Alonzo-white-exercise-2.md).
 
+## Feedback
+
+
 **Please let us know of any problems that you have encountered**
 
-- Via the Discord channel for general questions.
+- Via the Discord channels for general questions.
 
 - Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
 
