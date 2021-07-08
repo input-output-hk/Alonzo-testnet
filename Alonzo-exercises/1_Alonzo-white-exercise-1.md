@@ -1,4 +1,4 @@
-# Getting started
+# Alonzo White Testnet Exercise 1 "Getting started"
 
 ## Welcome to the Alonzo White Testnet!  
 
@@ -43,7 +43,7 @@ In the first set of exercises, we will make sure that you can:
 2. Connect your node to the Alonzo White testnet blockchain;
 3. Obtain some test ada to use in the testnet.
 
-## Exercise 1
+## Exercises
 
 Download and install the correct version of the Cardano node and CLI software.  
 
@@ -91,16 +91,16 @@ Congratulations!  You have a working node connected to the public Alonzo Cardano
 6. Log on to the dedicated Discord channel for `alonzo-white` and introduce yourself.  In addition to your peers, you will meet IOG staff who are responsible for running the testnet, stake pool operators who are responsible for producing blocks and ensuring that the Alonzo system works, community advisors and others. Please follow the rules on good conduct!
 5. Obtain test Ada from the "faucet" that is specified in the links on the Discord channel
 
-The next full exercise [Exercise 3](1_Alonzo-white-exercise-3.md) will involve building, signing and submitting simple Plutus transactions using your own node.  
+The next full exercise [Exercise 3](3_Alonzo-white-exercise-3.md) will involve building, signing and submitting simple Plutus transactions using your own node.  
 
-Before then, you might want to participate in the Hard Fork Event using the optional [Exercise 2](1_Alonzo-white-exercise-2.md).
+Before then, you might want to participate in the Hard Fork Event using the optional [Exercise 2](2_Alonzo-white-exercise-2.md).
 
 **Please let us know of any problems that you have encountered**
 
-1. Via the Discord channel for general questions.
+- Via the Discord channel for general questions.
 
-2. Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
+- Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
 
-3. Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
+- Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
 
 
