@@ -29,7 +29,7 @@ writePlutusScript datum filename scriptSerial scriptSBS =
   do
   case Plutus.defaultCostModelParams of
         Just m ->
-          let pData = Plutus.toData datum
+          let pData = Plutus.toData hello
               (logout, e) = Plutus.evaluateScriptCounting Plutus.Verbose m scriptSBS [pData]
           in do print ("Log output" :: String) >> print logout
                 case e of

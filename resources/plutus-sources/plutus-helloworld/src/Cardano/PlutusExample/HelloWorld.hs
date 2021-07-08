@@ -8,8 +8,7 @@
 {-# LANGUAGE TypeOperators #-}
 
 module Cardano.PlutusExample.HelloWorld
-  ( hello
-  , helloWorldSerialised
+  ( helloWorldSerialised
   , helloWorldSBS
   ) where
 

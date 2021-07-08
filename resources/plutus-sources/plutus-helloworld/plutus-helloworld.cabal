@@ -49,9 +49,12 @@ library
 
   build-depends:        bytestring
                       , cardano-api
+                      , flat
+                      , plutus-core
                       , plutus-ledger
                       , plutus-ledger-api
                       , plutus-tx
+                      , plutus-tx-plugin
                       , serialise
 
 executable plutus-helloworld
@@ -60,8 +63,8 @@ executable plutus-helloworld
   main-is:              plutus-helloworld.hs
   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
-  build-depends:        aeson
-                      , cardano-api
+  build-depends:        cardano-api
+                      , cardano-ledger-alonzo
                       , plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
