@@ -29,7 +29,6 @@ See an update proposal submitted to the chain and follow along as we go through 
 (*Note that this may be a one-off event for each Testnet since we will need to start the network from scratch - the timing will be notified on the relevant Discord channel*).
 
 [Exercise 2](Alonzo-exercises/2_Alonzo-blue-exercise-2.md)
-Model Solution
 
 ## Exercise 3: Addresses and Transactions
 
