@@ -9,7 +9,6 @@ The planned syllabus is outlined below.  Exercises will be deployed here and lin
 
 The exercises are designed to help those who are unfamiliar with the Cardano node to write and submit Plutus scripts on the initial Alonzo Blue and Alonzo White testnets using the node CLI, so that they can develop their own simple DApps.  Those who are already familiar with the node may choose to skip some of the earlier exercises, of course. Note that there will be no Cardano wallet or Plutus application backend support prior to Alonzo Purple, so functionality will be limited compared with the full Plutus experience.
 
-
 ## Useful Resources
 
 ### Documentation
@@ -36,7 +35,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 1. Obtaining test Ada.  
 
 
-[Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/alonzo-blue/1_Alonzo-blue-exercise-1.md)
+[Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/alonzo-white/1_Alonzo-white-exercise-1.md)
 [(Model Solutions)](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1)
 
 [Instructions for using Docker with the Cardano node](docker.md)
@@ -47,7 +46,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 
 (*Note that this may be a one-off event for each Testnet since we will need to start the network from scratch - the timing will be notified on the relevant Discord channel*).
 
-[Exercise 2](Alonzo-exercises/alonzo-blue/2_Alonzo-blue-exercise-2.md)
+[Exercise 2](Alonzo-exercises/alonzo-white/2_Alonzo-white-exercise-2.md)
 
 ## Exercise 3: Addresses and Transactions
 
@@ -55,7 +54,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 1. Building, signing and submitting transactions on chain.  
 1. Submitting a transaction containing a pre-built Plutus script.
 
-[Exercise 3](Alonzo-exercises/alonzo-blue/3_Alonzo-blue-exercise-3.md)
+[Exercise 3](Alonzo-exercises/alonzo-white/3_Alonzo-white-exercise-3.md)
 [(Model Solution)](Alonzo-solutions/exercise3/e3SampleSolution.md)
 
 ## Exercise 4: Compiling and Submitting Simple Plutus Scripts (Coming Soon)
@@ -116,5 +115,13 @@ We welcome feedback on any issues you have encountered:
 
 ## Disclaimer for Alonzo Blue/White
 
-Note that to ensure a good user experience we will be rolling the Alonzo testnets out in phases. At this point in time, we are restricting access to a few invited users. If you are not one of those users, please bear with us until we are ready to open up for general access.
+Note that to ensure a good user experience we will be rolling the Alonzo testnets out in phases. At this point in time, we are restricting access to a relatively few invited users. If you are not one of those users, please bear with us until we are ready to open up for general access.
+
+### Can I join in if I don't yet have an invite to the IOG-run Testnet?
+
+Yes, if you have sufficient technical expertise, you are more than welcome to set up your own private cluster and to try the exercises!
+We have provided sample solutions to help if you encounter problems.
+As we open up Alonzo White, we will then be able to integrate you with other community users.
+We recommend that you follow the [Alonzo White exercises](Alonzo-exercises/alonzo-white).
+
 
