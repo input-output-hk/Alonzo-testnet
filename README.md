@@ -12,9 +12,22 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ## Useful Resources
 
+### Documentation
+
 [Instructions for using Docker with the Cardano node](documentation/docker.md)
 
 [Plutus Scripts and other useful Resources](resources/)
+
+### Executable Nodes
+
+[Alonzo-blue-2.0 node Linux binary](https://hydra.iohk.io/build/6662400)
+
+[Alonzo-blue-2.0 node Docker image](https://hydra.iohk.io/build/6662381)
+
+### Network Configurations
+
+
+[Alonzo White configuration files](https://github.com/input-output-hk/iohk-nix/pull/483)
 
 ## Exercise 1: Getting Started
 
