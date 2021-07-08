@@ -81,11 +81,11 @@ Note that we will be updating the software regularly to add features, fix bugs, 
 
 **You are running a so-called “passive” node.  Your node will not participate in block production or verification, and it will connect to the dedicated IOG Testnet relay nodes to obtain information from the network.**
 
-Make sure that you set the `CARDANO_NODE_SOCKET_PATH` environment variable correctly.  You may want to update your .bashrc or other configuration so this is done automatically in future.
+Make sure that you set the `CARDANO_NODE_SOCKET_PATH` environment variable correctly.  You may want to update your `.bashrc` or other Shell configuration files so this is done automatically in future.
 
 Check that your instance of the node is properly connected to the Alonzo White Testnet and is fully synchronised.  You may need to wait a few minutes.  Use the relevant **cardano-cli commands** to query the tip of the blockchain.
 
-Congratulations!  You have a working node connected to the first-ever public Alonzo Cardano network!
+Congratulations!  You have a working node connected to the public Alonzo Cardano network!
 
 4. Use `cardano-cli` to generate payment keys and address
 6. Log on to the dedicated Discord channel for `alonzo-white` and introduce yourself.  In addition to your peers, you will meet IOG staff who are responsible for running the testnet, stake pool operators who are responsible for producing blocks and ensuring that the Alonzo system works, community advisors and others. Please follow the rules on good conduct!
@@ -101,6 +101,6 @@ Before then, you might want to participate in the Hard Fork Event using the opti
 
 2. Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
 
-3. Via the issue tracker at [https://github.com/input-output-hk//issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
+3. Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
 
 
