@@ -103,6 +103,18 @@ Exercise 6
 Exercise 7
 (Model Solution)
 
+## Feedback
+
+
+We welcome feedback on any issues you have encountered:
+
+- Via the Discord channels for general questions or discussion.
+
+- Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
+
+- Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
+
 ## Disclaimer for Alonzo Blue/White
 
 Note that to ensure a good user experience we will be rolling the Alonzo testnets out in phases. At this point in time, we are restricting access to a few invited users. If you are not one of those users, please bear with us until we are ready to open up for general access.
+
