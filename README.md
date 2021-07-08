@@ -120,8 +120,11 @@ Note that to ensure a good user experience we will be rolling the Alonzo testnet
 ### Can I join in if I don't yet have an invite to the IOG-run Testnet?
 
 Yes, if you have sufficient technical expertise, you are more than welcome to set up your own private cluster and to try the exercises!
-We have provided sample solutions to help if you encounter problems.
-As we open up Alonzo White, we will then be able to integrate you with other community users.
+We have provided sample solutions to help if you encounter problems and our tutorials and other documentation are all available for you to use.
+As we open up Alonzo White, we will then be able to integrate you with other community users, including access to the Testnet Discord channels.
 We recommend that you follow the [Alonzo White exercises](Alonzo-exercises/alonzo-white).
+You may find the following setup guides useful.
 
+[How to launch a testnet](https://github.com/input-output-hk/cardano-node/blob/master/doc/getting-started/launching-a-testnet.md)
 
+[How to Make a Shelley blockchain from scratch](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/shelley-genesis.md)
