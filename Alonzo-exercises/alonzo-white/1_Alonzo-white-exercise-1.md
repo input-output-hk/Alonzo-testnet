@@ -16,7 +16,7 @@ We are excited to have you join us on the journey to delivering Plutus scripts f
 	2. The Alonzo White Testnet configuration information at: [TBD]()
 	3. Either, the correct binary image for your operating system, or
 the Docker image at [TBD]()
-	4. the associated documentation at: [https://docs.cardano.org/getting-started/installing-the-cardano-node](https://docs.cardano.org/getting-started/installing-the-cardano-node) and [https://github.com/input-output-hk/Alonzo-testnet/blob/main/docker.md](https://github.com/input-output-hk/Alonzo-testnet/blob/main/docker.md)
+	4. the associated documentation at: [https://docs.cardano.org/getting-started/installing-the-cardano-node](https://docs.cardano.org/getting-started/installing-the-cardano-node) and [https://github.com/input-output-hk/Alonzo-testnet/blob/main/documentation/docker.md](https://github.com/input-output-hk/Alonzo-testnet/blob/main/documentation/docker.md)
 
 
 - You should be comfortable with using Shell commands and have a basic understanding of the Cardano ecosystem.

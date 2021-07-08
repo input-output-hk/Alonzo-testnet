@@ -12,7 +12,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ## Useful Resources
 
-[Instructions for using Docker with the Cardano node](docker.md)
+[Instructions for using Docker with the Cardano node](documentation/docker.md)
 
 [Plutus Scripts and other useful Resources](resources/)
 
