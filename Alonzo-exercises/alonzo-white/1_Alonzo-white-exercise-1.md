@@ -13,9 +13,9 @@ We are excited to have you join us on the journey to delivering Plutus scripts f
 
 
 	1. The IOHK Tutorial Documentation at: [https://docs.cardano.org/introduction](https://docs.cardano.org/introduction)
-	2. The Alonzo White Testnet configuration information at: [TBD]()
-	3. Either, the correct binary image for your operating system, or
-the Docker image at [TBD]()
+	2. The Alonzo White Testnet configuration information at: [https://github.com/input-output-hk/iohk-nix/pull/483](https://github.com/input-output-hk/iohk-nix/pull/483)
+	3. Either, the correct binary image for your operating system (currently [Alonzo-blue-2.0 node Linux binary](https://hydra.iohk.io/build/6662400)), or
+the Docker image (currently [Alonzo-blue-2.0 node Docker image](https://hydra.iohk.io/build/6662381)).
 	4. the associated documentation at: [https://docs.cardano.org/getting-started/installing-the-cardano-node](https://docs.cardano.org/getting-started/installing-the-cardano-node) and [https://github.com/input-output-hk/Alonzo-testnet/blob/main/documentation/docker.md](https://github.com/input-output-hk/Alonzo-testnet/blob/main/documentation/docker.md)
 
 
@@ -34,7 +34,8 @@ Make sure you are running a recent stable version of Linux (eg Ubuntu 20.04 or 1
 
 - Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3001 by default to establish connections with other nodes, so this will need to be open to the world.
 
-**This should be everything that you need to get you up and running.**. If you get stuck at any point or have any questions, there is a dedicated Discord channel for `exercise-1` and IOG staff will also run weekly "office hours".
+**This should be everything that you need to get you up and running.**
+ If you get stuck at any point or have any questions, there is a dedicated Discord channel for `exercise-1` and IOG staff will also run periodic "office hours" when they will be happy to answer questions.
 
 ## Objectives
 
@@ -54,15 +55,18 @@ Note that we will be updating the software regularly to add features, fix bugs, 
 
 1. Verify your versions of `cardano-node` and `cardano-cli`:
 
+```
 		cardano-node –-version
 
 		cardano-cli –-version
+```
+or
 
-	or
-
+```
 		docker run cardano-node run --version
+```
 
-(see the IOG documentation for information on how to run `cardano-cli` from the Docker image and other tips.)
+(see the [documentation](https://github.com/input-output-hk/Alonzo-testnet/blob/main/documentation/docker.md) for information on how to run `cardano-cli` from the Docker image and other tips. Note that you should not use `NETWORK=mainnet` in the `docker` command if you are connecting to a Testnet, of course!)
 
 2. Create a working directory for your node instance.  Download the genesis files, topology file, and config file for the Alonzo White testnet and store them in your working directory.  
 
@@ -70,19 +74,19 @@ Note that we will be updating the software regularly to add features, fix bugs, 
 
 3. Start the node using the configuration information that you have downloaded:
 
-
+```
 		cardano-node run \
 		--topology alonzo-white-topology.json \
 		--database-path db \
 		--socket-path node.socket \
 		--port 3001 \
 		--config alonzo-white-config.json
-
+```
 ![](images/node_running.png)
 
 **You are running a so-called “passive” node.  Your node will not participate in block production or verification, and it will connect to the dedicated IOG Testnet relay nodes to obtain information from the network.**
 
-Make sure that you set the `CARDANO_NODE_SOCKET_PATH` environment variable correctly.  You may want to update your `.bashrc` or other Shell configuration files so this is done automatically in future.
+Make sure that you set the `CARDANO_NODE_SOCKET_PATH` environment variable correctly (for example, `export CARDANO_NODE_SOCKET_PATH="$HOME"/alonzo-white/node.socket`).  You may want to update your `.bashrc` or other Shell configuration files so this is done automatically in future.
 
 Check that your instance of the node is properly connected to the Alonzo White Testnet and is fully synchronised.  You may need to wait a few minutes.  Use the relevant **cardano-cli commands** to query the tip of the blockchain.
 
@@ -90,7 +94,7 @@ Congratulations!  You have a working node connected to the public Alonzo Cardano
 
 4. Use `cardano-cli` to generate payment keys and address
 6. Log on to the dedicated Discord channel for `alonzo-white` and introduce yourself.  In addition to your peers, you will meet IOG staff who are responsible for running the testnet, stake pool operators who are responsible for producing blocks and ensuring that the Alonzo system works, community advisors and others. Please follow the rules on good conduct!
-5. Obtain test Ada from the "faucet" that is specified in the links on the Discord channel
+5. Obtain test Ada from the "faucet" that is specified in the Discord channel
 
 The next full exercise [Exercise 3](3_Alonzo-white-exercise-3.md) will involve building, signing and submitting simple Plutus transactions using your own node.  
 
