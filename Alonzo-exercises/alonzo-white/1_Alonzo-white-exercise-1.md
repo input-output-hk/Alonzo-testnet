@@ -6,9 +6,9 @@ We are excited to have you join us on the journey to delivering Plutus scripts f
 
 ## Prerequisites
 
-- Attend the Alonzo Testnet Briefing Meeting or Read the Testnet Briefing Notes.
-- Read the Alonzo Testnet Code of Conduct.  This governs your behaviour and responsibilities on the Alonzo Testnets.
-- Register yourself on Discord and join the designated channel.
+- Attend the Alonzo Testnet Briefing Meeting or Read the Testnet Briefing Notes (currently restricted to invitees).
+- Read the Alonzo Testnet Code of Conduct.  This governs your behaviour and responsibilities on the Alonzo Testnets (currently restricted to invitees).
+- Register yourself on Discord and join the designated channels (currently also estricted to invitees).
 - Make sure you can access:
 
 
