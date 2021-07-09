@@ -127,4 +127,6 @@ You may find the following setup guides useful.
 
 [How to launch a testnet](https://github.com/input-output-hk/cardano-node/blob/master/doc/getting-started/launching-a-testnet.md)
 
+[Scripts for setting up a testnet](https://github.com/input-output-hk/cardano-node-tests#tests-development)
+
 [How to Make a Shelley blockchain from scratch](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/shelley-genesis.md)
