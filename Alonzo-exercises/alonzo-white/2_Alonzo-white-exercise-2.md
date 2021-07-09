@@ -14,6 +14,8 @@
 	- During the hard fork, if possible (otherwise, after the hard fork)
  - Join the `exercise-2` Discord channel so you can follow along with your cohort.
 
+
+
 ## Objectives
 
 In this optional set of exercises, we will:
