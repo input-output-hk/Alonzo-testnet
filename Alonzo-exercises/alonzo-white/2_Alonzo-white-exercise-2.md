@@ -1,8 +1,8 @@
-# Alonzo White Testnet Exercise 2 (Optional) "The Hard Fork to Alonzo"
+# Alonzo White Testnet Exercise 2 (Optional): "The Hard Fork to Alonzo"
 
 **Note that this may be a one-off event for each testnet since we will need to start the network from scratch - the timing will be notified on the relevant Discord channel**
 
-## Prerequisites
+## Prerequisites ##
 
 - Complete [Exercise Sheet 1](1_Alonzo-white-exercise-1.md)
 - Start a passive Cardano node
@@ -14,8 +14,7 @@
 	- During the hard fork, if possible (otherwise, after the hard fork)
 - Join the `exercise-2` Discord channel so you can follow along with your cohort.
 
-
-## Objectives
+## Objectives ##
 
 In this optional set of exercises, we will:
 
@@ -24,7 +23,7 @@ In this optional set of exercises, we will:
 - Follow along as the testnet “hard forks” to Alonzo
 
 
-## Exercises
+## Exercises ##
 
 **Before the hard fork**
 
@@ -124,7 +123,7 @@ You will see the node change era as the hard fork happens (it may take a short w
 
   Now that we have gone through the hard fork into Alonzo, the next exercise will involve building, signing and submitting simple Plutus transactions using your own node.  
 
-## Feedback
+## Feedback ##
 
 **Please let us know of any problems that you have encountered**
 
