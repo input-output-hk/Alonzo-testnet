@@ -4,17 +4,17 @@
 
 ## Prerequisites ##
 
-- Complete [Exercise Sheet 1](1_Alonzo-white-exercise-1.md)
-- Start a passive Cardano node
-- Make sure that you have set the CARDANO_NODE_SOCKET_PATH environment variable correctly.
-- Install [lnav](http://lnav.org/) (optional) if you would like to use this to monitor the log files on Linux.
-- Join the network at the specified times:
+ - Complete [Exercise Sheet 1](1_Alonzo-white-exercise-1.md)
+ - Start a passive Cardano node
+ - Make sure that you have set the CARDANO_NODE_SOCKET_PATH environment variable correctly.
+ - Install [lnav](http://lnav.org/) (optional) if you would like to use this to monitor the log files on Linux.
+ - Join the network at the specified times:
 	- Before the hard fork
 	- Once the update proposal has been issued by IOG DevOps
 	- During the hard fork, if possible (otherwise, after the hard fork)
-- Join the `exercise-2` Discord channel so you can follow along with your cohort.
+ - Join the `exercise-2` Discord channel so you can follow along with your cohort.
 
-## Objectives ##
+## Objectives
 
 In this optional set of exercises, we will:
 
@@ -23,7 +23,7 @@ In this optional set of exercises, we will:
 - Follow along as the testnet “hard forks” to Alonzo
 
 
-## Exercises ##
+## Exercises
 
 **Before the hard fork**
 
