@@ -56,9 +56,11 @@ In this optional set of exercises, we will:
 ```
 		grep -2 -i update node.log
 		…
-	    … HardForkUpdateInEra S (S (S (S (Z …
+	    … HardForkUpdateInEra S (S (S (Z …
 		…
 ```
+
+(use `grep --context=2` on MacOS).
 
 Note that you may also see update proposals for previous eras.
 
@@ -82,10 +84,13 @@ or (if you have installed the `lnav` command)
         lnav -t -c ‘:goto 100%’ node.log
 ```
 
- **(When running `lnav`, the `G` command will take you to the end of the log, `g` will take you to the start)**
-    You will see the node change era as the hard fork happens (it may take a short while for the change to propagate across the network).
+*(When running `lnav`, the `G` command will take you to the end of the log, `g` will take you to the start)*
+
+You will see the node change era as the hard fork happens (it may take a short while for the change to propagate across the network).
 
 ```
+        … HardForkUpdateTransitionConfirmed … 
+        … 
         … HardForkUpdateTransitionDone …
 ```
 
@@ -94,9 +99,11 @@ or (if you have installed the `lnav` command)
 5.	Check the logs for the hard fork event
 
 ```
-          grep -2 -i ‘HardForkUpdate’ node.log
+          grep -2 -i HardForkUpdate node.log
           … HardForkUpdateTransitionDone
 ```
+
+(again use `--context=2` on MacOS)
 
 6. Confirm that the testnet is  in the Alonzo era
 
