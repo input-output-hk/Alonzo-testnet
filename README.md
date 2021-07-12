@@ -57,7 +57,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 [Exercise 3](Alonzo-exercises/alonzo-white/3_Alonzo-white-exercise-3.md)
 [(Model Solution)](Alonzo-solutions/exercise3/e3SampleSolution.md)
 
-## Exercise 4: Compiling and Submitting Simple Plutus Scripts (Coming Soon)
+## Exercise 4: Compiling and Submitting Simple Plutus Scripts
 
 
 1. Compiling simple Plutus transactions. 
@@ -65,10 +65,10 @@ See an update proposal submitted to the chain and follow along as we go through 
 3. Calculating fees for Plutus transactions.
 4. Determining what effect your Plutus transactions have had on the blockchain.
 
-Exercise 4
+[Exercise 4](Alonzo-exercises/alonzo-white/4_Alonzo-white-exercise-4.md)
 (Model Solution)
 
-## Exercise 5: Managing Native Tokens
+## Exercise 5: Managing Native Tokens (Coming Soon)
 
 
 1. Minting native tokens using both Mary-era forging scripts
