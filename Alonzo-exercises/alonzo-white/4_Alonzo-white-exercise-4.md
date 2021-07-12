@@ -7,7 +7,7 @@ In the third exercise, you submitted a pre-compiled transaction to the Alonzo te
 1. Complete [Exercise 3](3_Alonzo-white-exercise-3.md)
 2. Start a passive Cardano node if you need to, and make sure that it has synced with the testnet. It should be in the Alonzo era.
 3. Make sure you have some Alonzo White test ada
-4. Check out the [resources](../resources) directory for useful sources and scripts etc.
+4. Check out the [resources](../../resources) directory for useful sources and scripts etc.
 
 ## Objectives ##
 
@@ -19,7 +19,7 @@ In the fourth set of exercises, we will make sure that you can:
 
 ## Exercises ##
 
-1. Compile the `AlwaysSucceeds` Plutus script from [source](../resources/plutus-sources/plutus-alwayssucceeds) and extract the serialised representation that the compiler has produced.
+1. Compile the `AlwaysSucceeds` Plutus script from [source](../../resources/plutus-sources/plutus-alwayssucceeds) and extract the serialised representation that the compiler has produced.
 
 ```
 {
