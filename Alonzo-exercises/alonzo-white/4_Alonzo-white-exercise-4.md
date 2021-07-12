@@ -1,4 +1,4 @@
-## Alonzo Whire Testnet Exercise Sheet 4: "Compiling and Submitting Simple Plutus Transactions"
+## Alonzo White Testnet Exercise Sheet 4: "Compiling and Submitting Simple Plutus Transactions"
 
 
 In the third exercise, you submitted a pre-compiled transaction to the Alonzo testnet using the node CLI, and made sure you could use the test ada that had been given to you. In this exercise, you will write some very simple Plutus transactions, calculate the fees for those transactions, and submit them to the testnet.
@@ -9,13 +9,6 @@ In the third exercise, you submitted a pre-compiled transaction to the Alonzo te
 3. Check out the resources directory
 4. Make sure you have some Alonzo White test ada
 5. Download and install the Plutus Transaction compiler
-4. Read the tutorial information on:
-
-   - How to write Plutus transactions
-    - How to confirm that testnet transactions have succeeded 
-    - Validator scripts
-    - Datums and Redeemers
-    - Plutus transaction fees
 
 ## Objectives ##
 
