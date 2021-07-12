@@ -4,4 +4,4 @@ This directory contains a simple "Hello World" script.  There are two versions: 
 
 ``plutus-helloworld'' -- very simple numeric version
 
-``plutus-bytestring'' -- more compex version using bytestring constant
+``plutus-helloworld-bytestring'' -- more compex version using bytestring constant
