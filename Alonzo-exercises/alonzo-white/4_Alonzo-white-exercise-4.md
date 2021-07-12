@@ -8,7 +8,6 @@ In the third exercise, you submitted a pre-compiled transaction to the Alonzo te
 2. Start a passive Cardano node if you need to, and make sure that it has synced with the testnet. It should be in the Alonzo era.
 3. Make sure you have some Alonzo White test ada
 4. Check out the [resources](../resources) directory for useful sources and scripts etc.
-5. Download and build the [plutus-helloworld](../../resources/plutus-sources/plutus-helloworld) source that compiles Plutus scripts.
 
 ## Objectives ##
 
@@ -20,7 +19,7 @@ In the fourth set of exercises, we will make sure that you can:
 
 ## Exercises ##
 
-1. Compile the `AlwaysSucceeds` Plutus script from source and extract the serialised representation that the compiler has produced.
+1. Compile the `AlwaysSucceeds` Plutus script from [source](../resources/plutus-sources/plutus-alwayssucceeds) and extract the serialised representation that the compiler has produced.
 
 ```
 {
@@ -31,7 +30,7 @@ In the fourth set of exercises, we will make sure that you can:
 
 You may also want to inspect the Plutus Core form – this is a representation of the compiled script that will be executed on the blockchain. Confirm that your script is identical to the pre-compiled version that you used in [Exercise 3](3_Alonzo-white-exercise-3.md). If not, how is it different, and why?
 
-2. Compile the `HelloWorld` Plutus script from source. Save the serialised Plutus script into a file `helloworld.plutus`.
+2. Compile the `HelloWorld` Plutus script from [source](../../resources/plutus-sources/plutus-helloworld) source. Save the serialised Plutus script into a file `helloworld.plutus`.
 
 3. Build a Cardano transaction that will submit `helloworld.plutus` for execution on the testnet.  Assume that the transaction will cost 2 ada (2,000,000 lovelace) and give it a budget of 10,000,000 execution units and 10,000,000 memory units.  You will need to provide two inputs: one to pay for the transaction and one to provide the collateral for running the Plutus script.
 
