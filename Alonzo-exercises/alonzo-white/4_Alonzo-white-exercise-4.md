@@ -8,7 +8,7 @@ In the third exercise, you submitted a pre-compiled transaction to the Alonzo te
 2. Start a passive Cardano node if you need to, and make sure that it has synced with the testnet. It should be in the Alonzo era.
 3. Check out the resources directory
 4. Make sure you have some Alonzo White test ada
-5. Download and install the Plutus Transaction compiler
+5. Download and build the [plutus-helloworld](../../resources/plutus-sources/plutus-helloworld) source that compiles Plutus scripts.
 
 ## Objectives ##
 
