@@ -23,8 +23,13 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 [Alonzo-blue-2.0 node Docker image](https://hydra.iohk.io/build/6662381)
 
-### Network Configurations
+[Alonzo-white-1.0 node Linux binary](https://hydra.iohk.io/build/6907168)
+[Alonzo-white-1.0 node MacOSX binary](https://hydra.iohk.io/build/6907043)
+[Alonzo-white-1.0 node Windows binary](https://hydra.iohk.io/build/6907043)
 
+Alonzo-white-1.0 node Docker image](https://hydra.iohk.io/build/6907072)
+
+### Network Configurations
 
 [Alonzo White configuration files](https://hydra.iohk.io/build/6854041/download/1/index.html)
 
