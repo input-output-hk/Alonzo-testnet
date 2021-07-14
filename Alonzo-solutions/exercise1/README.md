@@ -62,7 +62,7 @@ Starting: /nix/store/c7cnd5nbf4332wxrllqvrkpdfk8w68x2-cardano-node-exe-cardano-n
 
 We will start a passive-node, this is a relay that can communicate with the testnet but will not participate in the creation of blocks. 
 
-If you are joining before the Hard Fork (HF) afternoon UTC time of July 14, 2021 you can log all the info of the node to capture the transition of the HF (see exercise 2), you will see the transition from Mary era to Alonzo White era.
+If you are joining before the Hard Fork (HF), before afternoon UTC time of July 14, 2021 you can log all the info of the node to capture the transition of the HF (see exercise 2), you will see the transition from Mary era to Alonzo White era.
 
     cd result/alonzo-white
     ./cardano-node-alonzo-white/bin/cardano-node-alonzo-white
