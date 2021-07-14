@@ -3,12 +3,33 @@ This is the repository for the Cardano Alonzo testnet rollout program.
 
 Here you will find a set of [exercises](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises) and support material to use on the Alonzo testnet. We will gradually add materials to this repository through the testnet phases to help you understand the testnet and make use of its features.
 
-The Planned Syllabus is shown below.  Exercises will be deployed here and linked from this page as they are finalised.
+The planned syllabus is outlined below.  Exercises will be deployed here and linked from this page as they are finalised.
 
 ## Target Audience
 
 The exercises are designed to help those who are unfamiliar with the Cardano node to write and submit Plutus scripts on the initial Alonzo Blue and Alonzo White testnets using the node CLI, so that they can develop their own simple DApps.  Those who are already familiar with the node may choose to skip some of the earlier exercises, of course. Note that there will be no Cardano wallet or Plutus application backend support prior to Alonzo Purple, so functionality will be limited compared with the full Plutus experience.
 
+## Useful Resources
+
+### Documentation
+
+[Instructions for using Docker with the Cardano node](documentation/docker.md)
+
+[Plutus Scripts and other useful Resources](resources/)
+
+### Executable Nodes
+
+[Alonzo-white-1.0 node Linux binary](https://hydra.iohk.io/build/6907168)
+
+[Alonzo-white-1.0 node MacOSX binary](https://hydra.iohk.io/build/6907043)
+
+[Alonzo-white-1.0 node Windows binary](https://hydra.iohk.io/build/6907185)
+
+[Alonzo-white-1.0 node Docker image](https://hydra.iohk.io/build/6907072)
+
+### Network Configurations
+
+[Alonzo White configuration files](https://hydra.iohk.io/build/6854041/download/1/index.html)
 
 ## Exercise 1: Getting Started
 
@@ -16,11 +37,11 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 1. Setting up a node to connect to the testnet.
 1. Obtaining test Ada.  
 
-([Draft Instructions for using Docker](docker.md))
 
-
-[Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/1_Alonzo-blue-exercise-1.md)
+[Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/alonzo-white/1_Alonzo-white-exercise-1.md)
 [(Model Solutions)](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1)
+
+[Instructions for using Docker with the Cardano node](docker.md)
 
 ## Exercise 2: Hard Fork (Optional)
 
@@ -28,8 +49,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 
 (*Note that this may be a one-off event for each Testnet since we will need to start the network from scratch - the timing will be notified on the relevant Discord channel*).
 
-[Exercise 2](Alonzo-exercises/2_Alonzo-blue-exercise-2.md)
-Model Solution
+[Exercise 2](Alonzo-exercises/alonzo-white/2_Alonzo-white-exercise-2.md)
 
 ## Exercise 3: Addresses and Transactions
 
@@ -37,19 +57,21 @@ Model Solution
 1. Building, signing and submitting transactions on chain.  
 1. Submitting a transaction containing a pre-built Plutus script.
 
-[Exercise 3](Alonzo-exercises/3_Alonzo-blue-exercise-3.md)
-(Model Solution)
+[Exercise 3](Alonzo-exercises/alonzo-white/3_Alonzo-white-exercise-3.md)
+[(Model Solution)](Alonzo-solutions/exercise3/e3SampleSolution.md)
 
 ## Exercise 4: Compiling and Submitting Simple Plutus Scripts
 
 
-Compiling simple Plutus transactions. Submitting simple Plutus transactions. Calculating fees for Plutus transactions.
-Determining what effect your Plutus transactions have had on the blockchain.
+1. Compiling simple Plutus transactions. 
+2. Submitting simple Plutus transactions. 
+3. Calculating fees for Plutus transactions.
+4. Determining what effect your Plutus transactions have had on the blockchain.
 
-Exercise 4
+[Exercise 4](Alonzo-exercises/alonzo-white/4_Alonzo-white-exercise-4.md)
 (Model Solution)
 
-## Exercise 5: Managing Native Tokens
+## Exercise 5: Managing Native Tokens (Coming Soon)
 
 
 1. Minting native tokens using both Mary-era forging scripts
@@ -72,7 +94,42 @@ Exercise 5
 Exercise 6
 (Model Solution)
 
+## Exercise 7: Interacting with the Wallet
 
-## Disclaimer for Alonzo Blue
 
-Note that to ensure a good user experience we will be rolling the Alonzo testnets out in phases. At this point in time, we are restricting access to a few invited users. If you are not one of those users, please bear with us until we are ready to open up for general access.
+1. The Cardano Wallet CLI
+2. Submitting transactions with Plutus Scripts from the wallet CLI
+3. Some simple DApps using the wallet CLI
+
+
+Exercise 7
+(Model Solution)
+
+## Feedback
+
+
+We welcome feedback on any issues you have encountered:
+
+- Via the Discord channels for general questions or discussion.
+
+- Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
+
+- Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
+
+## Disclaimer for Alonzo Blue/White
+
+Note that to ensure a good user experience we will be rolling the Alonzo testnets out in phases. At this point in time, we are restricting access to a relatively few invited users. If you are not one of those users, please bear with us until we are ready to open up for general access.
+
+### Can I join in if I don't yet have an invite to the IOG-run Testnet?
+
+Yes, if you have sufficient technical expertise, you are more than welcome to set up your own private cluster and to try the exercises!
+We have provided sample solutions to help if you encounter problems and our tutorials and other documentation are all available for you to use.
+As we open up Alonzo White, we will then be able to integrate you with other community users, including providing access to the Testnet Discord channels.
+We recommend that you follow the [Alonzo White exercises](Alonzo-exercises/alonzo-white).
+You may find the following setup guides useful.
+
+[How to launch a testnet](https://github.com/input-output-hk/cardano-node/blob/master/doc/getting-started/launching-a-testnet.md)
+
+[Scripts for setting up a testnet](https://github.com/input-output-hk/cardano-node-tests#tests-development)
+
+[How to Make a Shelley blockchain from scratch](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/shelley-genesis.md)

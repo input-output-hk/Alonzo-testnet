@@ -1,4 +1,0 @@
-ignore-project: False
-with-compiler: ghc-8.10.4
-package cardano-crypto-praos
-  flags: -external-libsodium-vrf

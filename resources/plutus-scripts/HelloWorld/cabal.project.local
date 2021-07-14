@@ -1,7 +1,0 @@
-ignore-project: False
-
-package *
-  ghc-location: 8.10.4
-
-program-locations
-  ghc-location: 8.10.4
