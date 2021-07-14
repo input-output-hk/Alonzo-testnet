@@ -29,7 +29,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ### Network Configurations
 
-[Alonzo White configuration files](https://hydra.iohk.io/build/6854041/download/1/index.html)
+[Alonzo White configuration files](https://github.com/input-output-hk/iohk-nix/tree/master/cardano-lib/alonzo-white)
 
 ## Exercise 1: Getting Started
 
