@@ -64,16 +64,18 @@ We will start a passive-node, this is a relay that can communicate with the test
 
 If you are joining before the Hard Fork (HF), before afternoon UTC time of July 14, 2021 you can log all the info of the node to capture the transition of the HF (see exercise 2), you will see the transition from Mary era to Alonzo White era.
 
-    cd result/alonzo-white
-    ./cardano-node-alonzo-white/bin/cardano-node-alonzo-white
-    
+```
+$ cd result/alonzo-white
+$ cardano-node-alonzo-white
+```
+
 You should see a lot of information being printed on the screen.
 
 #### 6. Query last block (new Terminal)
 
 To verify that we are in sync with the testnet we will use the cli and query the tip of the blockchain. Leave the node running and in a new Terminalenter
 
-    ./cardano-cli/bin/cardano-cli query tip --testnet-magic 7
+    $ cardano-cli query tip --testnet-magic 7
 
 we should see something like this
 
