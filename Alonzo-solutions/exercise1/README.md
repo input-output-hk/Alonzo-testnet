@@ -28,11 +28,41 @@ To make quicker access to the cli, we have to add its socket to our `bashrc`. Re
     echo export CARDANO_NODE_SOCKET_PATH=~/yourPath/cardano-node/result/alonzo-white/state-node-alonzo-white/node.socket >> ~/.bashrc
     source ~/.bashrc
 
+Additionally you can copy `cardano-cli`(see **NOTE**) and `cardano-node-alonzo-white` bins to your `/usr/local/bin/` path for quick access to these commands as follows
+
+```
+$ cd /usr/local/bin/
+$ sudo cp ~/yourPath/cardano-node/result/alonzo-white/cardano-cli/bin/cardano-cli ./
+$ sudo cp ~/yourPath/cardano-node/result/alonzo-white/cardano-node-alonzo-white/bin/cardano-node-alonzo-white ./
+```
+
+now verify that the commands are accessible, expected output:
+
+```
+$ cardano-cli --version
+cardano-cli 1.27.0 - linux-x86_64 - ghc-8.10
+git rev 7cf540dafa0ca496526e0614fa3ef6262e85c70d
+
+$ cardano-node-alonzo-white --help
+Starting: /nix/store/c7cnd5nbf4332wxrllqvrkpdfk8w68x2-cardano-node-exe-cardano-node-1.27.0/bin/cardano-node run
+--config /nix/store/5mm9vmf4xrbhwl9rc14pi8kr51g5daan-config-0-0.json
+--database-path state-node-alonzo-white/db-alonzo-white
+--topology /nix/store/dr0203ii399zqplq547f6gqldk9s5dhv-topology.yaml
+--host-addr 0.0.0.0
+--port 3001
+--socket-path state-node-alonzo-white/node.socket
+.
+.
+.
+```
+
+**NOTE.-** Whenever there is an update to the testnet that implies updating the nodes, you should as well remove and update your socket and cli, repeating Step 4.
+
 #### 5. Run a node
 
 We will start a passive-node, this is a relay that can communicate with the testnet but will not participate in the creation of blocks. 
 
-If you are joining before the Hard Fork (HF) of July 13, 2021 you can log all the info of the node to capture the transition of the HF, you will still see that we are in the Alonzo White era.
+If you are joining before the Hard Fork (HF) afternoon UTC time of July 14, 2021 you can log all the info of the node to capture the transition of the HF (see exercise 2), you will see the transition from Mary era to Alonzo White era.
 
     cd result/alonzo-white
     ./cardano-node-alonzo-white/bin/cardano-node-alonzo-white
