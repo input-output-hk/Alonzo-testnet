@@ -125,7 +125,7 @@ cardano-cli address build \
 --payment-verification-key-file payment.vkey \
 --stake-verification-key-file stake.vkey \
 --out-file payment.addr \
---testnet-magic 5
+--testnet-magic 7
 ```
 
 Print the payment address on Terminal, and then export it
@@ -142,7 +142,7 @@ Now generate a staking address
 cardano-cli stake-address build \
 --stake-verification-key-file stake.vkey \
 --out-file stake.addr \
---testnet-magic 5
+--testnet-magic 7
 ```
 
 verify the staking address
