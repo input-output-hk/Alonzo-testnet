@@ -46,7 +46,7 @@ library
   hs-source-dirs:       src
 
   exposed-modules:      Cardano.PlutusExample.LockingScript
-                        Cardano.PlutusExample.MintingScript
+--                        Cardano.PlutusExample.MintingScript
 
   build-depends:        bytestring
                       , cardano-api

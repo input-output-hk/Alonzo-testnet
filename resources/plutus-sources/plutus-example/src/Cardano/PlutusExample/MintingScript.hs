@@ -45,20 +45,20 @@ mkPolicy ownerPkh ctx =
     mustBeSignedBy' :: Bool
     mustBeSignedBy' = txSignedBy info ownerPkh
 
-policy :: PubKeyHash -> Scripts.MonetaryPolicy
-policy ownerPkh = mkMonetaryPolicyScript $
-    $$(PlutusTx.compile [|| \ownerPkh' -> Scripts.wrapMonetaryPolicy $ mkPolicy ownerPkh' ||])
+policy :: PubKeyHash -> Scripts.MintingPolicy
+policy ownerPkh = mkMintingPolicyScript $
+    $$(PlutusTx.compile [|| \ownerPkh' -> Scripts.wrapMintingPolicy $ mkPolicy ownerPkh' ||])
     `PlutusTx.applyCode`
     PlutusTx.liftCode ownerPkh
 
 plutusScript :: Script
 plutusScript =
-  unMonetaryPolicyScript
+  unMintingPolicyScript
     $ policy "e7dc13db93c1f56b3fd51752c14d5fdd20157334b9f0a0186d8dbd39"
 
 validator :: Validator
 validator =
-  Validator . unMonetaryPolicyScript
+  Validator . unMintingPolicyScript
     $ policy "e7dc13db93c1f56b3fd51752c14d5fdd20157334b9f0a0186d8dbd39"
 
 scriptAsCbor :: LB.ByteString
