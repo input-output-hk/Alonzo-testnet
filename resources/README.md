@@ -17,3 +17,5 @@ Further examples and scripts can be found in the `cardano-node` repository:
 [https://github.com/input-output-hk/cardano-node/tree/master/plutus-example](https://github.com/input-output-hk/cardano-node/tree/master/plutus-example)
 
 [https://github.com/input-output-hk/cardano-node/tree/master/scripts/plutus](https://github.com/input-output-hk/cardano-node/tree/master/scripts/plutus)
+
+The sources are compatible with Alonzo White.  The pre-built scripts are compatible with Alonzo Blue (with the exception of HelloWorldInt.plutus which is compatible with Alonzo White).
