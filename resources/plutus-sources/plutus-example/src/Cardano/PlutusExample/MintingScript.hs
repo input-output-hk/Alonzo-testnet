@@ -47,7 +47,7 @@ mkPolicy ownerPkh ctx =
 
 policy :: PubKeyHash -> Scripts.MintingPolicy
 policy ownerPkh = mkMintingPolicyScript $
-    $$(PlutusTx.compile [|| \ownerPkh' -> Scripts.wrapMintingPolicy $ mkPolicy ownerPkh' ||])
+    $$(PlutusTx.compile [|| \ownerPkh' -> Scripts.wrapMintingPolicy $ mkPolicy ||])
     `PlutusTx.applyCode`
     PlutusTx.liftCode ownerPkh
 
