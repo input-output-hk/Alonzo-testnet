@@ -44,8 +44,8 @@ library
 
   hs-source-dirs:       src
 
-  exposed-modules:      Cardano.PlutusExample.HelloWorld,
-			Cardano.PlutusExample.HelloWorldByteStringParametric
+  exposed-modules:      Cardano.PlutusExample.HelloWorld
+                      , Cardano.PlutusExample.HelloWorldByteStringParametric
 
   build-depends:        bytestring
                       , cardano-api
@@ -66,6 +66,7 @@ executable plutus-helloworld
                       , plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
+
 
 executable plutus-helloworld-bytestring
   import:               base, project-config

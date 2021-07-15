@@ -51,12 +51,12 @@ helloWorld keyword datum redeemer context = keyword P.== datum
 -}
 
 data HelloWorld
-instance Scripts.ScriptType HelloWorld where
+instance Scripts.ValidatorTypes HelloWorld where
     type instance DatumType HelloWorld = P.ByteString
     type instance RedeemerType HelloWorld = P.ByteString
 
-helloWorldInstance :: Scripts.ScriptInstance HelloWorld
-helloWorldInstance = Scripts.validator @HelloWorld
+helloWorldInstance :: Scripts.TypedValidator HelloWorld
+helloWorldInstance = Scripts.mkTypedValidator @HelloWorld
     ($$(PlutusTx.compile [|| helloWorld ||]) `PlutusTx.applyCode` PlutusTx.liftCode hello)
     $$(PlutusTx.compile [|| wrap ||])
   where
