@@ -43,8 +43,11 @@ Submit the transaction to the testnet and confirm that your transaction has been
 4. Modify the `HelloWorld` Plutus script:
 
 a. To succeed if  the datum is your name;
+
 b. To succeed if the redeemer is also your birthday;
+
 c. To take a datum and a redeemer and to succeed if the redeemer is the same as the datum;
+
 d. To take a datum that represents a pair of integers and a redeemer that represents a list of integers and succeed if all elements in the redeemer are within the range specified by the values in the datum.
 
 Compile each of the Plutus transactions, build the corresponding Cardano transactions, and submit these to the blockchain.  Test your transactions on various inputs.
