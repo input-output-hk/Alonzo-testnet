@@ -32,7 +32,7 @@ You may also want to inspect the Plutus Core form – this is a representation o
 
 2. Compile the `HelloWorld` Plutus script from [source](../../resources/plutus-sources/plutus-helloworld). Save the serialised Plutus script into a file `helloworld.plutus`.
 
-3. Build a Cardano transaction that will submit `helloworld.plutus` for execution on the testnet.  Assume that the transaction will cost 2 ada (2,000,000 lovelace) and give it a budget of 10,000,000 execution units and 10,000,000 memory units.  You will need to provide two inputs: one to pay for the transaction and one to provide the collateral for running the Plutus script.
+3. Build a Cardano transaction that will submit `helloworld.plutus` for execution on the testnet.  Assume that the transaction will cost 300 ada (300,000,000 lovelace) and give it a budget of 300,000,000 execution units and 100,000 memory units.  You will need to provide two inputs: one to pay for the transaction fees and one to provide the collateral that is spent if the Plutus script fails to validate (note that you will lose all the collateral in that case, so you should normally use a dedicated payment address with limited funds rather than your main payment address!).
 
 `cardano-cli transaction build-raw …`
 
