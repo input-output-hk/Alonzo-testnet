@@ -32,7 +32,7 @@ __Build the script address__
 
 __Lock some funds in the script__
 
-cardano-cli query utxo --testnet-magic 7 --address $(cat ~/cardano/whiteWallet1/payment.addr)
+    cardano-cli query utxo --testnet-magic 7 --address $(cat ~/cardano/whiteWallet1/payment.addr)
 
                            TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
