@@ -57,48 +57,23 @@ Confirm that you have successfully funded your wallet.  Remember that you will h
 ``cardano-cli query utxo …``
 
 
-### Part 2:  Submit a transaction that uses a Plutus script.
+### Part 2:  Submit a transaction to lock funds guarded by a Plutus script.
 
 We will first use a pre-built Plutus validator script that always returns `True`. This is the simplest possible validator script (though it is not very useful except as a placeholder/test script!).
 
-5. Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaysSucceeds.plutus) Plutus script, and obtain the script address
+1. Download the pre-built [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaysSucceeds.plutus) Plutus script, and obtain the script address.
 
 ``
 cardano-cli address build …
 ``
 
-6. Build a raw transaction that will submit the script and pay for it using funds from `wallet.addr`. You may need to top up the wallet before you do this if you did not transfer enough Ada initially.  For test purposes, assume that the transaction will cost 100 Ada (100,000,000 Lovelace) -- the cost of a real transaction on the Cardano Mainnet will be much less than this, of course.  Until we have improved the CLI, you will also need to specify the "budget" for executing the script in terms of time and memory execution units.  You may assume 10,000,000,000 units in each case (again, these numbers will be much larger than will be required on Mainnet).
-
-``
-cardano-cli transaction build-raw …
-``
-
-7. Sign the transaction as usual, using the secret key for `wallet.addr`
-
-``
-cardano-cli transaction sign …
-``
-
-8. Submit the transaction to the chain. 
-
-``
-cardano-cli transaction submit …
-``
-
-The Plutus script technically controls how the funds can be withdrawn, but it always succeeds, so there is effectively no restriction.
-
-### Part 3:  "Locking" funds using a Plutus script.
-
-We will now do something more useful, by using another pre-built script to "lock" some funds unless a valid input is supplied 
-
-1. Download the pre-built [Lock.plutus](/resources/plutus-scripts/Lock.plutus) script.
 2. Choose your favourite number and hash it:
 
 ``
 cardano-cli transaction hash-script-data --script-data-value 17662
 ``
 
-3. Build a transaction that includes this hash on the transaction output and submit it.
+3. Build a transaction that includes this hash on the transaction output.
 
 ```
 cardano-cli transaction build-raw \
@@ -106,7 +81,28 @@ cardano-cli transaction build-raw \
       ...
 ```
 
-4. Try spending the funds that are "locked" by the script. Note that you will need to provide some "collateral" to cover the fees in case the script fails to validate, and you will also need to provide a "redeemer".  What happens if you give the wrong value?
+4. Sign the transaction as usual, using the secret key for `wallet.addr`
+
+``
+cardano-cli transaction sign …
+``
+
+5. Submit the transaction to the chain. 
+
+``
+cardano-cli transaction submit …
+``
+
+6. Confirm funds are locked at script address with correct datum hash
+
+
+### Part 3:  Unlocking funds guarded by Plutus script.
+
+Now we want to create a transaction to return the locked funds. This validation script always passes but it is still important to use a datum value that matches the datum hash you used in part 2.
+
+1. Build a transaction including the script and submit it. Pay for it using funds from `wallet.addr`. You may need to top up the wallet before you do this if you did not transfer enough Ada initially.  For test purposes, assume that the transaction will cost 100 Ada (100,000,000 Lovelace) -- the cost of a real transaction on the Cardano Mainnet will be much less than this, of course.  Until we have improved the CLI, you will also need to specify the "budget" for executing the script in terms of time and memory execution units.  You may assume 10,000,000,000 units in each case (again, these numbers will be much larger than will be required on Mainnet). Note that you will need to provide some "collateral" to cover the fees in case the script fails to validate, and you will also need to provide a "redeemer".  What happens if you give the wrong value?
+
+2. Confirm funds have been unlocked and moved back to your wallet.
 
 
 ### Optional Exercises
@@ -139,4 +135,7 @@ The next exercise will involve compiling and submitting some more complex Plutus
 
 - Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
 
+- Via the issue tracker at [https://github.com/input-output-hk/plutus/issues](https://github.com/input-output-hk/plutus/issues) for any bugs or feature requests with plutus, playground, PAB etc.
+
 - Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
+
