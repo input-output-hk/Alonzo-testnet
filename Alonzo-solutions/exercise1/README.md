@@ -69,7 +69,6 @@ $ cd result/alonzo-white
 $ cardano-node-alonzo-white
 ```
 
-You should see a lot of information being printed on the screen.
 
 #### 6. Query last block (new Terminal)
 
@@ -154,4 +153,4 @@ stake_test1ur86uuq8gyvc04g0a2tfzrqtrf92ak58xsknu4fafsh672g3kvfmg
 
 Sweet!
 
-Noy claim your goody-bag of test-ADA!
+Now claim your goody-bag of test-ADA!
