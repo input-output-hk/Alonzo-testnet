@@ -13,7 +13,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ### Documentation
 
-[Instructions for using Docker with the Cardano node](documentation/docker.md)
+[Instructions for installing the Cardano node (pre-compiled, cabal, nix & Docker)](https://docs.cardano.org/getting-started/installing-the-cardano-node)
 
 [Plutus Scripts and other useful Resources](resources/)
 
@@ -112,7 +112,9 @@ We welcome feedback on any issues you have encountered:
 
 - Via the Discord channels for general questions or discussion.
 
-- Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs in the node etc.  Please tag them as Alonzo-related.
+- Via the issue tracker at [https://github.com/input-output-hk/cardano-node/issues](https://github.com/input-output-hk/cardano-node/issues) for any bugs or feature requests in the node etc.  Please tag them as Alonzo-related.
+
+- Via the issue tracker at [https://github.com/input-output-hk/plutus/issues](https://github.com/input-output-hk/plutus/issues) for any bugs or feature requests with plutus, playground, PAB etc.
 
 - Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
 
