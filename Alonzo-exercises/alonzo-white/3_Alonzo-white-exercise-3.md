@@ -57,7 +57,7 @@ Confirm that you have successfully funded your wallet.  Remember that you will h
 ``cardano-cli query utxo …``
 
 
-### Part 2:  Submit a transaction to lock funds guarded by a Plutus script.
+### Part 2:  Submit a transaction to lock funds.
 
 We will first use a pre-built Plutus validator script that always returns `True`. This is the simplest possible validator script (though it is not very useful except as a placeholder/test script!).
 
@@ -70,15 +70,15 @@ cardano-cli address build …
 2. Choose your favourite number and hash it:
 
 ``
-cardano-cli transaction hash-script-data --script-data-value 17662
+cardano-cli transaction hash-script-data --script-data-value …
 ``
 
 3. Build a transaction that includes this hash on the transaction output.
 
 ```
 cardano-cli transaction build-raw \
-      --tx-out-datum-hash <hash_of_your_chosen_number> \
-      ...
+      --tx-out-datum-hash … \
+      …
 ```
 
 4. Sign the transaction as usual, using the secret key for `wallet.addr`
@@ -93,16 +93,16 @@ cardano-cli transaction sign …
 cardano-cli transaction submit …
 ``
 
-6. Confirm funds are locked at script address with correct datum hash
+6. Confirm that the funds are locked with the correct datum hash.
 
 
-### Part 3:  Unlocking funds guarded by Plutus script.
+### Part 3:  Unlocking funds that are guarded by a Plutus script.
 
 Now we want to create a transaction to return the locked funds. This validation script always passes but it is still important to use a datum value that matches the datum hash you used in part 2.
 
 1. Build a transaction including the script and submit it. Pay for it using funds from `wallet.addr`. You may need to top up the wallet before you do this if you did not transfer enough Ada initially.  For test purposes, assume that the transaction will cost 100 Ada (100,000,000 Lovelace) -- the cost of a real transaction on the Cardano Mainnet will be much less than this, of course.  Until we have improved the CLI, you will also need to specify the "budget" for executing the script in terms of time and memory execution units.  You may assume 10,000,000,000 units in each case (again, these numbers will be much larger than will be required on Mainnet). Note that you will need to provide some "collateral" to cover the fees in case the script fails to validate, and you will also need to provide a "redeemer".  What happens if you give the wrong value?
 
-2. Confirm funds have been unlocked and moved back to your wallet.
+2. Confirm that the funds have been unlocked and returned to your wallet.
 
 
 ### Optional Exercises
