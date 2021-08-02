@@ -1,8 +1,8 @@
-## Alonzo White Testnet Exercise Sheet 6: "Simple DApps" ##
+# Alonzo White Testnet Exercise Sheet 6: "Simple DApps" #
 
 In the previous set of exercises, you interacted with native tokens. In this set of exercises, you will build some more substantial applications.
 
-##Prerequisites##
+## Prerequisites ##
 
 1. Complete [Exercise Sheet 5](5_Alonzo-white-exeercise-5.md)
 
@@ -10,14 +10,14 @@ In the previous set of exercises, you interacted with native tokens. In this set
 
 3. Make sure you have some Alonzo White Test Ada
 
-##Objectives##
+## Objectives ##
 
 In this set of exercises, we will make sure that you can:
 
 1. Build more substantial DApps
 2. Adapt the DApps to changing external situations
 
-##Exercises##
+## Exercises ##
 
 1. Build a _faucet_ application that dispenses funds on request. You should supply 1,000 Lovelace for each request.
 
