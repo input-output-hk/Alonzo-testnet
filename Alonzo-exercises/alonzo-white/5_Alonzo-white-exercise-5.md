@@ -4,7 +4,7 @@
 
 In the fourth exercise, you wrote some simple transactions using datums and redeemers. In this exercise, we will practice managing multi-asset tokens.
 
-#Prerequisites#
+# Prerequisites #
 
 1. Complete [Exercise Sheet 4](4_Alonzo-white-exercise-4.md)
 
@@ -17,7 +17,7 @@ In the fourth exercise, you wrote some simple transactions using datums and rede
   1. Native tokens and Mary-era _forging policy scripts/monetary policy scripts_
   2. How to manage native tokens with Plutus, including Plutus _forging policy_ scripts
 
-##Objectives##
+## Objectives ##
 
 In the fifth set of exercises, we will make sure that you can:
 
@@ -26,7 +26,7 @@ In the fifth set of exercises, we will make sure that you can:
 3. Mint non-fungible tokens, including taking payments
 4. Manage time-based scripts
 
-##Exercises##
+## Exercises ##
 
 1. Create a set of private/public signing keys, _shelley_, and two _payment addresses, mary_ and _percy_. Fund the addresses with some test Ada.
 
