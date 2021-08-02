@@ -23,13 +23,10 @@ In this set of exercises, we will make sure that you can:
 
 1. Extend your faucet so that it dispenses different amounts of Lovelace if specific API keys are provided. For example
 
-| **API Key** | **Amount**
- |
+| **API Key** | **Amount** |
 | --- | --- |
-| Secret1 | 10,000 lovelace
- |
-| Secret2
- | 100,000 lovelace |
+| Secret1 | 10,000 lovelace |
+| Secret2 | 100,000 lovelace |
 
 1. Test your _faucet_ by funding a number of addresses. Also fund the same address multiple times. Do you encounter any problems? If so, how can you fix them?
 
