@@ -1,4 +1,4 @@
-## Alonzo White Testnet Exercise Sheet 6: "Simple DApps"##
+## Alonzo White Testnet Exercise Sheet 6: "Simple DApps" ##
 
 In the previous set of exercises, you interacted with native tokens. In this set of exercises, you will build some more substantial applications.
 
