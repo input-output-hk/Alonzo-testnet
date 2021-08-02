@@ -81,7 +81,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 1. Time-based scripts
 
 
-[Exercise 5](5_Alonzo-white-exercise-5.md)
+[Exercise 5](Alonzo-exercises/alonzo-white/5_Alonzo-white-exercise-5.md)
 (Model Solution)
 
 ## Exercise 6: DApps
@@ -91,7 +91,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 2. Interacting with external events
 
 
-[Exercise 6](6_Alonzo-white-exercise-6.md)(Model Solution)
+[Exercise 6](Alonzo-exercises/alonzo-white/6_Alonzo-white-exercise-6.md)(Model Solution)
 
 ## Exercise 7: Interacting with the Wallet (Coming Soon)
 
