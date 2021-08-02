@@ -71,7 +71,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 [Exercise 4](Alonzo-exercises/alonzo-white/4_Alonzo-white-exercise-4.md)
 (Model Solution)
 
-## Exercise 5: Managing Native Tokens (Coming Soon)
+## Exercise 5: Managing Native Tokens
 
 
 1. Minting native tokens using both Mary-era forging scripts
@@ -81,7 +81,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 1. Time-based scripts
 
 
-Exercise 5
+[Exercise 5](Alonzo-exercises/alonzo-white/5_Alonzo-white-exercise-5.md)
 (Model Solution)
 
 ## Exercise 6: DApps
@@ -91,10 +91,9 @@ Exercise 5
 2. Interacting with external events
 
 
-Exercise 6
-(Model Solution)
+[Exercise 6](Alonzo-exercises/alonzo-white/6_Alonzo-white-exercise-6.md)(Model Solution)
 
-## Exercise 7: Interacting with the Wallet
+## Exercise 7: Interacting with the Wallet (Coming Soon)
 
 
 1. The Cardano Wallet CLI
