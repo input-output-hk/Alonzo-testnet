@@ -34,7 +34,9 @@ In the fifth set of exercises, we will make sure that you can:
 
 1. Mint 1000 new **Ozymandians** in the _percy_ address by building and submitting a transaction. Check that they have been successfully minted.
 
-$ cardano-cli query utxo –address $(cat percy)
+```
+cardano-cli query utxo –address $(cat percy)
+```
 
 1. Define a second _forging script_ that allows _shelley_ to create new **SkyLark** tokens. Mint 100 **SkyLark** tokens and send them to _percy_. Check that the tokens have been received and then send 75 **SkyLark** tokens to _mary._
 

@@ -32,10 +32,9 @@ You may also want to inspect the Plutus Core form – this is a representation o
 
 2. Compile the `HelloWorld` Plutus script from [source](../../resources/plutus-sources/plutus-helloworld). Save the serialised Plutus script into a file `helloworld.plutus`.
 
-3. Build a Cardano transaction that will submit `helloworld.plutus` for execution on the testnet.  Assume that the transaction will cost 600 ada (600,000,000 lovelace) and give it a budget of 300,000,000 execution units and 100,000 memory units. *These are just testnet values, of course!  Real transactions will be much less expensive.* 
-4You will need to provide two inputs: one to pay for the transaction fees and one to provide the collateral that is spent if the Plutus script fails to validate (note that you will lose all the collateral in that case, so you should normally use a dedicated payment address with limited funds rather than your main payment address!).
+3. Build a Cardano transaction that will submit `helloworld.plutus` for execution on the testnet.  As before, you will need to provide two input addresses: one to pay for the transaction fees and one to provide the collateral that is spent if the Plutus script fails to validate (to avoid risking all your funds, it is recommended that you use a dedicated payment address with limited funds to pay for the collateral rather than your main payment address!).
 
-`cardano-cli transaction build-raw …`
+`cardano-cli transaction build …`
 
 Submit the transaction to the testnet and confirm that your transaction has been recorded on the testnet blockchain. Note that you may need to wait a short time.
 
@@ -55,13 +54,7 @@ Compile each of the Plutus transactions, build the corresponding Cardano transac
 
 5. Set up three new payment addresses: `payment.addr`, `wallet1.addr`, and `wallet2.addr` using the node CLI commands.  Transfer some ada to each of these addresses, and check that they have been funded.
 
-Produce a transaction that sends 100 ada from `wallet1.addr` to `wallet2.addr` provided the correct “secret spending key” is provided as a redeemer.
-
-Determine the cost and required collateral for the Cardano transaction using the CLI commands and then construct and submit the transaction, paying the exact cost and collateral.
-
-`cardano-cli transaction build-raw …`
-`cardano-cli transaction calculate-min-fee …`
-`…`
+Produce a transaction that sends 100 ada from `wallet1.addr` to `wallet2.addr` provided the correct “secret spending key” is provided as a redeemer and submit this.
 
 Check that the funds have been transferred correctly between the wallets.
 

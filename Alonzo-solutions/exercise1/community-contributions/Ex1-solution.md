@@ -14,6 +14,8 @@ For the Alonzo White testnet we will be working with a particular tag, checkout 
 
     git checkout tag/alonzo-white-1.0 -b alonzo-white_1_0
 
+**Please check and use the correct tag -- the node version will be updated during the course of the testnet**
+
 #### 3. Build node and cli
 
 We now can use Nix to build the node and the cli
@@ -56,7 +58,9 @@ Starting: /nix/store/c7cnd5nbf4332wxrllqvrkpdfk8w68x2-cardano-node-exe-cardano-n
 .
 ```
 
-**NOTE.-** Whenever there is an update to the testnet that implies updating the nodes, you should as well remove and update your socket and cli, repeating Step 4.
+**NOTE.-** Whenever there is an update to the testnet that implies updating the nodes, you should as well remove and update your socket and cli, repeating Step 4.  
+
+**NOTE.-** The version information that is output will depend on the node tag.
 
 #### 5. Run a node
 
@@ -153,4 +157,4 @@ stake_test1ur86uuq8gyvc04g0a2tfzrqtrf92ak58xsknu4fafsh672g3kvfmg
 
 Sweet!
 
-Now claim your goody-bag of test-ADA!
+Now claim your test Ada from the "faucet"!

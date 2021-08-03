@@ -1,5 +1,7 @@
 # Sample solution exercise 3
 
+**Note that this solution uses `alonzo-white-1.0` - you should use `transaction build` rather than `transaction build-raw` for `alonzo-white-1.4 `or later.**
+
 ## Part 1 Create a new set of keys and address
 
     cardano-cli address key-gen \

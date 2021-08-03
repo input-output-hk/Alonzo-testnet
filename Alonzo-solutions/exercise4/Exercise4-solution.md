@@ -1,5 +1,7 @@
 ## EXERCISE 4 (Items 1, 2 and 3)
 
+**Note that this solution uses `alonzo-white-1.0` - you should use `transaction build` rather than `transaction build-raw` for `alonzo-white-1.4 `or later.**
+
 __Clone the Alonzo-testnet repository__
 
     git clone https://github.com/input-output-hk/Alonzo-testnet.git

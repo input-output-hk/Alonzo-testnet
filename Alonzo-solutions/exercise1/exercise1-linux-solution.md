@@ -103,7 +103,3 @@ Use cardano-cli to generate payment keys and address.
 
 	export ADDRESS=addr_test1qzsdrv4juj5hmc3dqeq9wc7kpjwmu69zwjz9j29m3l88m26hdfyr7r54f67e7c9de70ld7gzfwmhqpudvkyyvkse2gmq0cvrdj
 
-
-Get funds:
-
-	Faucet is not available after HF.
