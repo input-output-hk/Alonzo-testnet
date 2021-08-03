@@ -69,7 +69,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 4. Determining what effect your Plutus transactions have had on the blockchain.
 
 [Exercise 4](Alonzo-exercises/alonzo-white/4_Alonzo-white-exercise-4.md)
-(Model Solution)
+[(Model Solution)](Alonzo-solutions/exercise4/Exercise4-solution.md)
 
 ## Exercise 5: Managing Native Tokens
 
