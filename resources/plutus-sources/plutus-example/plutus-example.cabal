@@ -69,5 +69,16 @@ executable plutus-example
                       , plutus-example
                       , plutus-ledger-api
 
+executable plutus-minting-example
+  import:               base, project-config
+  hs-source-dirs:       app
+  main-is:              plutus-minting-example.hs
+  ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
-
+  build-depends:        aeson
+                      , cardano-api
+                      , cardano-ledger-alonzo
+                      , plutus-example
+                      , plutus-ledger-api
+                      , plutus-tx
+                      , bytestring
