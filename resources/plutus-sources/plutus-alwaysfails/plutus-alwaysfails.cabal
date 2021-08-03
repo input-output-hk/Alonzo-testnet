@@ -57,11 +57,7 @@ library
                       , plutus-tx-plugin
                       , serialise
 
-<<<<<<< HEAD
-ghc-options: -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
-=======
   ghc-options: -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
->>>>>>> 24a8c0d17e07aaf9ee9017724662bbee99cae15b
 
 executable plutus-alwaysfails
   import:               base, project-config
