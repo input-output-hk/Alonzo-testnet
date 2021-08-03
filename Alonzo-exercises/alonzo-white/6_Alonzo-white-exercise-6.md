@@ -21,20 +21,20 @@ In this set of exercises, we will make sure that you can:
 
 1. Build a _faucet_ application that dispenses funds on request. You should supply 1,000 Lovelace for each request.
 
-1. Extend your faucet so that it dispenses different amounts of Lovelace if specific API keys are provided. For example
+2. Extend your faucet so that it dispenses different amounts of Lovelace if specific API keys are provided. For example
 
 | **API Key** | **Amount** |
 | --- | --- |
 | Secret1 | 10,000 lovelace |
 | Secret2 | 100,000 lovelace |
 
-1. Test your _faucet_ by funding a number of addresses. Also fund the same address multiple times. Do you encounter any problems? If so, how can you fix them?
+3. Test your _faucet_ by funding a number of addresses. Also fund the same address multiple times. Do you encounter any problems? If so, how can you fix them?
 
-1. A "stable coin" aims to maintain a constant value. A _reserve_ of some asset is used to maintain the value of the stable coin. Build an application that models a stable coin using test Ada to fund the reserve. Each time a stable coin is minted or burned, an equivalent amount of ada should be transferred to/from the reserve.
+4. A "stable coin" aims to maintain a constant value. A _reserve_ of some asset is used to maintain the value of the stable coin. Build an application that models a stable coin using test Ada to fund the reserve. Each time a stable coin is minted or burned, an equivalent amount of ada should be transferred to/from the reserve.
 
-1. Extend your stable coin model so that it is stable against some external currency (for example, Euros, US dollars, or Japanese Yen). Additional ada must be injected into or removed from the reserve each time the ada to currency exchange rate changes. Test your stable coin model against a series of rate changes.
+5. Extend your stable coin model so that it is stable against some external currency (for example, Euros, US dollars, or Japanese Yen). Additional ada must be injected into or removed from the reserve each time the ada to currency exchange rate changes. Test your stable coin model against a series of rate changes.
 
-1. Publicise your stable coin and exchange coins with other Testnet users. How effective is your model at maintaining a stable exchange rate? What problems do you encounter and how can you fix these.
+6. Publicise your stable coin and exchange coins with other Testnet users. How effective is your model at maintaining a stable exchange rate? What problems do you encounter and how can you fix these.
 
 ## Feedback
 
