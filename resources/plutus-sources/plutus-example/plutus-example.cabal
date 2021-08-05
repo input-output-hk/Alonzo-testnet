@@ -68,6 +68,7 @@ executable plutus-example
 
   build-depends:        cardano-api
                       , cardano-ledger-alonzo
+                      , plutus-ledger
                       , plutus-example
                       , plutus-ledger-api
 
@@ -80,6 +81,7 @@ executable plutus-minting-example
   build-depends:        aeson
                       , cardano-api
                       , cardano-ledger-alonzo
+                      , plutus-ledger
                       , plutus-example
                       , plutus-ledger-api
                       , plutus-tx
