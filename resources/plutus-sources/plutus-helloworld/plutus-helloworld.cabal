@@ -65,6 +65,7 @@ executable plutus-helloworld
 
   build-depends:        cardano-api
                       , cardano-ledger-alonzo
+                      , plutus-ledger
                       , plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
@@ -78,6 +79,7 @@ executable plutus-helloworld-bytestring
 
   build-depends:        aeson
                       , cardano-api
+                      , cardano-ledger-alonzo
                       , plutus-helloworld
                       , plutus-ledger-api
                       , plutus-tx

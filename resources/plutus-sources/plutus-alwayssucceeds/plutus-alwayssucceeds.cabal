@@ -67,6 +67,7 @@ executable plutus-alwayssucceeds
 
   build-depends:        cardano-api
                       , cardano-ledger-alonzo
+                      , plutus-ledger
                       , plutus-alwayssucceeds
                       , plutus-ledger-api
                       , bytestring

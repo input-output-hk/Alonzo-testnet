@@ -23,12 +23,11 @@ import qualified Data.ByteString.Lazy as LBS
 import qualified Data.ByteString.Short as SBS
 
 import qualified Plutus.V1.Ledger.Scripts as Plutus
-import           PlutusTx (Data (..))
 import qualified PlutusTx
 import           PlutusTx.Prelude hiding (Semigroup (..), unless)
 
 {-# INLINABLE mkValidator #-}
-mkValidator :: Data -> Data -> Data -> ()
+mkValidator :: BuiltinData -> BuiltinData -> BuiltinData -> ()
 mkValidator _ _ _ = PlutusTx.Prelude.error ()
 
 validator :: Plutus.Validator
