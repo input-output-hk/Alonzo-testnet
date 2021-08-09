@@ -19,17 +19,17 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ### Executable Nodes
 
-[Alonzo-white-1.0 node Linux binary](https://hydra.iohk.io/build/6907168)
+[Alonzo-purple-1.0.1 node Linux binary](https://hydra.iohk.io/build/7191568)
 
-[Alonzo-white-1.0 node MacOSX binary](https://hydra.iohk.io/build/6907043)
+[Alonzo-purple-1.0.1 node MacOSX binary](https://hydra.iohk.io/build/7191666)
 
-[Alonzo-white-1.0 node Windows binary](https://hydra.iohk.io/build/6907185)
+[Alonzo-purple-1.0.1 node Windows binary](https://hydra.iohk.io/build/7191606)
 
-[Alonzo-white-1.0 node Docker image](https://hydra.iohk.io/build/6907072)
+[Alonzo-purple-1.0.1 node Docker image](https://hydra.iohk.io/build/7191779)
 
 ### Network Configurations
 
-[Alonzo White configuration files](https://hydra.iohk.io/build/6928147/download/1/index.html)
+[Alonzo Purple configuration files](https://hydra.iohk.io/build/7189190/download/1/index.html)
 
 ## Exercise 1: Getting Started
 
