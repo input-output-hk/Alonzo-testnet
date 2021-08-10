@@ -1,6 +1,7 @@
 # Sample solution exercise 3
 
-**Note that this solution uses `alonzo-white-1.0` - you should use `transaction build` rather than `transaction build-raw` for `alonzo-purple-1.0.1` or later.**
+**Note that this solution uses  `transaction build-raw`.  You will
+find it easier to use `transaction build` for `alonzo-purple-1.0.1` or later.**
 
 ## Part 1 Create a new set of keys and address
 
@@ -38,7 +39,7 @@
 
     cardano-cli transaction sign \
     --testnet-magic 8 \
-    --signing-key-file paymet.skey \
+    --signing-key-file payment.skey \
     --tx-body-file tx.raw \
     --out-file tx.sign
 
@@ -71,7 +72,7 @@ Use https://www.random.org/integers/ to generate a random number and save it in 
 
 ### Generate script address
 
-    cardano-cli address build --payment-script-file untyped-always-succeeds-txin.plutus --testnet-magic 8 --out-file script.addr
+    cardano-cli address build --payment-script-file AlwaysSucceeds.plutus --testnet-magic 8 --out-file script.addr
 
 ### Generate protocol-parameters file
 
@@ -95,7 +96,7 @@ In this case we want the script address to get **funds and a datum**, therefore 
 
 So now we can sign and submit the transaction
 
-    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file wallet2_payment.skey --testnet-magic 8 --out-file tx.sign
+    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file payment2.skey --testnet-magic 8 --out-file tx.sign
 
     cardano-cli transaction submit --testnet-magic 8 --tx-file tx.sign
 
