@@ -7,7 +7,7 @@ The planned syllabus is outlined below.  Exercises will be deployed here and lin
 
 ## Target Audience
 
-The exercises are designed to help those who are unfamiliar with the Cardano node to write and submit Plutus scripts on the initial Alonzo Blue and Alonzo White testnets using the node CLI, so that they can develop their own simple DApps.  Those who are already familiar with the node may choose to skip some of the earlier exercises, of course. Note that there will be no Cardano wallet or Plutus application backend support prior to Alonzo Purple, so functionality will be limited compared with the full Plutus experience.
+The exercises are designed to help those who are unfamiliar with the Cardano node to write and submit Plutus scripts on the Alonzo testnets using the node CLI, so that they can develop their own simple DApps.  Those who are already familiar with the node may choose to skip some of the earlier exercises, of course. Note that there will be no Cardano wallet or Plutus application backend support prior to Alonzo Purple, so functionality will be limited compared with the full Plutus experience.
 
 ## Useful Resources
 
@@ -38,7 +38,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 1. Obtaining test Ada.  
 
 
-[Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/alonzo-white/1_Alonzo-white-exercise-1.md)
+[Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/alonzo-purple/1_Alonzo-purple-exercise-1.md)
 [(Model Solutions)](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1)
 
 [Instructions for using Docker with the Cardano node](docker.md)
@@ -49,7 +49,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 
 (*Note that this may be a one-off event for each Testnet since we will need to start the network from scratch - the timing will be notified on the relevant Discord channel*).
 
-[Exercise 2](Alonzo-exercises/alonzo-white/2_Alonzo-white-exercise-2.md)
+[Exercise 2](Alonzo-exercises/alonzo-purple/2_Alonzo-purple-exercise-2.md)
 
 ## Exercise 3: Addresses and Transactions
 
@@ -57,7 +57,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 1. Building, signing and submitting transactions on chain.  
 1. Submitting a transaction containing a pre-built Plutus script.
 
-[Exercise 3](Alonzo-exercises/alonzo-white/3_Alonzo-white-exercise-3.md)
+[Exercise 3](Alonzo-exercises/alonzo-purple/3_Alonzo-purple-exercise-3.md)
 [(Model Solution)](Alonzo-solutions/exercise3/e3SampleSolution.md)
 
 ## Exercise 4: Compiling and Submitting Simple Plutus Scripts
@@ -68,7 +68,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 3. Calculating fees for Plutus transactions.
 4. Determining what effect your Plutus transactions have had on the blockchain.
 
-[Exercise 4](Alonzo-exercises/alonzo-white/4_Alonzo-white-exercise-4.md)
+[Exercise 4](Alonzo-exercises/alonzo-purple/4_Alonzo-purple-exercise-4.md)
 [(Model Solution)](Alonzo-solutions/exercise4/Exercise4-solution.md)
 
 ## Exercise 5: Managing Native Tokens
@@ -81,7 +81,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 1. Time-based scripts
 
 
-[Exercise 5](Alonzo-exercises/alonzo-white/5_Alonzo-white-exercise-5.md)
+[Exercise 5](Alonzo-exercises/alonzo-purple/5_Alonzo-purple-exercise-5.md)
 (Model Solution)
 
 ## Exercise 6: DApps
@@ -91,7 +91,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 2. Interacting with external events
 
 
-[Exercise 6](Alonzo-exercises/alonzo-white/6_Alonzo-white-exercise-6.md)(Model Solution)
+[Exercise 6](Alonzo-exercises/alonzo-purple/6_Alonzo-purple-exercise-6.md)(Model Solution)
 
 ## Exercise 7: Interacting with the Wallet (Coming Soon)
 
@@ -117,16 +117,12 @@ We welcome feedback on any issues you have encountered:
 
 - Via the issue tracker at [https://github.com/input-output-hk/Alonzo-testnet/issues](https://github.com/input-output-hk/Alonzo-testnet/issues) for any issues with the exercises.
 
-## Disclaimer for Alonzo Blue/White
-
-Note that to ensure a good user experience we will be rolling the Alonzo testnets out in phases. At this point in time, we are restricting access to a relatively few invited users. If you are not one of those users, please bear with us until we are ready to open up for general access.
-
 ### Can I join in if I don't yet have an invite to the IOG-run Testnet?
 
 Yes, if you have sufficient technical expertise, you are more than welcome to set up your own private cluster and to try the exercises!
 We have provided sample solutions to help if you encounter problems and our tutorials and other documentation are all available for you to use.
-As we open up Alonzo White, we will then be able to integrate you with other community users, including providing access to the Testnet Discord channels.
-We recommend that you follow the [Alonzo White exercises](Alonzo-exercises/alonzo-white).
+As we open up the Alonzo testnets, we will then be able to integrate you with other community users, including providing access to the Testnet Discord channels.
+We recommend that you follow the [Alonzo Purple exercises](Alonzo-exercises/alonzo-purple).
 You may find the following setup guides useful.
 
 [How to launch a testnet](https://github.com/input-output-hk/cardano-node/blob/master/doc/getting-started/launching-a-testnet.md)
