@@ -1,6 +1,6 @@
 # Sample solution exercise 3
 
-**Note that this solution uses `alonzo-white-1.0` - you should use `transaction build` rather than `transaction build-raw` for `alonzo-white-1.4 `or later.**
+**Note that this solution uses `alonzo-white-1.0` - you should use `transaction build` rather than `transaction build-raw` for `alonzo-purple-1.0.1` or later.**
 
 ## Part 1 Create a new set of keys and address
 
@@ -16,9 +16,11 @@
     --payment-verification-key-file payment2.vkey \
     --stake-verification-key-file stake2.vkey \
     --out-file payment2.addr \
-    --testnet-magic 5
+    --testnet-magic 8
 
-    cardano-cli query utxo --testnet-magic 5 --address $(cat payment.addr)
+    export CARDANO_NODE_SOCKET_PATH=$HOME/alonzo-purple/socket
+    
+    cardano-cli query utxo --testnet-magic 8 --address $(cat payment.addr)
 
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
@@ -32,18 +34,17 @@
     --tx-in 7b4956b103d47908318ee92aa0790ff4b36fe7940991f0be350c9085fc4da175#1 \
     --tx-out addr_test1qpkgeus5d5yhpj876f8vx68qp95ftkk6kxw7dq9fmluvlewgmkukektxh5dthk04uhcm90d7pz6njjcfd3y0jjn5klhsk8ghrl+25000000000 \
     --tx-out $(cat payment.addr)+74999800000 \
-    --protocol-params-file pparams.json \
     --out-file tx.raw
 
     cardano-cli transaction sign \
-    --testnet-magic 5 \
+    --testnet-magic 8 \
     --signing-key-file paymet.skey \
     --tx-body-file tx.raw \
     --out-file tx.sign
 
-    cardano-cli transaction submit --testnet-magic 5  --tx-file tx.sign
+    cardano-cli transaction submit --testnet-magic 8  --tx-file tx.sign
 
-    cardano-cli query utxo --testnet-magic 5  --address addr_test1qpkgeus5d5yhpj876f8vx68qp95ftkk6kxw7dq9fmluvlewgmkukektxh5dthk04uhcm90d7pz6njjcfd3y0jjn5klhsk8ghrl
+    cardano-cli query utxo --testnet-magic 8  --address addr_test1qpkgeus5d5yhpj876f8vx68qp95ftkk6kxw7dq9fmluvlewgmkukektxh5dthk04uhcm90d7pz6njjcfd3y0jjn5klhsk8ghrl
 
 
                                TxHash                                 TxIx        Amount
@@ -70,11 +71,11 @@ Use https://www.random.org/integers/ to generate a random number and save it in 
 
 ### Generate script address
 
-    cardano-cli address build --payment-script-file untyped-always-succeeds-txin.plutus --testnet-magic 5 --out-file script.addr
+    cardano-cli address build --payment-script-file untyped-always-succeeds-txin.plutus --testnet-magic 8 --out-file script.addr
 
 ### Generate protocol-parameters file
 
-    cardano-cli query protocol-parameters --testnet-magic 5 > pparams.json
+    cardano-cli query protocol-parameters --testnet-magic 8 > pparams.json
 
 ### Send funds to the script address, we must include the datum hash
 
@@ -94,9 +95,9 @@ In this case we want the script address to get **funds and a datum**, therefore 
 
 So now we can sign and submit the transaction
 
-    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file wallet2_payment.skey --testnet-magic 5 --out-file tx.sign
+    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file wallet2_payment.skey --testnet-magic 8 --out-file tx.sign
 
-    cardano-cli transaction submit --testnet-magic 5 --tx-file tx.sign
+    cardano-cli transaction submit --testnet-magic 8 --tx-file tx.sign
 
 ### Your node will show the txid and the size of your transaction:
 
@@ -106,7 +107,7 @@ So now we can sign and submit the transaction
 
 We can use the tx id and/or the datum hash to identify "our" UTxO at the script. The last one, in this case:
 
-    cardano-cli query utxo --testnet-magic 5 --address addr_test1wzeqkp6ne3xm6gz39l874va4ujgl4kr0e46pf3ey8xsu3jsgkpcj2
+    cardano-cli query utxo --testnet-magic 8 --address addr_test1wzeqkp6ne3xm6gz39l874va4ujgl4kr0e46pf3ey8xsu3jsgkpcj2
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
     2c80e8db5205ca6bc60688b951406c929c098daa2665d5767567c39ff58e80f9     0        10140000 lovelace + TxOutDatumHashNone
@@ -142,15 +143,15 @@ Lets build the transaction, again, it is important to observe the proper order f
     --out-file tx.raw
 
 
-    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file wallet2_payment.skey --testnet-magic 5 --out-file tx.sign
-    cardano-cli transaction submit --testnet-magic 5 --tx-file tx.sign
+    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file wallet2_payment.skey --testnet-magic 8 --out-file tx.sign
+    cardano-cli transaction submit --testnet-magic 8 --tx-file tx.sign
     Transaction successfully submitted.
 
     [VM:cardano.node.Mempool:Info:40] [2021-06-16 19:43:30.87 UTC] fromList [("txs",Array [Object (fromList [("txid",String "txid: TxId {_unTxId = SafeHash \"989096df8785235740efbc7a1de0df17bd2123a64536172a11f5c464d822818a\"}")])]),("mempoolSize",Object (fromList [("bytes",Number 0.0),("numTxs",Number 0.0)])),("kind",String "TraceMempoolRemoveTxs")]
 
 Check the receiving address balance:
 
-    cardano-cli query utxo --testnet-magic 5 --address addr_test1qzsdrv4juj5hmc3dqeq9wc7kpjwmu69zwjz9j29m3l88m26hdfyr7r54f67e7c9de70ld7gzfwmhqpudvkyyvkse2gmq0cvrdj
+    cardano-cli query utxo --testnet-magic 8 --address addr_test1qzsdrv4juj5hmc3dqeq9wc7kpjwmu69zwjz9j29m3l88m26hdfyr7r54f67e7c9de70ld7gzfwmhqpudvkyyvkse2gmq0cvrdj
 
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
@@ -160,7 +161,7 @@ Check the receiving address balance:
 
 And we can confirm that we have spent the UTxO at the script:
 
-    cardano-cli query utxo --testnet-magic 5 --address $(cat script.addr)
+    cardano-cli query utxo --testnet-magic 8 --address $(cat script.addr)
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
     2c80e8db5205ca6bc60688b951406c929c098daa2665d5767567c39ff58e80f9     0        10140000 lovelace + TxOutDatumHashNone

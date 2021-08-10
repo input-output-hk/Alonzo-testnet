@@ -24,9 +24,9 @@ __Compile helloworld.hs__
 
 __Build the script address__
 
-    cardano-cli address build --payment-script-file helloworld2.plutus --testnet-magic 7 --out-file helloworld2.addr
+    cardano-cli address build --payment-script-file helloworld2.plutus --testnet-magic 8 --out-file helloworld2.addr
 
-    cardano-cli query utxo --testnet-magic 7 --address $(cat helloworld2.addr)
+    cardano-cli query utxo --testnet-magic 8 --address $(cat helloworld2.addr)
                            TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
     978681fa039c391bf37b1f2ba57312a10e2b823cf68c01fb627973b36064e452     1        512000000 lovelace + TxOutDatumHash ScriptDataInAlonzoEra "4250ea713ad7ba3b121621a8d14d8e39a4300065314b7ce9a40526acf992c8e3"
@@ -34,7 +34,7 @@ __Build the script address__
 
 __Lock some funds in the script__
 
-    cardano-cli query utxo --testnet-magic 7 --address $(cat ~/cardano/whiteWallet1/payment.addr)
+    cardano-cli query utxo --testnet-magic 8 --address $(cat ~/cardano/whiteWallet1/payment.addr)
 
                            TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
@@ -69,11 +69,11 @@ __Sign and submit__
 
     cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file ~/cardano/whiteWallet1/payment.skey --out-file tx.sign
 
-    cardano-cli transaction submit --testnet-magic 7 --tx-file tx.sign
+    cardano-cli transaction submit --testnet-magic 8 --tx-file tx.sign
 
 __Check the balances__
 
-    cardano-cli query utxo --testnet-magic 7 --address $(cat ~/cardano/whiteWallet1/payment.addr)
+    cardano-cli query utxo --testnet-magic 8 --address $(cat ~/cardano/whiteWallet1/payment.addr)
 
                            TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ __Check the balances__
 
 __Note the script has 98 ADA locked__
 
-    cardano-cli query utxo --testnet-magic 7 --address $(cat helloworld2.addr)
+    cardano-cli query utxo --testnet-magic 8 --address $(cat helloworld2.addr)
 
 
                            TxHash                                 TxIx        Amount
@@ -118,13 +118,13 @@ __Spend from the script__
 
     cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file ~/cardano/whiteWallet1/payment.skey --out-file tx.sign
 
-    cardano-cli transaction submit --testnet-magic 7 --tx-file tx.sign
+    cardano-cli transaction submit --testnet-magic 8 --tx-file tx.sign
 
 
 __Confirm we have redeemed succesfully__
 
 
-    cardano-cli query utxo --testnet-magic 7 --address $(cat ~/cardano/whiteWallet1/payment.addr)
+    cardano-cli query utxo --testnet-magic 8 --address $(cat ~/cardano/whiteWallet1/payment.addr)
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
     bc95f0701a75b5991e81eaf23399bc904b94f62e375d924e3075dadbb71ac371     0        98000000 lovelace + TxOutDatumHashNone
@@ -143,7 +143,7 @@ __Confirm we have redeemed succesfully__
 
 __The script address shows that we have succesfully spent funds from the script__
 
-    cardano-cli query utxo --testnet-magic 7 --address $(cat helloworld2.addr)
+    cardano-cli query utxo --testnet-magic 8 --address $(cat helloworld2.addr)
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
     978681fa039c391bf37b1f2ba57312a10e2b823cf68c01fb627973b36064e452     1        512000000 lovelace + TxOutDatumHash ScriptDataInAlonzoEra "4250ea713ad7ba3b121621a8d14d8e39a4300065314b7ce9a40526acf992c8e3"
