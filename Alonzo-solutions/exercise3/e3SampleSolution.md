@@ -50,7 +50,7 @@ Build the transaction using `transaction build` (recommended)
 or using `transaction build-raw`
 
     cardano-cli transaction build-raw \
-    --mary-era \
+    --alonzo-era \
     --fee 200000 \
     --tx-in ${ADDR} \
     --tx-out $(cat payment2.addr)+25000000000 \
