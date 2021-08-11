@@ -29,7 +29,7 @@ In this optional set of exercises, we will:
 
 **Before the hard fork**
 
-1. Start a passive Cardano node as you did in [Exercise Sheet 1](1_Alonzo-blue-exercise-1.md). Note that you will not need to reset the configuration information, and the node will synchronise faster than when starting from scratch.  **Make sure the log output is being sent to a file.**
+1. Start a passive Cardano node as you did in [Exercise Sheet 1](1_Alonzo-purple-exercise-1.md). Note that you will not need to reset the configuration information, and the node will synchronise faster than when starting from scratch.  **Make sure the log output is being sent to a file.**
 
 ```
       cardano-node run --config … > node.log
