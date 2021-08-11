@@ -41,7 +41,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 [Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/alonzo-purple/1_Alonzo-purple-exercise-1.md)
 [(Model Solutions)](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1)
 
-[Instructions for using Docker with the Cardano node](docker.md)
+[Instructions for using Docker with the Cardano node](documentation/docker.md)
 
 ## Exercise 2: Hard Fork (Optional)
 
