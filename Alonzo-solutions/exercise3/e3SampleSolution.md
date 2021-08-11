@@ -181,7 +181,7 @@ Let's build the transaction, again, it is important to observe the proper order 
      --tx-in-collateral ${COLLATERAL} \
      --change-address $(cat payment2.addr) \
      --protocol-params-file pparams.json \
-     ${MAGIC} \
+     --testnet-magic ${MAGIC} \
      --out-file tx.raw
 
 Or if using `transaction build-raw`, it is necessary to do some more work.
@@ -211,8 +211,8 @@ up, a greater fee will be charged - up to the maximum available funds, even if t
 
 Sign the transaction
 
-    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file collateral_payment.skey ${MAGIC} --out-file tx.sign
-    cardano-cli transaction submit ${MAGIC} --tx-file tx.sign
+    cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file collateral_payment.skey --testnet-magic ${MAGIC} --out-file tx.sign
+    cardano-cli transaction submit --testnet-magic ${MAGIC} --tx-file tx.sign
 
 Transaction successfully submitted.
 
@@ -220,7 +220,7 @@ Transaction successfully submitted.
 
 Check the receiving address balance:
 
-    cardano-cli query utxo ${MAGIC} --address $(cat payment2.addr)
+    cardano-cli query utxo --testnet-magic ${MAGIC} --address $(cat payment2.addr)
 
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
@@ -230,7 +230,7 @@ Check the receiving address balance:
 
 And we can confirm that we have spent the UTxO at the script:
 
-    cardano-cli query utxo ${MAGIC} --address $(cat script.addr)
+    cardano-cli query utxo --testnet-magic ${MAGIC} --address $(cat script.addr)
                                TxHash                                 TxIx        Amount
     --------------------------------------------------------------------------------------
     2c80e8db5205ca6bc60688b951406c929c098daa2665d5767567c39ff58e80f9     0        10140000 lovelace + TxOutDatumHashNone
