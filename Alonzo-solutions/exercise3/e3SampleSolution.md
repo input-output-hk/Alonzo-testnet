@@ -117,7 +117,7 @@ Build the transaction using `transaction build` (recommended)
       --tx-out $(cat script.addr)+10000000000 \
       --tx-out-datum-hash $(cat random_datum_hash.txt) \
       --change-address $(cat payment2.addr) \
-      --testnet-magic 8 \
+      ${MAGIC} \
       --protocol-params-file pparams.json \
       --out-file tx.raw
     
@@ -181,7 +181,7 @@ Let's build the transaction, again, it is important to observe the proper order 
      --tx-in-collateral ${COLLATERAL} \
      --change-address $(cat payment2.addr) \
      --protocol-params-file pparams.json \
-     --testnet-magic 8 \
+     ${MAGIC} \
      --out-file tx.raw
 
 Or if using `transaction build-raw`, it is necessary to do some more work.
@@ -192,6 +192,7 @@ included in the transaction data as `--tx-in-execution-units`
 * The exact total fee a transaction is paying is also specified in the transaction data. For a transaction to be valid, this fee must cover the script-running resource budget at the current price, as well as the size-based part of the required fee. If the fee is not sufficient to
 cover the resource budget specified (eg. if the resource price increased), the transaction is considered invalid and will not appear on the ledger (will not be included in a valid block). No fees will be collected in this case. This is in contrast with the gas model, where, if prices go
 up, a greater fee will be charged - up to the maximum available funds, even if they are not sufficient to cover the cost of the execution of the contract.
+
 
     cardano-cli transaction build-raw \
     --alonzo-era \
