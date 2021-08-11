@@ -194,6 +194,7 @@ cover the resource budget specified (eg. if the resource price increased), the t
 up, a greater fee will be charged - up to the maximum available funds, even if they are not sufficient to cover the cost of the execution of the contract.
 
 
+```
     cardano-cli transaction build-raw \
     --alonzo-era \
     --fee 801000000 \
@@ -206,6 +207,7 @@ up, a greater fee will be charged - up to the maximum available funds, even if t
     --tx-out $(cat payment2.addr)+9199000000 \
     --protocol-params-file pparams.json\
     --out-file tx.raw
+```
 
 Sign the transaction
 
