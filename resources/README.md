@@ -19,4 +19,10 @@ Further examples and scripts can be found in the `cardano-node` repository:
 
 [https://github.com/input-output-hk/cardano-node/tree/master/scripts/plutus](https://github.com/input-output-hk/cardano-node/tree/master/scripts/plutus)
 
-The sources and scripts are compatible with Alonzo White but not with Alonzo Blue.
+Here are examples of the JSON format that is used to encode datums and redeemers
+
+[https://github.com/input-output-hk/cardano-node/tree/master/scripts/plutus/data](https://github.com/input-output-hk/cardano-node/tree/master/scripts/plutus/data)
+
+And here is documentation of the general metadata format.
+
+[https://developers.cardano.org/docs/get-started/cardano-serialization-lib/transaction-metadata/](https://developers.cardano.org/docs/get-started/cardano-serialization-lib/transaction-metadata/)
