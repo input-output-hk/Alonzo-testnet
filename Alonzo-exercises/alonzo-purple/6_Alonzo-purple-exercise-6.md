@@ -6,9 +6,9 @@ In the previous set of exercises, you interacted with native tokens. In this set
 
 1. Complete [Exercise Sheet 5](5_Alonzo-purple-exercise-5.md)
 
-2. Start a passive Cardano Node if you need to, and make sure that it has synced with the Testnet.
+2. Start a passive Cardano node if you need to, and make sure that it has synced with the testnet.
 
-3. Make sure you have some Alonzo Purple Test Ada
+3. Make sure you have some Alonzo Purple test ada
 
 ## Objectives ##
 
