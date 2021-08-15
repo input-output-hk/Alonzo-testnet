@@ -7,9 +7,9 @@ In the fourth exercise, you wrote some simple transactions using datums and rede
 
 1. Complete [Exercise Sheet 4](4_Alonzo-purple-exercise-4.md)
 
-2. Start a passive Cardano Node if you need to, and make sure that it has synced with the Testnet.
+2. Start a passive Cardano node if you need to, and make sure that it has synced with the testnet.
 
-3. Make sure you have some Alonzo Purple Test Ada
+3. Make sure you have some Alonzo Purple test ada
 
 1. Read the tutorial information on:
 
