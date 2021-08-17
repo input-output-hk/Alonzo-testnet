@@ -17,6 +17,12 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 [Plutus Scripts and other useful Resources](resources/)
 
+[Plutus Explainer (Technical Terminology)](explainers/Plutus-explainer.md)
+
+[Plutus Playground Tutorial Documentation](https://playground.plutus.iohkdev.io/tutorial/tutorials/index.html)
+
+[Cardano Documentation](https://docs.cardano.org/plutus/learn-about-plutus)
+
 ### Executable Nodes
 
 [Alonzo-purple-1.0.1 node Linux binary](https://hydra.iohk.io/build/7191568)
