@@ -56,7 +56,7 @@ __Hash the datum value__
 
 __Build the transaction to lock 98 ADA__
 
-    cardano-cli transaction build
+    cardano-cli transaction build \
     --alonzo-era \
     --tx-in 674670674b874c27a26fde0edf65c4075d729f2cc72cc0a041e788b227c63852#1 \
     --tx-out $(cat helloworld2.addr)+98000000 \
