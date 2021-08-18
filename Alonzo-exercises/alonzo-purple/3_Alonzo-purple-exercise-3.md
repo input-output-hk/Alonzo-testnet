@@ -120,21 +120,19 @@ cardano-cli transaction build \
 
 ### Optional Exercises
 
-7.	Optional Exercise (Easy)
+1.	Optional Exercise (Easy)
 
 Submit a transaction containing the [AlwaysFails.plutus](/resources/plutus-scripts/AlwaysFails.plutus) Plutus script.  How does the outcome differ from [AlwaysSucceeds.plutus](/resources/plutus-scripts/AlwaysSucceeds.plutus)?
- 
 
-8.	Optional Exercise (Easy)
+2.	Optional Exercise (Easy)
 
 What other kinds of data can you include you include in a datum value?
 
-8.	Optional Exercise (Moderate)
+3.	Optional Exercise (Moderate)
 
 Write your own version of the `AlwaysSucceeds` Plutus script, compile your script and submit it to the Alonzo Testnet.  Verify that it has succeeded.  (Note: we will do this properly in [Exercise Sheet 4](4_Alonzo-purple-exercise-4.md) so completing this exercise will involve you reading ahead!)
 
-
-8.	Optional Exercise (Moderate)
+4.	Optional Exercise (Moderate)
 
 What ways do you have to record “state” information on-chain using Plutus scripts?
 
