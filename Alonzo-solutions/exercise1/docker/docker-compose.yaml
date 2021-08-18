@@ -1,14 +1,14 @@
 version: '3.3'
 services:
     cardano-node:
-        image: inputoutput/cardano-node:alonzo-blue1.0
+        image: inputoutput/cardano-node:alonzo-purple-1.0.2
         restart: always
         volumes:
           - ./configuration/config/:/app/cardano/config/
           - ./configuration/topology/:/app/cardano/topology/
           - ./configuration/sockets:/app/cardano/sockets/
           - ./database:/db
-        command: "run --topology /app/cardano/topology/alonzo-blue-topology.json --config /app/cardano/config/alonzo-blue-config.json --port 3001 --host-addr 0.0.0.0 --database-path /db --socket-path /app/cardano/sockets/node.socket"
+        command: "run --topology /app/cardano/topology/alonzo-purple-topology.json --config /app/cardano/config/alonzo-purple-config.json --port 3001 --host-addr 0.0.0.0 --database-path /db --socket-path /app/cardano/sockets/node.socket"
         ports:
           - 3001
         environment:
