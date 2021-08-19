@@ -19,7 +19,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 [Plutus Explainer (Technical Terminology)](explainers/Plutus-explainer.md)
 
-[Plutus Playground Tutorial Documentation](https://playground.plutus.iohkdev.io/tutorial/tutorials/index.html)
+[Plutus Playground Tutorial Documentation](https://staging.plutus.iohkdev.io/doc/plutus/tutorials/index.html)
 
 [Cardano Documentation](https://docs.cardano.org/plutus/learn-about-plutus)
 
