@@ -5,6 +5,8 @@ Plutus is the native smart contract language for Cardano. It is a Turing-complet
 ### Plutus smart contracts
 Plutus smart contracts consist of parts that run on the blockchain (on-chain code) and parts that run on a user’s machine (off-chain or client code). Off-chain code can be written using the Plutus Application Framework (PAF), and this code is then compiled by the GHC (Glasgow Haskell Compiler), whereas on-chain code is compiled by the Plutus compiler into Plutus Core. 
 
+![Plutus_arch](Plutus_arch.png)
+
 ### Accounting model used by Plutus
 Cardano uses the extended UTXO accounting model (EUTXO) which extends the unspent (U) transaction (TX) output (O) accounting model (UTXO) model (used by Bitcoin). In the UTXO model, a *transaction* has *inputs* and *outputs*, where the **inputs** are unspent outputs from previous transactions. As soon as an output is used as input in a transaction, it becomes spent and can never be used again. The **output** is specified by an *address* (a public key or public key hash) and a *value* (consisting of an ada amount and optional, additional native token amounts).
 
