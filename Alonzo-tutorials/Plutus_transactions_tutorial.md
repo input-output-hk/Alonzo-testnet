@@ -24,7 +24,7 @@ We will use Nix to provide both Haskell and Cabal, but if you desire, you could 
 
 Nix is an amazing tool that, among other things, allows us to create isolated environments in which we can embed all dependencies needed for an application. These dependencies can even be system-level dependencies. Thus, we can create an isolated environment to ensure the application will work since all required dependencies are available.
 
-Install Nix on any **Linux distribution**, **MacOS** or **Windows** (via WSL) via the recommended [multi-user installation](https://nixos.org/manual/nix/stable/#chap-installation).  In short, you need to run this at your terminal:
+1. Install Nix on any **Linux distribution**, **MacOS** or **Windows** (via WSL) via the recommended [multi-user installation](https://nixos.org/manual/nix/stable/#chap-installation).  In short, you need to run this at your terminal:
 ```
 
 $ sh <(curl -L https://nixos.org/nix/install) --daemon
@@ -81,10 +81,10 @@ compiled using version 3.4.0.0 of the Cabal library
 ### Plutus tx: compiling a Plutus script
  
 
-1. **Clone the `AlwaysSucceeds` Plutus script**. Write a Haskell program that uses it to compile our desired Plutus script, or you can use the source for the project plutus-alwayssucceeds.
+1. **Clone the `AlwaysSucceeds` Plutus script**. Write a Haskell program that uses it to compile our desired Plutus script, or you can use the source for the project [plutus-alwayssucceeds](https://github.com/input-output-hk/Alonzo-testnet/tree/main/resources/plutus-sources/plutus-alwayssucceeds).
 
 ```
-$ git clone https://github.com/input-output-hk/Alonzo-testnet.git
+$ git clone [https://github.com/input-output-hk/Alonzo-testnet.git](https://github.com/input-output-hk/Alonzo-testnet)
 $ cd Alonzo-testnet/resources/plutus-sources/plutus-alwayssucceeds
 ```
 
