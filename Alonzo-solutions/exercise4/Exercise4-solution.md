@@ -1,14 +1,12 @@
 ## EXERCISE 4 (Items 1, 2 and 3)
 
-**Note that this solution uses `alonzo-white-1.0` - you should use `transaction build` rather than `transaction build-raw` for `alonzo-white-1.4 `or later.**
-
 __Clone the Alonzo-testnet repository__
 
     git clone https://github.com/input-output-hk/Alonzo-testnet.git
 
 __Compile helloworld.hs__
 
-    cd Alonzo-testnet/resources/plutus-sources/plutus-alwayssucceeds
+    cd Alonzo-testnet/resources/plutus-sources/plutus-helloworld
     cabal build -w ghc-8.10.4
     cat plutus-helloworld.cabal | grep executable
     > executable plutus-helloworld
@@ -52,17 +50,19 @@ __Lock some funds in the script__
 
 __Hash the datum value__
 
-    cardano-cli transaction hash-script-data --script-data-value 79600447942433
-    8fb8d1694f8180e8a59f23cce7a70abf0b3a92122565702529ff39baf01f87f1
+    `79600447942433` represents `hello world` message converted to an Integer and shortened to fit within the 8-byte limit for an `int` datum.
+
+    cardano-cli transaction hash-script-data --script-data-value 79600447942433 > helloworld_hash.txt
 
 __Build the transaction to lock 98 ADA__
 
-    cardano-cli transaction build-raw --alonzo-era \
+    cardano-cli transaction build \
+    --alonzo-era \
     --tx-in 674670674b874c27a26fde0edf65c4075d729f2cc72cc0a041e788b227c63852#1 \
-    --tx-out $(cat helloworld2.addr)+98000000 \--tx-out-datum-hash 8fb8d1694f8180e8a59f23cce7a70abf0b3a92122565702529ff39baf01f87f1 \
-    --tx-out $(cat ~/cardano/whiteWallet1/payment.addr)+400000000 \
-    --fee 1000000 \
-    --protocol-params-file ~/cardano/pparams.json \
+    --tx-out $(cat helloworld2.addr)+98000000 \
+    --tx-out-datum-hash $(cat helloworld_hash.txt) \
+    --change-address $(cat ~/cardano/whiteWallet1/payment.addr) \
+    --testnet-magic 8 \
     --out-file tx.raw
 
 __Sign and submit__
@@ -102,18 +102,16 @@ __Note the script has 98 ADA locked__
 
 __Spend from the script__
 
-    cardano-cli transaction build-raw --alonzo-era \
-    --fee 300000000 \
+    cardano-cli transaction build \
+    --alonzo-era \
     --protocol-params-file ~/cardano/pparams.json \
-    --tx-in 9f411a81c28fb3b9927cad1d3da8831711e33280c39142c1c6d480e88084a514#1 \
     --tx-in 9f411a81c28fb3b9927cad1d3da8831711e33280c39142c1c6d480e88084a514#0 \
     --tx-in-script-file helloworld2.plutus \
     --tx-in-datum-value 79600447942433 \
     --tx-in-redeemer-value 79600447942433 \
-    --tx-in-execution-units "(294420000,67800)" \
     --tx-in-collateral cdecdad235b235a0dd616290ecddb9df01f9226dda961f2012d770caa45f504c#3 \
-    --tx-out $(cat ~/cardano/whiteWallet1/payment.addr)+98000000 \
-    --tx-out $(cat ~/cardano/whiteWallet1/payment.addr)+100000000 \
+    --change-address $(cat payment.addr) \
+    --testnet-magic 8 \
     --out-file tx.raw
 
     cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file ~/cardano/whiteWallet1/payment.skey --out-file tx.sign
