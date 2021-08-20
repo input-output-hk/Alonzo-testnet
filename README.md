@@ -35,7 +35,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ### Network Configurations
 
-[Alonzo Purple configuration files](https://hydra.iohk.io/build/7363249/download/1/index.html)
+[Alonzo Purple configuration files](https://hydra.iohk.io/build/7366583/download/1/index.html)
 
 ## Exercise 1: Getting Started
 
