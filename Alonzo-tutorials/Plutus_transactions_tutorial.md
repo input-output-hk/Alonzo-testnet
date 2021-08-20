@@ -238,7 +238,7 @@ We have now sent a simple transaction.
 ### Transaction to lock funds
 A transaction to lock funds is very similar to a simple transaction. Still, it has two key differences: we lock funds to a script address instead of a personal one, and we need to specify a datum hash for every output. 
 
-```
+
 First, use the following  Plutus validator script:  
 
 ```
