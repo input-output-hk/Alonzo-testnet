@@ -50,7 +50,7 @@ __Lock some funds in the script__
 
 __Hash the datum value__
 
-    `79600447942433` represents `hello world` message converted to an Integer and shortened to fit within the 8-byte limit for an `int` datum.
+`79600447942433` represents `hello world` message converted to an Integer and shortened to fit within the 8-byte limit for an `int` datum.
 
     cardano-cli transaction hash-script-data --script-data-value 79600447942433 > helloworld_hash.txt
 

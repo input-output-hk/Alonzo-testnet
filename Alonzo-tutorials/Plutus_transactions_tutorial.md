@@ -175,10 +175,6 @@ $ cardano-cli query utxo --address $(cat payment.addr) --testnet-magic $TESTNET_
 ```
 You should see something like this:
 ```
-
-
-
-
                        	TxHash                             	TxIx    	Amount
 --------------------------------------------------------------------------------------
 77aff3e7cdedf4874f4bf6c1e79dd9a1a250b32a342d0bdb885b1f7a41a49ca6 	0    	1000000000000 lovelace + TxOutDatumHashNone
@@ -188,8 +184,8 @@ You should see something like this:
 
 ```
 $ cardano-cli transaction build \
-        --alonzo-era \
-            --testnet-magic ${TESTNET_MAGIC}  \
+--alonzo-era \
+--testnet-magic ${TESTNET_MAGIC}  \
 --change-address $(cat payment.addr) \
 --tx-in 77aff3e7cdedf4874f4bf6c1e79dd9a1a250b32a342d0bdb885b1f7a41a49ca6#0 \
 --tx-out $(cat payment2.addr)+30000000000 \
@@ -215,9 +211,9 @@ $ cardano-cli transaction sign \
 $ cardano-cli transaction submit --tx-file tx.signed --testnet-magic ${TESTNET_MAGIC}
 
 Transaction successfully submitted.
-
+```
 Now if we query payment2.addr we will have a new UTxO containing 30,000 ADAs:
-
+```
 $ cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
 
                        	TxHash                             	TxIx    	Amount
@@ -238,7 +234,7 @@ We have now sent a simple transaction.
 ### Transaction to lock funds
 A transaction to lock funds is very similar to a simple transaction. Still, it has two key differences: we lock funds to a script address instead of a personal one, and we need to specify a datum hash for every output. 
 
-```
+
 First, use the following  Plutus validator script:  
 
 ```
