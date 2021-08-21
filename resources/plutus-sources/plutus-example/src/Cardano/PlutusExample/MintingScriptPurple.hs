@@ -51,7 +51,7 @@ mkPolicy mp _ ctx = traceIfFalse "wrong amount minted" checkMintedAmount
     info = scriptContextTxInfo ctx
 
     checkMintedAmount :: Bool
-    checkMintedAmount = case flattenValue (txInfoForge info) of
+    checkMintedAmount = case flattenValue (txInfoMint info) of
       [(cs, tn, amt)] -> cs  == ownCurrencySymbol ctx && tn == (mpTokenName mp) && amt == (mpAmount mp)
       _                -> False
 
