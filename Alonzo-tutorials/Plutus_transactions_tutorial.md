@@ -3,6 +3,7 @@ This tutorial outlines what a Plutus transaction is and how to write one.
 
 ### What is a Plutus transaction?
 A transaction is a piece of data that contains both inputs and outputs, and as of the Alonzo era, they can also include Plutus scripts. **Inputs** are unspent outputs from previous transactions (UTxO). As soon as an UTxO is used as input in a transaction, it becomes spent and can never be used again. The **output** is specified by an *address* (a public key or public key hash) and a *value* (consisting of an ada amount and optional additional native token amounts). This flow-diagram gives a better idea of what the components of a transaction are at a technical level: 
+![Plutus-transaction](diagram-plutus-transaction.png)
 
 In short, inputs contain references to UTXOs introduced by previous transactions, and outputs are the new UTXOs that this transaction will produce. Also, if we think about it, this allows us to change the state of a smart contract since new data can be contained in the produced outputs. 
 
@@ -29,56 +30,95 @@ Nix is an amazing tool that, among other things, allows us to create isolated en
 
 $ sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
+Add IOHK Binary Cache. To improve build speed, it is possible to set up a binary cache maintained by IOHK.
+  
+```
+$ sudo mkdir -p /etc/nix
+
+$ cat <<EOF | sudo tee /etc/nix/nix.conf
+
+substituters = https://cache.nixos.org https://hydra.iohk.io
+
+trusted-public-keys = iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo= hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+
+EOF
+```
 Before Nix works in your existing shells, you need to close them and open them again. Other than that, you should be ready to go.
 
-2. Save the following into a file called `shell.nix` and then load a shell with Nix using the `nix-shell` command:
+Once Nix is installed, log out and then log back in, so it is activated properly in your shell. Clone the following and check out the Alonzo tag.
+
 ```
+$ git clone [https://github.com/input-output-hk/cardano-node](https://github.com/input-output-hk/cardano-node)
+$ cd cardano-node
+$ git checkout -b alonzo-purple tags/alonzo-purple-1.0.2
+```
+Save the following into a file called `plutus-tutorial.nix`:
+
+```
+{ version ? "purple", magicId ? 8, pkgs ? import <nixpkgs> { }}:
 let
-   pkgs = import <nixpkgs> { };
-in
-pkgs.mkShell {
-  buildInputs = with pkgs; [
-    zlib
-    libsodium
-    cabal-install
-    haskell.compiler.ghc8104
-    haskellPackages.brittany
-    haskellPackages.libsodium
-    haskellPackages.haskell-language-server
-  ];
+cardano-node-repo = import ./. { };
+
+in pkgs.mkShell {
+buildInputs = with pkgs; [
+libsodium
+cabal-install
+haskell.compiler.ghc8104
+haskellPackages.haskell-language-server
+cardano-node-repo.scripts."alonzo-${version}".node
+cardano-node-repo.cardano-cli
+];
+
+CARDANO_NODE_SOCKET_PATH = "${builtins.toString ./.}/state-node-alonzo-${version}/node.socket";
+TESTNET_MAGIC = magicId;
 }
 ```
-
-If you prefer not to create this file, you can do the same using the following command:
+and then load a shell with Nix using this file with the following command:
 ```
-$ nix-shell -p libsodium cabal-install haskell.compiler.ghc8104 haskellPackages.haskell-language-server
-```
-
-This will take approximately five or ten minutes, then, you should see something similar to this: 
-
+$ nix-shell plutus-tutorial.nix
+```  
+This will take approximately five or ten minutes, then, you should see something similar to this:
 ```
 these paths will be fetched (445.08 MiB download, 5870.53 MiB unpacked):
-  /nix/store/04jc7s1006vhg3qj4fszg6bcljlyap1a-conduit-parse-0.2.1.0-doc
-  /nix/store/052kzx9p5fl52pk436i2jcsqkz3ni0r2-reflection-2.1.6-doc
+
+/nix/store/04jc7s1006vhg3qj4fszg6bcljlyap1a-conduit-parse-0.2.1.0-doc
+
+/nix/store/052kzx9p5fl52pk436i2jcsqkz3ni0r2-reflection-2.1.6-doc
 .
 .
 .
 /nix/store/7jq1vjy58nj8rjwa688l5x7dyzr55d9f-monad-memo-0.5.3... (34 KB left)
+
 ```
 
 This creates an environment with all dependencies listed in the “buildInputs” section, with GHC 8.10.4 and Cabal among those.
 
-3. When you have recent versions of GHC and Cabal,  make sure to use  GHC 8.10.2 or later:
+
+When you have recent versions of GHC and Cabal, make sure to use GHC 8.10.2 or later:
+
 ```
 [nix-shell:~]$ ghc --version
 The Glorious Glasgow Haskell Compilation System, version 8.10.4
 
 [nix-shell:~]$ cabal --version
 cabal-install version 3.4.0.0
-compiled using version 3.4.0.0 of the Cabal library 
+compiled using version 3.4.0.0 of the Cabal library
+
 ```
 
-### Plutus tx: compiling a Plutus script
+### Running the cardano-node
+
+Inside the nix-shell start a passive Cardano node:
+
+```
+$ nix-shell plutus-tutorial.nix
+[nix-shell:~]$ cardano-node-alonzo-purple
+```
+
+At this point, the node will start syncing with the network. We are now ready to start building the Plutus transaction. Keep the node running in this shell, and open a new terminal to continue with the following steps. Remember to enter the nix-shell environment in this new terminal so you have both GHC and Cabal available.
+
+
+### Plutus tx: Compiling a Plutus script
  
 
 1. **Clone the `AlwaysSucceeds` Plutus script**. Write a Haskell program that uses it to compile our desired Plutus script, or you can use the source for the project [plutus-alwayssucceeds](https://github.com/input-output-hk/Alonzo-testnet/tree/main/resources/plutus-sources/plutus-alwayssucceeds).
