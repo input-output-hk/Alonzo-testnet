@@ -165,7 +165,7 @@ $ cat alwayssucceeds.plutus
 
 We will then have the Plutus script compiled. Now, we need to build the transaction within the Alonzo testnet using the cardano-node-cli project including the Plutus script.
 
-### Generate Wallets
+### Generating Wallets
 
 1. **Ensure that you have the latest tagged version of the Alonzo era**. You should now see the following: 
 ```
