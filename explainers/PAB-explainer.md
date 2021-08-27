@@ -16,7 +16,7 @@ The following diagram provides an overview of the PAB architecture:
 
 There are two deployment models envisaged for the PAB once it is available:
 - hosted - this option will be supported at the initial release of the PAB. In this scenario, the DApp provider / developer hosts an instance of the PAB alongside the chain index and an Alonzo node. The off-chain code of the Plutus app is run on the DApp provider’s infrastructure.
-- in-browser - this option will be available later after the initial release. 
+- in-browser - this option will be available later, after the initial release. 
 
 
 In addition to the PAB itself, the following components are required:
