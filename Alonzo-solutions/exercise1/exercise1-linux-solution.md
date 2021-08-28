@@ -5,7 +5,7 @@
 Create a working directory and get the cardano-node and cardano-cli binaries
 
     mkdir cardano
-    wget (https://hydra.iohk.io/build/7191568/download/1/cardano-node-1.28.0-linux.tar.gz
+    wget https://hydra.iohk.io/build/7191568/download/1/cardano-node-1.28.0-linux.tar.gz
     tar -xf cardano-node-1.28.0-linux.tar.gz
     rm cardano-node-1.28.0-linux.tar.gz
 
