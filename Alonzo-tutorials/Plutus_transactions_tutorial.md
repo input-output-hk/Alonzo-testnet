@@ -180,7 +180,7 @@ At this point, the node will start syncing with the network. We are now ready to
 ```
 
 
-3. **Execute the plutus-alwayssucceeds project**. We will pick a random number. It will be passed as an argument to the Plutus script (it is not used right now, but it is required). The second argument is the filename we use for the compiled Plutus script.
+3. **Execute the plutus-alwayssucceeds project**. We will pick a random number. It will be passed as an argument to the Plutus script (it is not used by the script right now, but will be required by transactions using the script). The second argument is the filename we use for the compiled Plutus script.
 
   
 
@@ -515,7 +515,7 @@ Now, we have sent funds to a script.
 
   
 
-To unlock funds from a script, we need the redeemer. Let’s remember that this script will always succeed regardless of the value of the redeemer. So we can use any value as a redeemer. We also need an input as collateral, this is used in case the transaction fails so the fees are completely covered. Then, we need a UTXO with enough funds. We are going to create a simple transaction using the `payment2.addr` account as an example.
+To unlock funds from a script, we need the redeemer. Let’s remember that this script will always succeed regardless of the value of the redeemer, so long as we provide the correct datum. So we can use any value as a redeemer. We also need an input as collateral : it covers the fees if the transaction fails. Then, we need a UTXO with enough funds. We are going to create a simple transaction using the `payment2.addr` account as an example.
 
   
   
@@ -560,7 +560,7 @@ TxHash TxIx Amount
 --tx-in-collateral ${txCollateral} \
 --change-address $(cat payment.addr) \
 --protocol-params-file pparams.json \
---out-file test-alonzo.tx \
+--out-file test-alonzo.tx
 ```
 
   
