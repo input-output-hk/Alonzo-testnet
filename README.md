@@ -25,7 +25,11 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ### Executable Nodes
 
-[Alonzo-1.29.0 node binaries](https://github.com/input-output-hk/cardano-node/actions/runs/1167487183)
+[Alonzo-1.29.0 node Linux binary](https://hydra.iohk.io/build/7408438)
+
+[Alonzo-1.29.0 node MacOS binary](https://hydra.iohk.io/build/7408630)
+
+[Alonzo-1.29.0 node Windows binary](https://hydra.iohk.io/build/7408538)
 
 [Alonzo-1.29.0 node Docker image](https://hub.docker.com/layers/inputoutput/cardano-node/1.29.0/images/sha256-426abd457f1514bd81a85f68fb6b0a6dd4f373c4e856e5b18f6d58143a107a21)
 
