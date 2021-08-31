@@ -27,7 +27,7 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 [Alonzo-1.29.0 node Linux binary](https://hydra.iohk.io/build/7408438)
 
-[Alonzo-1.29.0 node MacOS binary](https://hydra.iohk.io/build/7408630)
+[Alonzo-1.29.0 node MacOSX binary](https://hydra.iohk.io/build/7408630)
 
 [Alonzo-1.29.0 node Windows binary](https://hydra.iohk.io/build/7408538)
 
