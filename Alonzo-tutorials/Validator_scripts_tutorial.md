@@ -91,7 +91,7 @@ So with all these examples we can create an intuitive definition of a validator.
 
 Now that we know what a validator function is, let’s define a validator /script/.
 
-> A validator function that has been compiled using `PlutusTX.compile` and template haskell is known as a validator script. The cade for the script will be saved in the blockchain and It’s hash will be used as the address for the code.
+> A validator function that has been compiled using `PlutusTX.compile` and template haskell is known as a validator script. The code hash will be used as the address for the script.
 
 ### Validators in Plutus Contracts
 
@@ -248,5 +248,5 @@ With the two previous examples is easy to abstract the pattern needed to create 
 * A validator script
 
   * It’s generated from a validator function
-  * The code is stored as part of the transaction.
+  * The code is not stored on the blockchain, *until* the reedemer transaction actually executes.
   * You need to calculate it’s address with `scriptAddress`
