@@ -1,6 +1,6 @@
 ## Plutus Application Backend (PAB) explainer ##
 
-The Plutus Application Backend (PAB) is the client-side runtime component that enables developers to interact with smart contracts. It is an off-chain, backend service for managing and handling the requirements of the application instance throughout its lifecycle. This service includes interaction with external clients (such as wallet frontends) and acts as an intermediary between Plutus applications, the node, the wallet backend, and end users. Such interaction is made possible by PAB commands and mock components that enable convenient simulations and integration of DApps.
+The Plutus Application Backend (PAB) enables developers to interact with smart contracts. It is an off-chain, backend service for managing and handling the requirements of the application instance throughout its lifecycle. This service includes interaction with external clients (such as wallet frontends) and acts as an intermediary between Plutus applications, the node, the wallet backend, and end users. Such interaction is made possible by PAB commands and mock components that enable convenient simulations and integration of DApps. We will be rolling out a series of versions of the PAB over the coming weeks as we iterate and add new functionality.
 
 The purpose of the PAB is to:
 - provide a standardized environment in which Plutus applications run
