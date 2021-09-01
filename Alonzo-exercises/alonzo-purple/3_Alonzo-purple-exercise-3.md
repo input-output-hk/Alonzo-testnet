@@ -83,7 +83,7 @@ cardano-cli transaction build \
       …
 ```
 
-The collateral is used to pay for a transaction that fails to execute.  The `transaction build` command checks that a script is valid, so you should never normally lose your collateral.
+The collateral is used to pay for a transaction that fails to execute.  The `transaction build` command checks that the script validation succeeds, so collateral is safe if the transaction is submitted.
 
 
 4. Sign the transaction as usual, using the secret key for `wallet.addr`
@@ -126,7 +126,7 @@ Submit a transaction containing the [AlwaysFails.plutus](/resources/plutus-scrip
 
 2.	Optional Exercise (Easy)
 
-What other kinds of data can you include you include in a datum value?
+What other kinds of data can you include in a datum value?
 
 3.	Optional Exercise (Moderate)
 
