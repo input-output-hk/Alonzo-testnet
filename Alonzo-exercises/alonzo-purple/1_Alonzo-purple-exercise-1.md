@@ -14,7 +14,7 @@ We are excited to have you join us on the journey to delivering Plutus scripts f
 
 	1. The IOHK Tutorial Documentation at: [https://docs.cardano.org/introduction](https://docs.cardano.org/introduction)
 	2. The Alonzo Purple Testnet configuration (see main [README.md](../../README.md))
-	3. Either, the correct binary image for your operating system, or the Docker image (see main README.md).
+	3. Either, the correct binary image for your operating system, or the Docker image (see main [README.md](../../README.md)).
 	4. The associated documentation at: [https://docs.cardano.org/getting-started/installing-the-cardano-node](https://docs.cardano.org/getting-started/installing-the-cardano-node)
 
 
