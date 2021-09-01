@@ -24,7 +24,7 @@ This directory contains sources for a Plutus script that "always succeeds"
 
 # plutus-helloworld
 
-This directory contains a simple "Hello World" script.  There are two versions: one using an integer literal (needed because the Plutus interpreter doesn't currently accept byte string literals) and a slighly more complicated one using a bytestring parameter.
+This directory contains a few "Hello World" script examples. There are three versions: the latest addition uses bytestring literal. The other two are using an integer literal and a bytestring parameter (both are alternative workarounds for when the Plutus interpreter didn't yet accept byte string literals).
 
 ## FAQ
 
