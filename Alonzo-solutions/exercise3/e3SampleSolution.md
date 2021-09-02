@@ -201,7 +201,7 @@ up, a greater fee will be charged - up to the maximum available funds, even if t
     --tx-in ${ADDR3} \
     --tx-in-script-file AlwaysSucceeds.plutus \
     --tx-in-datum-value $(cat random_datum.txt) \
-    --tx-in-redeemer-value "ANYTHING" \
+    --tx-in-redeemer-value 0 \
     --tx-in-execution-units "(200000000,200000000)" \
     --tx-in-collateral ${COLLATERAL} \
     --tx-out $(cat payment2.addr)+9199000000 \
