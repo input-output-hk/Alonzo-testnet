@@ -25,17 +25,17 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ### Executable Nodes
 
-[Alonzo-1.29.0-rc1 node Linux binary](https://hydra.iohk.io/build/7348558)
+[Alonzo-1.29.0 node Linux binary](https://hydra.iohk.io/build/7408438)
 
-[Alonzo-1.29.0-rc1 node MacOSX binary](https://hydra.iohk.io/build/7348590)
+[Alonzo-1.29.0 node MacOSX binary](https://hydra.iohk.io/build/7408630)
 
-[Alonzo-1.29.0-rc1 node Windows binary](https://hydra.iohk.io/build/7348683)
+[Alonzo-1.29.0 node Windows binary](https://hydra.iohk.io/build/7408538)
 
-[Alonzo-1.29.0-rc1 node Docker image](https://hydra.iohk.io/build/7348664)
+[Alonzo-1.29.0 node Docker image](https://hub.docker.com/layers/inputoutput/cardano-node/1.29.0/images/sha256-426abd457f1514bd81a85f68fb6b0a6dd4f373c4e856e5b18f6d58143a107a21)
 
 ### Network Configurations
 
-[Alonzo Purple configuration files](https://hydra.iohk.io/build/7366583/download/1/index.html)
+[Alonzo Purple and Cardano Testnet configuration files](https://hydra.iohk.io/build/7366583/download/1/index.html)
 
 ## Exercise 1: Getting Started
 
@@ -88,7 +88,6 @@ See an update proposal submitted to the chain and follow along as we go through 
 
 
 [Exercise 5](Alonzo-exercises/alonzo-purple/5_Alonzo-purple-exercise-5.md)
-(Model Solution)
 
 ## Exercise 6: DApps
 
@@ -97,7 +96,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 2. Interacting with external events
 
 
-[Exercise 6](Alonzo-exercises/alonzo-purple/6_Alonzo-purple-exercise-6.md)(Model Solution)
+[Exercise 6](Alonzo-exercises/alonzo-purple/6_Alonzo-purple-exercise-6.md)
 
 ## Exercise 7: Interacting with the Wallet (Coming Soon)
 
@@ -107,8 +106,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 3. Some simple DApps using the wallet CLI
 
 
-Exercise 7
-(Model Solution)
+[Exercise 7] (Alonzo-exercises/alonzo-purple/7_Alonzo-purple-exercise-7.md)
 
 ## Feedback
 

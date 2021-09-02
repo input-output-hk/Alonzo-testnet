@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     cardano-node:
-        image: inputoutput/cardano-node:alonzo-purple-1.0.2
+        image: inputoutput/cardano-node:${NODE_TAG}
         restart: always
         volumes:
           - ./configuration/config/:/app/cardano/config/

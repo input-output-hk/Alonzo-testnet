@@ -229,7 +229,7 @@ Transaction successfully submitted.
 We can query the addresses to ensure that we have unlocked the funds. There is now no UTXO at the script address and a new one with 8 ada has been received.:
 
 ```
-$ cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic 5
+$ cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic 8
                            TxHash                                 TxIx        Amount
 --------------------------------------------------------------------------------------
 

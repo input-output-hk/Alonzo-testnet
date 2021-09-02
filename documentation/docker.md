@@ -12,7 +12,7 @@ Download the correct `cardano-node` image
 
 ``docker image pull inputoutput/cardano-node:<TAG>``
 
-where `<TAG>` is the tag for the version that you require (e.g. `latest` for the most recent stable version, or `1.27.0` for node version 1.27.0).
+where `<TAG>` is the tag for the version that you require (e.g. `latest` for the most recent stable version, or `1.29.0` for node version 1.29.0).
 
 Create local `data` and `node-ipc` volumes
 
