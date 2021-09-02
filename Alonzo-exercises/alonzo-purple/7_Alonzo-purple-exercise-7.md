@@ -4,7 +4,7 @@ In the previous set of exercises, you built some simple Distributed Applications
 
 ## Prerequisites
 
-1. Complete [Exercise Sheet 6](7_Alonzo-purple-exercise-7.md)
+1. Complete [Exercise Sheet 6](6_Alonzo-purple-exercise-6.md)
 
 2. Read the documentation on the Cardano Wallet and CLI at:
 
