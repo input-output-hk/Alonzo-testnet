@@ -106,7 +106,7 @@ See an update proposal submitted to the chain and follow along as we go through 
 3. Some simple DApps using the wallet CLI
 
 
-[Exercise 7] (Alonzo-exercises/alonzo-purple/7_Alonzo-purple-exercise-7.md)
+[Exercise 7](Alonzo-exercises/alonzo-purple/7_Alonzo-purple-exercise-7.md)
 
 ## Feedback
 
