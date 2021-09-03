@@ -2,9 +2,9 @@
 
 A validator script is used to lock transaction outputs on the chain. It is attached to a script output in the extended UTXO model and determines the address of the output. It must return positively in order for the output to be spent.
 
-The purpose of the validator script is to signal failure. If it fails it signals that the attempt to spend the output in invalid and therefore the transaction should fail. It indicates failure using the PlutusTx.Builtins.error builtin.
+The purpose of the validator script is to signal failure. If it fails, it signals that the attempt to spend the output in invalid and therefore the transaction should fail. It indicates failure using the PlutusTx.Builtins.error builtin.
 
-Validator scripts are written as Haskell functions, which are compiled with Plutus Tx into Plutus Core. The type of a validator function is Data -> Data -> Data -> ()- a function which takes three arguments of type Data, and returns a value of type () (“unit” or “the empty tuple”)
+Validator scripts are written as Haskell functions, which are compiled with Plutus Tx into Plutus Core. The type of a validator function is Data -> Data -> Data -> ()- a function which takes three arguments of type Data, and returns a value of type () (“unit” or “the empty tuple”).
 
 ### An intuitive understanding of a validator function.
 
@@ -12,7 +12,7 @@ Let’s start with a couple of examples in pseudo code. These are examples of th
 
 #### Example 1: Ferris Wheel
 
-For example, a kid wants to go on a ferris wheel, but before getting in there it must be taller than the sign.
+For example, a kid wants to go on a ferris wheel, but before getting on, they must be taller than the safety sign.
 
 We could express that idea in pseudo code, like:
 
@@ -87,15 +87,15 @@ example2 = makeValidator(validator=mayLegalyDrink
 So with all these examples we can create an intuitive definition of a validator.
 
 
-> A validator is a function that encodes a rule. It’s parameters are a Context, state of the world, and a datum, a specific instance of data. It succeeds as long as it doesn’t throw an exception.
+> A validator is a function that encodes a rule. Its parameters are a Context, state of the world, and a datum, a specific instance of data. It succeeds as long as it doesn’t throw an exception.
 
 Now that we know what a validator function is, let’s define a validator /script/.
 
-> A validator function that has been compiled using `PlutusTX.compile` and template haskell is known as a validator script. The code hash will be used as the address for the script.
+> A validator function that has been compiled using `PlutusTX.compile` and template Haskell is known as a validator script. The code hash will be used as the address for the script.
 
 ### Validators in Plutus Contracts
 
-Now let’s look at actual plutus contracts, no more pseudo code, and see how they implement validator functions and validator scripts.
+Now let’s look at actual Plutus contracts, no more pseudo code, and see how they implement validator functions and validator scripts.
 
 #### Plutus example: Vesting
 Imagine we want to give an inheritance to our child. However she may only receive the inheritance when she turns 18. Analyzing the whole example is beyond the scope of this article, but it is presented with detail in the 3rd Lecture of the Plutus Pioneer program, with the complete code, and the lecture notes by the community.
