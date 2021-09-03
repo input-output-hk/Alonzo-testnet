@@ -149,7 +149,7 @@ So now we can sign and submit the transaction
 
 ### Query the script address balance
 
-We can use the tx id and/or the datum hash to identify "our" UTxO at the script. The last one, in this case:
+We can use the tx hash and/or the datum hash to identify "our" UTxO at the script. The last one, in this case:
 
     cardano-cli query utxo ${MAGIC} --address $(cat script.addr)
                                TxHash                                 TxIx        Amount
@@ -168,7 +168,7 @@ So the script address has a UTxO that can ONLY be spent when providing the VALUE
 
      COLLATERAL=3064e641ab188863eb3ec7755d1c06ba4c95b3db5575a87998c95c7c8053430a#1
 
-Let's build the transaction, again, it is important to observe the proper order for inputs and outputs, check  `cardano-cli transaction build --help`
+Let's build the transaction.  Again, it is important to observe the proper order for inputs and outputs, check  `cardano-cli transaction build --help`
 
      ADDR3=fb169b24bbf66e9a1f779ab87fef63321a616d64e69e5e0206a6b8e8af4c7802#0
 
@@ -201,7 +201,7 @@ up, a greater fee will be charged - up to the maximum available funds, even if t
     --tx-in ${ADDR3} \
     --tx-in-script-file AlwaysSucceeds.plutus \
     --tx-in-datum-value $(cat random_datum.txt) \
-    --tx-in-redeemer-value $(cat random_datum.txt) \
+    --tx-in-redeemer-value 0 \
     --tx-in-execution-units "(200000000,200000000)" \
     --tx-in-collateral ${COLLATERAL} \
     --tx-out $(cat payment2.addr)+9199000000 \
