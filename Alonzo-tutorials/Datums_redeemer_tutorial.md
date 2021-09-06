@@ -2,11 +2,11 @@
 
 This tutorial explains the concepts of Plutus datums and redeemers, and outlines how to work with these elements when submitting transactions.
 
-The **datum** is a piece of information that can be associated with a UTXO and is used to carry script state such as its owner or the timing details (when the UTXO can be spent). It is frequently used in combination with a **redeemer** – arbitrary information included in a transaction to provide an input to the script. 
+The **datum** is a piece of information that can be associated with a UTXO and is used to carry script state information such as its owner or the timing details (which define when the UTXO can be spent). It is frequently used in combination with a **redeemer** – arbitrary information included in a transaction to provide an input to the script. 
 
 ### Two-phase transaction validation
 
-Inputs are unspent outputs from previous transactions. The datum hash and a value (consisting of an ada amount and optional, additional native token amounts) are stored in a UTXO at an address (public key or public key hash). When a UTXO at a script address is an input to a valid transaction, the script determines whether to ‘unlock’ the funds. This can be executed under specific conditions defined by the script (arbitrary combination of factors including datum, redeemer, and script context). During the first validation phase, a transaction must be signed by the owner of the private key corresponding to the address.
+Inputs are unspent outputs from previous transactions. The datum hash and a value (consisting of an ada amount and optional, additional native token amounts) are stored in a UTXO at an address (public key or public key hash). When a UTXO at a script address is an input to a valid transaction, the script determines whether to ‘unlock’ the funds. This can be executed under specific conditions defined by the script (an arbitrary combination of factors including datum, redeemer, and script context). During the first validation phase, a transaction must be signed by the owner of the private key corresponding to the address.
 
 There are a couple of concepts that we need to learn before understanding a redeemer transaction:
 1. Script address — the Cardano address that stores funds guarded by a Plutus script that can be further unlocked. It is a hash of the Plutus script.
