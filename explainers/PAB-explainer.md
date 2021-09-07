@@ -23,4 +23,4 @@ In addition to the PAB itself, the following components are required:
 - Chain index — the chain index is a database of data gathered from Cardano transactions. It uses the Cardano node’s chain sync protocol and needs to be co-located with a Cardano node. The chain index is a read-only component for the PAB. Multiple instances of the PAB can therefore share a single instance of the chain index. All chain index queries are served over an HTTP API.
 - Alonzo node — the PAB subscribes to ledger state updates from the node, using a socket protocol.
 
-The PAB is another powerful tool on Cardano that make DApps simpler, more secure, and more cost-effective to develop. By providing information from canonical sources in a usable form, it relieves developers of many routine tasks.
+The PAB is another powerful tool on Cardano that makes DApps simpler, more secure, and more cost-effective to develop. By providing information from canonical sources in a usable form, it relieves developers of many routine tasks.
