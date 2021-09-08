@@ -1,4 +1,4 @@
-# What is Plutus?
+# Learn about Plutus?
 
 Plutus is the native smart contract language for Cardano. It is a Turing-complete language written in Haskell, and Plutus smart contracts are effectively Haskell programs. [Alonzo](https://iohk.io/en/blog/posts/2021/04/08/smart-contracts-%E2%80%93-here-we-come/) is the name of the protocol upgrade that will introduce the support for Plutus smart contracts on Cardano. By using Plutus, you can be confident in the correct execution of your smart contracts. It draws from modern language research to provide a safe, full-stack programming environment based on Haskell, the leading purely-functional programming language.
 
