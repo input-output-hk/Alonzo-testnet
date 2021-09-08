@@ -1,3 +1,5 @@
+# EUTXO explained
+
 Cardano (like Bitcoin) is an Unspent Transaction Output (UTXO)-based blockchain, which utilizes a different accounting model for its ledger from other account-based blockchains like Ethereum.
 
 ## Overview of the UTXO model ##
