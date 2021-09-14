@@ -100,4 +100,18 @@ executable plutus-helloworld-literal-bytestring
                       , plutus-tx
                       , bytestring
 
+executable jsons-datum
+  import:               base, project-config
+  hs-source-dirs:       app
+  main-is:              JsonsDatum.hs
+  ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
+
+  build-depends:        aeson
+                      , cardano-api
+                      , cardano-ledger-alonzo
+                      , plutus-helloworld
+                      , plutus-ledger
+                      , plutus-ledger-api
+                      , plutus-tx
+                      , bytestring
 
