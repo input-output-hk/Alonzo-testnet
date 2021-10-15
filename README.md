@@ -25,13 +25,13 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 ### Executable Nodes
 
-[Alonzo-1.29.0 node Linux binary](https://hydra.iohk.io/build/7408438)
+[Alonzo-1.30.1 node Linux binary](https://hydra.iohk.io/build/7739415)
 
-[Alonzo-1.29.0 node MacOSX binary](https://hydra.iohk.io/build/7408630)
+[Alonzo-1.30.1 node MacOSX binary](https://hydra.iohk.io/build/7739444)
 
-[Alonzo-1.29.0 node Windows binary](https://hydra.iohk.io/build/7408538)
+[Alonzo-1.30.1 node Windows binary](https://hydra.iohk.io/build/7739339)
 
-[Alonzo-1.29.0 node Docker image](https://hub.docker.com/layers/inputoutput/cardano-node/1.29.0/images/sha256-426abd457f1514bd81a85f68fb6b0a6dd4f373c4e856e5b18f6d58143a107a21)
+[Alonzo-1.30.1 node Docker image](https://hub.docker.com/layers/inputoutput/cardano-node/1.30.1/images/sha256-039dfe8ed474b03fba84746b744787a1002ba068313b9d742eeebfaab2d2b0c0?context=explore)
 
 ### Network Configurations
 
@@ -46,8 +46,6 @@ The exercises are designed to help those who are unfamiliar with the Cardano nod
 
 [Exercise 1](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-exercises/alonzo-purple/1_Alonzo-purple-exercise-1.md)
 [(Model Solutions)](https://github.com/input-output-hk/Alonzo-testnet/tree/main/Alonzo-solutions/exercise1)
-
-[Instructions for using Docker with the Cardano node](documentation/docker.md)
 
 ## Exercise 2: Hard Fork (Optional)
 
