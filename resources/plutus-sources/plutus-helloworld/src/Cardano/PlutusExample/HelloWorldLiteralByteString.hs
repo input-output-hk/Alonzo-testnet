@@ -36,7 +36,7 @@ hello = BI.mkB "Hello World!"
 {-# INLINABLE helloWorld #-}
 
 helloWorld :: BuiltinData -> BuiltinData -> BuiltinData -> ()
-helloWorld datum redeemer context = if datum P.== hello then () else (P.error ())
+helloWorld datum _redeemer _context = if datum P.== hello then () else (P.error ())
 
 {-
     As a Validator

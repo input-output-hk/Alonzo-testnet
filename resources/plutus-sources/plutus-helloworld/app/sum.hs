@@ -1,34 +1,35 @@
+
 import           Prelude
-import           Data.String
 import           System.Environment
 
 import           Cardano.Api
+import           Cardano.Api.Shelley
 
+import qualified Cardano.Ledger.Alonzo.Data as Alonzo
 import qualified Plutus.V1.Ledger.Api as Plutus
 
 import qualified Data.ByteString.Short as SBS
 
-import           Cardano.PlutusExample.HelloWorldLiteralByteString (helloWorldSBS, helloWorldSerialised)
+import           Cardano.PlutusExample.Sum (sumSBS, sumSerialised)
 
 main :: IO ()
 main = do
   args <- getArgs
   let nargs = length args
-  let scriptData = if nargs > 0 then fromString (args!!0) else "Hello World!"
+  let scriptnum = if nargs > 0 then read (args!!0) else 42
   let scriptname = if nargs > 1 then args!!1 else  "result.plutus"
   putStrLn $ "Writing output to: " ++ scriptname
-  writePlutusScript scriptData scriptname helloWorldSerialised helloWorldSBS
+  writePlutusScript scriptnum scriptname sumSerialised sumSBS
 
-writePlutusScript :: Plutus.BuiltinByteString -> FilePath -> PlutusScript PlutusScriptV1 -> SBS.ShortByteString -> IO ()
-writePlutusScript scriptData filename scriptSerial scriptSBS =
+
+
+writePlutusScript :: Integer -> FilePath -> PlutusScript PlutusScriptV1 -> SBS.ShortByteString -> IO ()
+writePlutusScript scriptnum filename scriptSerial scriptSBS =
   do
   case Plutus.defaultCostModelParams of
         Just m ->
-          let (logout, e) = Plutus.evaluateScriptCounting Plutus.Verbose m scriptSBS
-                              [ Plutus.toData scriptData
-                              , Plutus.toData ()
-                              , Plutus.toData ()
-                              ]
+          let Alonzo.Data pData = toAlonzoData (ScriptDataNumber scriptnum)
+              (logout, e) = Plutus.evaluateScriptCounting Plutus.Verbose m scriptSBS [pData]
           in do print ("Log output" :: String) >> print logout
                 case e of
                   Left evalErr -> print ("Eval Error" :: String) >> print evalErr
