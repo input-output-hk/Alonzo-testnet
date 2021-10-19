@@ -47,6 +47,7 @@ library
   exposed-modules:      Cardano.PlutusExample.HelloWorld
                       , Cardano.PlutusExample.HelloWorldByteStringParametric
                       , Cardano.PlutusExample.HelloWorldLiteralByteString
+                      , Cardano.PlutusExample.Sum
 
   build-depends:        bytestring
                       , cardano-api
@@ -71,6 +72,16 @@ executable plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
 
+executable plutus-sum
+  import:               base, project-config
+  hs-source-dirs:       app
+  main-is:              plutus-sum.hs
+  ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
+
+  build-depends:        cardano-api
+                      , plutus-helloworld
+                      , plutus-ledger-api
+                      , bytestring
 
 executable plutus-helloworld-bytestring
   import:               base, project-config
@@ -92,12 +103,9 @@ executable plutus-helloworld-literal-bytestring
   main-is:              plutus-helloworld-literal-bytestring.hs
   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
-  build-depends:        aeson
-                      , cardano-api
-                      , cardano-ledger-alonzo
+  build-depends:      , cardano-api
                       , plutus-helloworld
                       , plutus-ledger-api
-                      , plutus-tx
                       , bytestring
 
 

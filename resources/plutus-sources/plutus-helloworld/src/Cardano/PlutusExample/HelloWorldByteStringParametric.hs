@@ -43,8 +43,8 @@ hello = "Hello World!"
 
 {-# INLINABLE helloWorld #-}
 
-helloWorld :: P.BuiltinByteString -> P.BuiltinByteString -> P.BuiltinByteString -> ScriptContext -> P.Bool
-helloWorld keyword datum redeemer context = keyword P.== datum
+helloWorld :: P.BuiltinByteString -> P.BuiltinByteString -> () -> ScriptContext -> P.Bool
+helloWorld keyword datum _redeemer _context = keyword P.== datum
 
 {-
     As a ScriptInstance
@@ -53,14 +53,14 @@ helloWorld keyword datum redeemer context = keyword P.== datum
 data HelloWorld
 instance Scripts.ValidatorTypes HelloWorld where
     type instance DatumType HelloWorld = P.BuiltinByteString
-    type instance RedeemerType HelloWorld = P.BuiltinByteString
+    type instance RedeemerType HelloWorld = ()
 
 helloWorldInstance :: Scripts.TypedValidator HelloWorld
 helloWorldInstance = Scripts.mkTypedValidator @HelloWorld
     ($$(PlutusTx.compile [|| helloWorld ||]) `PlutusTx.applyCode` PlutusTx.liftCode hello)
     $$(PlutusTx.compile [|| wrap ||])
   where
-    wrap = Scripts.wrapValidator @P.BuiltinByteString @P.BuiltinByteString
+    wrap = Scripts.wrapValidator @P.BuiltinByteString @()
 
 {-
     As a Validator
