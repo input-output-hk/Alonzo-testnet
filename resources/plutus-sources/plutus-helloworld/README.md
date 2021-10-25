@@ -7,3 +7,5 @@ This directory contains a simple "Hello World" script.  There are two versions: 
 ``plutus-helloworld-bytestring`` -- more compex typed version using a paramaterised validator and bytestring constant
 
 ``plutus-helloworld-literal-bytestring`` -- an untyped example using literal builtin bytestring (significantly smaller when serialised than typed validator)
+
+``plutus-sum`` -- a typed validator where datum and redeemer are both integers. The validator succeed if `sum [1..datum] == redeemer`

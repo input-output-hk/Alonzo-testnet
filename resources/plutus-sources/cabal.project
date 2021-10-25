@@ -5,6 +5,7 @@ packages:
     plutus-helloworld
     plutus-alwayssucceeds
     plutus-alwaysfails
+    plutus-deadline
 
 package cryptonite
   -- Using RDRAND instead of /dev/urandom as an entropy source for key

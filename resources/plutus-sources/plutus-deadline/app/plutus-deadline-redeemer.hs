@@ -10,16 +10,16 @@ import qualified Plutus.V1.Ledger.Api as Plutus
 
 import qualified Data.ByteString.Short as SBS
 
-import           Cardano.PlutusExample.Sum (sumSBS, sumSerialised)
+import           Cardano.PlutusDeadline.DeadlineRedeemer (deadlineScriptShortBs, deadlineScript)
 
 main :: IO ()
 main = do
   args <- getArgs
   let nargs = length args
   let scriptnum = if nargs > 0 then read (args!!0) else 42
-  let scriptname = if nargs > 1 then args!!1 else  "result.plutus"
+  let scriptname = if nargs > 1 then args!!1 else  "deadline-redeemer.plutus"
   putStrLn $ "Writing output to: " ++ scriptname
-  writePlutusScript scriptnum scriptname sumSerialised sumSBS
+  writePlutusScript scriptnum scriptname deadlineScript deadlineScriptShortBs
 
 
 
