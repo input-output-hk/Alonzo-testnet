@@ -79,7 +79,7 @@ Once Nix is installed, log out and then log back in, so it is activated properly
 
   
 ```
-$ git clone [https://github.com/input-output-hk/cardano-node](https://github.com/input-output-hk/cardano-node)
+$ git clone https://github.com/input-output-hk/cardano-node
 $ cd cardano-node
 $ git checkout -b alonzo-purple tags/alonzo-purple-1.0.2
 ```
@@ -573,7 +573,7 @@ If we use a UTXO that is part of a script address as an input of the transaction
 ```
 [nix-shell:~/..]$ cardano-cli transaction sign \
 --tx-body-file test-alonzo.tx \
---signing-key-file payment.skey \
+--signing-key-file payment2.skey \
 --testnet-magic ${TESTNET_MAGIC} \
 --out-file test-alonzo.signed
 ```
