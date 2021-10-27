@@ -26,6 +26,10 @@ This directory contains sources for a Plutus script that "always succeeds"
 
 This directory contains a few "Hello World" script examples. There are three versions: the latest addition uses bytestring literal. The other two are using an integer literal and a bytestring parameter (both are alternative workarounds for when the Plutus interpreter didn't yet accept byte string literals).
 
+# plutus-deadline
+
+This directory contains some timelocking examples. There are three versions: [Deadline.hs](./plutus-deadline/src/Cardano/PlutusDeadline/Deadline.hs) is a validation script using a constant posix time deadline, [DeadlinePolicy.hs](./plutus-deadline/src/Cardano/PlutusDeadline/DeadlinePolicy.hs) is a minting policy with a constant posix time deadline, and [DeadlineRedeemer.hs](./plutus-deadline/src/Cardano/PlutusDeadline/DeadlineRedeemer.hs) is a minting policy that applies the numeric redeemer as the posix time deadline.
+
 ## FAQ
 
 ### Where is the off chain code?
