@@ -555,7 +555,7 @@ TxHash TxIx Amount
 --testnet-magic ${TESTNET_MAGIC} \
 --tx-in ${plutusutxotxin} \
 --tx-in-script-file alwayssucceeds.plutus \
---tx-in-datum-value 42 \
+--tx-in-datum-value 12 \
 --tx-in-redeemer-value 22 \
 --tx-in-collateral ${txCollateral} \
 --change-address $(cat payment.addr) \
@@ -589,7 +589,7 @@ Now, if we query both addresses we can see that we have unlocked the funds:
 [nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
  ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat untyped-always-succeeds-txin.addr) --testnet-magic ${TESTNET_MAGIC}
+[nix-shell:~/..]$ cardano-cli query utxo --address $(cat script.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
   
