@@ -566,7 +566,7 @@ TxHash TxIx Amount
   
   
 
-If we use a UTXO that is part of a script address as an input of the transaction, we need to specify the `--tx-in-script-file  --tx-in datum-value  --tx-in-redeemer-value --tx-in-collateral` arguments after the `--tx-in` argument containing that UTXO:
+If we use a UTXO that is part of a script address as an input of the transaction, we need to specify the `--tx-in-script-file  --tx-in-datum-value  --tx-in-redeemer-value --tx-in-collateral` arguments after the `--tx-in` argument containing that UTXO:
 
   
 
