@@ -51,7 +51,6 @@ library
                       , cardano-api
                       , flat
                       , plutus-core
-                      , plutus-ledger
                       , plutus-ledger-api
                       , plutus-tx
                       , plutus-tx-plugin
